@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin
+   id="org.xmof.gemoc.activitydiagram"
+   version="1.0.0.qualifier"
+
+   class="org.xmof.gemoc.activitydiagram">
+   <requires>
+      <import plugin="org.eclipse.ui" version="3.106.1"/>
+      <import plugin="org.eclipse.core.runtime" version="3.10.0"/>
+      <import plugin="org.eclipse.emf.edit" version="2.10.1"/>
+      <import plugin="org.eclipse.emf.ecore.editor" version="2.10.1"/>
+      <import plugin="org.eclipse.graphiti" version="0.11.2"/>
+      <import plugin="org.modelexecution.xmof.editor" version="1.0.0"/>
+      <import plugin="org.eclipse.graphiti.ui" version="0.11.2"/>
+      <import plugin="org.eclipse.gef" version="3.11.0"/>
+      <import plugin="org.modelexecution.xmof.diagram" version="1.0.0"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.6.0"/>
+   </requires>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditorID">
+         <command
+               commandId="org.modelexecution.xmof.diagram.decorator.decorateActivityNodes"
+               label="Decorate Activity Nodes"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Decorate Activity Nodes"
+            id="org.modelexecution.xmof.diagram.decorator.decorateActivityNodes"
+            name="Decorate Activity Nodes">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.modelexecution.xmof.diagram.decorator.handler.DecorateActivityNodesHandler"
+            commandId="org.modelexecution.xmof.diagram.decorator.decorateActivityNodes">
+      </handler>
+   </extension>
+   <extension
+         point="org.modelexecution.xmof.diagram.DecorationProvider">
+      <decoratorProvider
+            decoratorProviderClass="org.modelexecution.xmof.diagram.decorator.provider.NodeDecorator">
+      </decoratorProvider>
+   </extension>
+
+</plugin>
