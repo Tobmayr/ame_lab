@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.modelexecution.animationaddon"
+         name="XMOF Animation- Addon"
+         point="org.gemoc.gemoc_language_workbench.engine_addon">
+      <Addon
+            AddonGroupId="org.modelexecution.xmof.animation.AddonGroup"
+            Class="org.modelexecution.xmof.animation.actions.AnimationAddon"
+            Name="org.modelexecution.xmof.animation.AnimationAddon"
+            ShortDescription="Addon for animated debugging"
+            id="org.modelexecution.xmof.animation.AnimationAddon">
+      </Addon>
+   </extension>
+   <extension
+         id="org.xmof.addontest.AddonGroup"
+         name="XMOF- Addongroup"
+         point="org.gemoc.gemoc_language_workbench.engine_addon_group">
+      <AddonGroup
+            Name="XMOF- Addongroup"
+            id="org.xmof.addontest.AddonGroup1">
+      </AddonGroup>
+   </extension>
+
+
+</plugin>
