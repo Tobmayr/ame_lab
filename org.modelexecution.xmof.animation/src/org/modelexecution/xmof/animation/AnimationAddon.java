@@ -86,7 +86,6 @@ public class AnimationAddon implements IEngineAddon{
 	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
 			MSEOccurrence mseOccurrence) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
