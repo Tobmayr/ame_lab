@@ -8,3 +8,5 @@ Require-Bundle: org.gemoc.xdsmlframework.api,
  org.gemoc.executionframework.engine;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Export-Package: org.modelexecution.xmof.animation
+Import-Package: org.modelexecution.xmof.vm

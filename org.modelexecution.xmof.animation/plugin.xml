@@ -7,7 +7,7 @@
          point="org.gemoc.gemoc_language_workbench.engine_addon">
       <Addon
             AddonGroupId="org.modelexecution.xmof.animation.AddonGroup"
-            Class="org.modelexecution.xmof.animation.actions.AnimationAddon"
+            Class="org.modelexecution.xmof.animation.AnimationAddon"
             Name="org.modelexecution.xmof.animation.AnimationAddon"
             ShortDescription="Addon for animated debugging"
             id="org.modelexecution.xmof.animation.AnimationAddon">

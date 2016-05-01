@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.actions;
+package org.modelexecution.xmof.animation;
 
 import java.util.Collection;
 import java.util.List;
@@ -8,9 +8,14 @@ import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
+import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 
 public class AnimationAddon implements IEngineAddon{
+
+	private AnimationController animationController= new AnimationController();
+	
+
 
 	@Override
 	public void engineAboutToStart(IBasicExecutionEngine engine) {
@@ -103,6 +108,12 @@ public class AnimationAddon implements IEngineAddon{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void initialize(XMOFBasedModel model) {
+		animationController.setXmofModel(model);
+		
+	}
+
 
 
 
