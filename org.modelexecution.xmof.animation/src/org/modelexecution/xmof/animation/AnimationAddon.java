@@ -3,6 +3,9 @@ package org.modelexecution.xmof.animation;
 import java.util.Collection;
 import java.util.List;
 
+import javafx.scene.AmbientLight;
+
+import org.eclipse.emf.ecore.resource.Resource;
 import org.gemoc.executionframework.engine.mse.LogicalStep;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
@@ -13,19 +16,20 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class AnimationAddon implements IEngineAddon{
 
-	private AnimationController animationController= new AnimationController();
+	private AnimationController animationController;
 	
 
 
 	@Override
 	public void engineAboutToStart(IBasicExecutionEngine engine) {
-		// TODO Auto-generated method stub
+	
+		return;
 		
 	}
 
 	@Override
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
-		// TODO Auto-generated method stub
+		animationController.openMainDiagram();	
 		
 	}
 
@@ -79,13 +83,14 @@ public class AnimationAddon implements IEngineAddon{
 	public void logicalStepExecuted(IBasicExecutionEngine engine,
 			LogicalStep logicalStepExecuted) {
 		// TODO Auto-generated method stub
-		
+		return;
 	}
 
 	@Override
 	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
 			MSEOccurrence mseOccurrence) {
 		// TODO Auto-generated method stub
+		return ;
 	}
 
 	@Override
@@ -108,8 +113,8 @@ public class AnimationAddon implements IEngineAddon{
 		return null;
 	}
 
-	public void initialize(XMOFBasedModel model) {
-		animationController.setXmofModel(model);
+	public void initialize(XMOFBasedModel model, Resource resource) {
+		animationController= new AnimationController(model,resource);
 		
 	}
 
