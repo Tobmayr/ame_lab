@@ -53,11 +53,11 @@ public class AnimationController {
 			break;
 		}
 		case ACTIVITYNODE: {
-
+			decorateActivityNode(match.getXmofElementName());
 			break;
 		}
-		case FORKNODE: {
-
+		case NODE: {
+			decorateControlFlowNode(match.getXmofElementName());
 			break;
 		}
 		default: {
@@ -67,6 +67,16 @@ public class AnimationController {
 
 	}
 	
+	private void decorateControlFlowNode(String xmofElementName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void decorateActivityNode(String xmofElementName) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	private void openOrCreateAcitvityDiagram(Activity acitvity){
 		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
 			@Override
