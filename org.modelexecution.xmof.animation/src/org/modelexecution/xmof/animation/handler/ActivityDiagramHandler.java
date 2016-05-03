@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation;
+package org.modelexecution.xmof.animation.handler;
 
 
 
@@ -28,7 +28,9 @@ public class ActivityDiagramHandler implements Runnable {
 	
 	}
 	
-
+	public void showDiagram(Activity activity){
+		activeEditor.showDiagram(activity);
+	}
 	public void showDiagram(BehavioredEOperation operation){
 		activeEditor.showDiagram(operation);
 	}
