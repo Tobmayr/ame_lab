@@ -1,10 +1,9 @@
 package org.modelexecution.xmof.animation.internal;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -15,14 +14,13 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
-public class XMOFBasedModelSearchService {
+public class XMOFModelProcessor {
 
-	private List<BehavioredEOperation> mainOperations;
 	private XMOFBasedModel model;
 	private Map<String,Activity> activityMap;
-	public XMOFBasedModelSearchService(XMOFBasedModel model) {
+	public XMOFModelProcessor(XMOFBasedModel model) {
 		this.model = model;
-		initialize();
+		prepareActivityMap();
 	}
 
 	private Map<String, EObject> obtainDistinctModelElements() {
@@ -36,19 +34,22 @@ public class XMOFBasedModelSearchService {
 
 	}
 
-	public Activity findActivityByName(String name){
+	public Activity getActivityByName(String name){
 		return activityMap.get(name);
 	}
-	private void obtainActivityMap() {
+	private void prepareActivityMap() {
 		activityMap=new HashMap<String, Activity>();
-		String s="";
 		for (Activity activity:obtainActivities(obtainDistinctModelElements().values())){
 			activityMap.put(activity.getName(), activity);
-			s+=activity.getName()+", ";
 		}
 		
 		return;
 
+	}
+	
+	
+	public Map<String, Activity> getActivityMap() {
+		return Collections.unmodifiableMap(activityMap);
 	}
 
 	private Set<Activity> obtainActivities(Collection<EObject> modelElements) {
@@ -78,34 +79,7 @@ public class XMOFBasedModelSearchService {
 		return null;
 	}
 
-	private void initialize() {
-		obtainMainOperations();
-		obtainActivityMap();
-
-	}
-
-	private void obtainMainOperations() {
-		mainOperations = new ArrayList<BehavioredEOperation>();
-		for (EObject modelElement : model.getMainEClassObjects()) {
-			obtainMainOperation(modelElement);
-		}
-
-	}
-
-	private void obtainMainOperation(EObject modelElement) {
-		EClass eClass = modelElement.eClass();
-		for (EOperation eOperation : eClass.getEAllOperations()) {
-			if (eOperation instanceof BehavioredEOperation
-					&& eOperation.getName().equals(XMOFBasedModel.MAIN)) {
-				mainOperations.add((BehavioredEOperation) eOperation);
-			}
-		}
-
-	}
-
-	public List<BehavioredEOperation> getMainOperations() {
-		return mainOperations;
-	}
+	
 
 	public XMOFBasedModel getModel() {
 		return model;

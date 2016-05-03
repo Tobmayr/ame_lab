@@ -13,70 +13,67 @@ import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
-
-public class AnimationAddon implements IEngineAddon{
+public class AnimationAddon implements IEngineAddon {
 
 	private AnimationController animationController;
-	
-
 
 	@Override
 	public void engineAboutToStart(IBasicExecutionEngine engine) {
-	
+
 		return;
-		
+
 	}
 
 	@Override
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
-		animationController.openMainDiagram();	
-		
+	
+
 	}
 
 	@Override
 	public void engineAboutToStop(IBasicExecutionEngine engine) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void engineStopped(IBasicExecutionEngine engine) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void engineAboutToDispose(IBasicExecutionEngine engine) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void aboutToSelectLogicalStep(IBasicExecutionEngine engine,
 			Collection<LogicalStep> logicalSteps) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void proposedLogicalStepsChanged(IBasicExecutionEngine engine,
 			Collection<LogicalStep> logicalSteps) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void logicalStepSelected(IBasicExecutionEngine engine,
 			LogicalStep selectedLogicalStep) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void aboutToExecuteLogicalStep(IBasicExecutionEngine engine,
 			LogicalStep logicalStepToExecute) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -89,22 +86,22 @@ public class AnimationAddon implements IEngineAddon{
 	@Override
 	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
 			MSEOccurrence mseOccurrence) {
-		// TODO Auto-generated method stub
-		return ;
+	
+		return;
 	}
 
 	@Override
 	public void mseOccurrenceExecuted(IBasicExecutionEngine engine,
 			MSEOccurrence mseOccurrence) {
-		// TODO Auto-generated method stub
-		
+			animationController.processMSEOccurrence(mseOccurrence);
+
 	}
 
 	@Override
 	public void engineStatusChanged(IBasicExecutionEngine engine,
 			RunStatus newStatus) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -114,11 +111,8 @@ public class AnimationAddon implements IEngineAddon{
 	}
 
 	public void initialize(XMOFBasedModel model, Resource resource) {
-		animationController= new AnimationController(model,resource);
-		
+		animationController = new AnimationController(model, resource);
+
 	}
-
-
-
 
 }
