@@ -48,7 +48,8 @@ public class AnimationController {
 			break;
 		}
 		case ACTITVITY: {
-
+			Activity main=modelProcessor.getActivityByName(match.getXmofElementName());
+			openOrCreateAcitvityDiagram(main);
 			break;
 		}
 		case ACTIVITYNODE: {
