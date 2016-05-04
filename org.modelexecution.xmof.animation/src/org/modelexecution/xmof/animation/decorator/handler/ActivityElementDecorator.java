@@ -60,7 +60,9 @@ public class ActivityElementDecorator implements Runnable {
 	
 	private void decorate(DiagramEditor editor, Activity activity, String nodeName) {
 		for (ActivityNode node : activity.getNode()) {
-			if (node.getName().equals(nodeName)){
+			String name = node.getName();
+			if(name==null) continue;
+			if (name.equals(nodeName.trim())){
 				refreshDecoration(editor, node);
 				return;
 			}
