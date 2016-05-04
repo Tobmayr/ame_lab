@@ -8,6 +8,8 @@ import org.modelexecution.xmof.animation.handler.ActivityDiagramHandler;
 import org.modelexecution.xmof.animation.internal.Match;
 import org.modelexecution.xmof.animation.internal.MatchingService;
 import org.modelexecution.xmof.animation.internal.XMOFModelProcessor;
+import org.modelexecution.xmof.diagram.decorator.handler.DecorateActivityNodesHandler;
+import org.modelexecution.xmof.diagram.decorator.service.DecoratorService;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class AnimationController {
@@ -15,11 +17,13 @@ public class AnimationController {
 	private XMOFModelProcessor modelProcessor;
 	private ActivityDiagramHandler diagramHandler;
 	private MatchingService mseMatcher;
+	private DecorateActivityNodesHandler decorator;
 
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
 		modelProcessor = new XMOFModelProcessor(model);
 		diagramHandler = new ActivityDiagramHandler(modelResource);
 		mseMatcher = new MatchingService(model);
+		decorator = new DecorateActivityNodesHandler();
 		PlatformUI.getWorkbench().getDisplay().asyncExec(diagramHandler);
 		initialize();
 	}
@@ -68,13 +72,12 @@ public class AnimationController {
 	}
 	
 	private void decorateControlFlowNode(String xmofElementName) {
-		// TODO Auto-generated method stub
+		DecoratorService.decorateNode(xmofElementName);
 		
 	}
 
 	private void decorateActivityNode(String xmofElementName) {
-		// TODO Auto-generated method stub
-		
+		DecoratorService.decorateNode(xmofElementName);
 	}
 
 	private void openOrCreateAcitvityDiagram(Activity acitvity){
