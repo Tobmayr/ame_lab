@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.diagram.decorator.handler;
+package org.modelexecution.xmof.animation.decorator.handler;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
-import org.modelexecution.xmof.diagram.decorator.service.DecoratorService;
+import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 
 public class DecorateActivityNodesHandler extends AbstractHandler {
 
