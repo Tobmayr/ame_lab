@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.diagram.decorator.service;
+package org.modelexecution.xmof.animation.decorator.service;
 
 
 public class DecoratorService {

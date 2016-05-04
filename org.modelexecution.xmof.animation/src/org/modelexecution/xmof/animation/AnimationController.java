@@ -4,12 +4,12 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.PlatformUI;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
+import org.modelexecution.xmof.animation.decorator.handler.DecorateActivityNodesHandler;
+import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 import org.modelexecution.xmof.animation.handler.ActivityDiagramHandler;
 import org.modelexecution.xmof.animation.internal.Match;
 import org.modelexecution.xmof.animation.internal.MatchingService;
 import org.modelexecution.xmof.animation.internal.XMOFModelProcessor;
-import org.modelexecution.xmof.diagram.decorator.handler.DecorateActivityNodesHandler;
-import org.modelexecution.xmof.diagram.decorator.service.DecoratorService;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class AnimationController {
