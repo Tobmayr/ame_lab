@@ -8,6 +8,7 @@ import javafx.scene.AmbientLight;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.gemoc.executionframework.engine.mse.LogicalStep;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
+import org.gemoc.executionframework.engine.mse.impl.MSEImpl;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
@@ -16,6 +17,7 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 public class AnimationAddon implements IEngineAddon {
 
 	private AnimationController animationController;
+
 
 	@Override
 	public void engineAboutToStart(IBasicExecutionEngine engine) {
@@ -87,13 +89,14 @@ public class AnimationAddon implements IEngineAddon {
 	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
 			MSEOccurrence mseOccurrence) {
 	
+		animationController.processMSEOccurrence(mseOccurrence);
 		return;
 	}
 
 	@Override
 	public void mseOccurrenceExecuted(IBasicExecutionEngine engine,
 			MSEOccurrence mseOccurrence) {
-			animationController.processMSEOccurrence(mseOccurrence);
+	
 
 	}
 

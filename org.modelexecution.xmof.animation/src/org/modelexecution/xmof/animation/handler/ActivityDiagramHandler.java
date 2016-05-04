@@ -68,6 +68,10 @@ public class ActivityDiagramHandler implements Runnable {
 		
 	}
 	
+	public KernelEditor getKernelEditor(){
+		return activeEditor;
+	}
+	
 	
 	
 }
