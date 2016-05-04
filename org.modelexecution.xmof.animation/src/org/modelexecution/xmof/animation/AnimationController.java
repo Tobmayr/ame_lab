@@ -84,7 +84,14 @@ public class AnimationController {
 	}
 
 	private void decorateActivityNode(String xmofElementName) {
-		decorator.decorateActivityNode(xmofElementName);
+		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+			  @Override
+			  public void run() {
+				  decorator.decorateActivityNode(xmofElementName);
+			  }
+
+		});
+		  
 	}
 
 	private void openOrCreateAcitvityDiagram(Activity acitvity) {
