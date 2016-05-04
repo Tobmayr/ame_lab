@@ -1,32 +1,27 @@
 package org.modelexecution.xmof.animation.decorator.service;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 
 public class DecoratorService {
 	
-	private static Object decoratedElement;
-	private static String name;
-	
-	public static void decorateNode(String nodeName) {
-		name=nodeName;
-	}
-	
-	public static void decorateNode(Object node) {
-		decoratedElement = node;
-	}
-	
-	public static Object getdecoratedElement() {
-		return decoratedElement;
-	}
-	
-	public static String getName() {
-		return name;
-	}
-
-	public static boolean isdecoratedElement(Object businessObject) {
-		if(decoratedElement==businessObject) {
-			return true;
-		} else {
-			return false;
+		private static Set<Object> decoratedElements = new LinkedHashSet<Object>();
+		
+		public static void addDecoratedElement(Object element) {
+			decoratedElements.add(element);
 		}
-	}
+		
+		public static void removeDecoratedElement(Object element) {
+			decoratedElements.remove(element);
+		}
+		
+		public static boolean isDecoratedElement(Object element) {
+			return decoratedElements.contains(element);
+		}
+		
+		public static void clearDecoratedElements() {
+			decoratedElements.clear();
+		}
+	
 }

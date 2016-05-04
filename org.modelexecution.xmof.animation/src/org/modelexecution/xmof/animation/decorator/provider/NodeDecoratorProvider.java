@@ -8,12 +8,12 @@ import org.eclipse.graphiti.util.IColorConstant;
 import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 import org.modelexecution.xmof.diagram.decoration.IXMOFDecoratorProvider;
 
-public class NodeDecorator implements IXMOFDecoratorProvider {
+public class NodeDecoratorProvider implements IXMOFDecoratorProvider {
 
 	@Override
 	public IDecorator[] getDecorators(PictogramElement pe) {
 		for (EObject businessObject : pe.getLink().getBusinessObjects()) {
-			if (DecoratorService.isdecoratedElement(businessObject)) {
+			if (DecoratorService.isDecoratedElement(businessObject)) {
 				return new IDecorator[] { new ColorDecorator(
 						IColorConstant.YELLOW, IColorConstant.RED) };
 			}

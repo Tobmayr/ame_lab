@@ -4,7 +4,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.PlatformUI;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.decorator.handler.DecorateActivityNodesHandler;
+import org.modelexecution.xmof.animation.decorator.handler.ActivityElementDecorator;
 import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 import org.modelexecution.xmof.animation.handler.ActivityDiagramHandler;
 import org.modelexecution.xmof.animation.internal.Match;
@@ -17,22 +17,20 @@ public class AnimationController {
 	private XMOFModelProcessor modelProcessor;
 	private ActivityDiagramHandler diagramHandler;
 	private MatchingService mseMatcher;
-	private DecorateActivityNodesHandler decorator;
+	private ActivityElementDecorator decorator;
 
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
 		modelProcessor = new XMOFModelProcessor(model);
 		diagramHandler = new ActivityDiagramHandler(modelResource);
 		mseMatcher = new MatchingService(model);
-		decorator = new DecorateActivityNodesHandler();
+		
 		PlatformUI.getWorkbench().getDisplay().asyncExec(diagramHandler);
 		initialize();
 	}
 
 	private void initialize() {
-		mseMatcher
-				.setAllowedActivities(modelProcessor.getActivityMap().keySet());
-	
-
+		mseMatcher.setAllowedActivities(modelProcessor.getActivityMap()
+				.keySet());
 
 	}
 
@@ -47,22 +45,26 @@ public class AnimationController {
 	private void processType(Match match) {
 		switch (match.getType()) {
 		case MAIN: {
-			Activity main=modelProcessor.getActivityByName(match.getXmofElementName());
-			openOrCreateAcitvityDiagram(main);
-			break;
+			decorator = new ActivityElementDecorator(diagramHandler.getKernelEditor());
+			Activity activity = modelProcessor.getActivityByName(match
+					.getXmofElementName());
+			prepareActivty(activity);
+		
+			return;
 		}
 		case ACTITVITY: {
-			Activity main=modelProcessor.getActivityByName(match.getXmofElementName());
-			openOrCreateAcitvityDiagram(main);
-			break;
+			Activity activity = modelProcessor.getActivityByName(match
+					.getXmofElementName());
+			prepareActivty(activity);
+			return;
 		}
 		case ACTIVITYNODE: {
 			decorateActivityNode(match.getXmofElementName());
-			break;
+			return;
 		}
 		case NODE: {
 			decorateControlFlowNode(match.getXmofElementName());
-			break;
+			return;
 		}
 		default: {
 
@@ -70,25 +72,29 @@ public class AnimationController {
 		}
 
 	}
-	
+
+	private void prepareActivty(Activity activity) {
+		openOrCreateAcitvityDiagram(activity);
+		decorator.setCurrentActvity(activity);
+	}
+
 	private void decorateControlFlowNode(String xmofElementName) {
-		DecoratorService.decorateNode(xmofElementName);
-		
+		// DecoratorService.decorateNode(xmofElementName);
+
 	}
 
 	private void decorateActivityNode(String xmofElementName) {
-		DecoratorService.decorateNode(xmofElementName);
+		decorator.decorateActivityNode(xmofElementName);
 	}
 
-	private void openOrCreateAcitvityDiagram(Activity acitvity){
+	private void openOrCreateAcitvityDiagram(Activity acitvity) {
 		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
 			@Override
 			public void run() {
-					diagramHandler.showDiagram(acitvity);
-				}
-			
+				diagramHandler.showDiagram(acitvity);
+			}
+
 		});
 	}
-
 
 }

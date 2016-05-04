@@ -14,31 +14,35 @@ import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.ui.editor.DiagramBehavior;
 import org.eclipse.graphiti.ui.editor.DiagramEditor;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 
-public class DecorateActivityNodesHandler extends AbstractHandler {
+public class ActivityElementDecorator implements Runnable {
 
-	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IEditorPart editor = HandlerUtil.getActiveEditorChecked(event);
-		DiagramEditor activeDiagramEditor = getActiveDiagramEditor(editor);
-		if (activeDiagramEditor != null) {
-			Activity activity = getActivity(activeDiagramEditor);
-				decorate(activeDiagramEditor, activity);
-		}
-		return null;
-
+	private Activity currentActvity;
+	private KernelEditor editor;
+	public ActivityElementDecorator(KernelEditor editor){
+		this.editor=editor;
+		
 	}
+	public void decorateActivityNode(String nodeName){
+		DiagramEditor activeDiagramEditor = getActiveDiagramEditor();
+		if (activeDiagramEditor!=null && currentActvity!=null){
+			decorate(activeDiagramEditor, currentActvity,nodeName);
+		}
+		
+	}
+	
 
-	private DiagramEditor getActiveDiagramEditor(IEditorPart editor) {
+
+	private DiagramEditor getActiveDiagramEditor() {
 		DiagramEditor diagramEditor = null;
-		if (editor instanceof KernelEditor) {
-			KernelEditor xmofEditor = (KernelEditor) editor;
-			Object selectedPage = xmofEditor.getSelectedPage();
+		if (editor !=null){
+			Object selectedPage = editor.getSelectedPage();
 			if (selectedPage instanceof DiagramEditor) {
 				diagramEditor = (DiagramEditor) selectedPage;
 			}
@@ -46,43 +50,26 @@ public class DecorateActivityNodesHandler extends AbstractHandler {
 		return diagramEditor;
 	}
 
-	private Activity getActivity(DiagramEditor editor) {
-		Diagram diagram = getDiagram(editor);
-		return getActivity(diagram);
-	}
+	
 
 	private Diagram getDiagram(DiagramEditor editor) {
 		Diagram diagram = editor.getDiagramTypeProvider().getDiagram();
 		return diagram;
 	}
 
-	private Activity getActivity(ContainerShape shape) {
-		for (Shape childShape : shape.getChildren()) {
-			Activity activity = getActivity(childShape);
-			if (activity != null && activity.getName()==DecoratorService.getName()) {
-				return activity;
-			}
-		}
-		return null;
-	}
-
-	private Activity getActivity(Shape shape) {
-		for (EObject businessObject : shape.getLink().getBusinessObjects()) {
-			if (businessObject instanceof Activity) {
-				return (Activity) businessObject;
-			}
-		}
-		return null;
-	}
-
-	private void decorate(DiagramEditor editor, Activity activity) {
+	
+	private void decorate(DiagramEditor editor, Activity activity, String nodeName) {
 		for (ActivityNode node : activity.getNode()) {
-			refreshDecoration(editor, node);
+			if (node.getName().equals(nodeName)){
+				refreshDecoration(editor, node);
+				return;
+			}
+			
 		}
 	}
 
 	private void refreshDecoration(DiagramEditor editor, ActivityNode node) {
-		DecoratorService.decorateNode(node);
+		DecoratorService.addDecoratedElement(node);
 		DiagramBehavior diagramBehavior = getDiagramBehavior(editor);
 		Diagram diagram = getDiagram(editor);
 		List<PictogramElement> pictogramElements = Graphiti.getLinkService()
@@ -96,5 +83,22 @@ public class DecorateActivityNodesHandler extends AbstractHandler {
 		DiagramBehavior diagramBehavior = editor.getDiagramBehavior();
 		return diagramBehavior;
 	}
+
+	public Activity getCurrentActvity() {
+		return currentActvity;
+	}
+
+	public void setCurrentActvity(Activity currentActvity) {
+		this.currentActvity = currentActvity;
+	}
+
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 
 }
