@@ -12,6 +12,7 @@ import org.gemoc.executionframework.engine.mse.impl.MSEImpl;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
+import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class AnimationAddon implements IEngineAddon {

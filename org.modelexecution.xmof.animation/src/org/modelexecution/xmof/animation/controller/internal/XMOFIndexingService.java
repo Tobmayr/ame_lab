@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.internal;
+package org.modelexecution.xmof.animation.controller.internal;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -12,7 +12,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
-import org.modelexecution.xmof.animation.decorator.handler.ActivityDiagramDecorator;
+import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
+import org.modelexecution.xmof.animation.decorator.ActivityDiagramDecorator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class XMOFIndexingService {
@@ -37,19 +38,22 @@ public class XMOFIndexingService {
 
 	}
 
-	public ActivityDiagramDecorator getDiagramDecoratorForActivity(String name){
-		return diagramDecoratorMap.get(name);
+	public ActivityDiagramDecorator getDiagramDecoratorForActivity(String name) {
+		return diagramDecoratorMap.get(name.trim());
 	}
+
 	public Activity getActivityByName(String name) {
 		return activityMap.get(name);
 	}
 
 	private void prepareMaps() {
-		activityMap = new HashMap<String, Activity>();
+		activityMap = new HashMap<>();
+		diagramDecoratorMap= new HashMap<>();
 		for (Activity activity : obtainActivities(obtainDistinctModelElements()
 				.values())) {
 			activityMap.put(activity.getName(), activity);
-			diagramDecoratorMap.put(activity.getName(), new ActivityDiagramDecorator());
+			diagramDecoratorMap.put(activity.getName(),
+					new ActivityDiagramDecorator());
 		}
 
 		return;
@@ -89,6 +93,13 @@ public class XMOFIndexingService {
 
 	public XMOFBasedModel getModel() {
 		return model;
+	}
+
+	public void passEditorToDiagramDecorator(KernelEditor kernelEditor) {
+		for (ActivityDiagramDecorator decorator : diagramDecoratorMap.values()) {
+			decorator.setKernelEditor(kernelEditor);
+		}
+
 	}
 
 }
