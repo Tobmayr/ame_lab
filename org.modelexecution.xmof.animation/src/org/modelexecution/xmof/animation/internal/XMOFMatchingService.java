@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
-public class MatchingService {
+public class XMOFMatchingService {
 
 	private static final String MSE_PREFIX = "MSE";
 	private static final String MAIN = "main";
@@ -23,7 +23,7 @@ public class MatchingService {
 	private Set<String> allowedActivities;
 	private Match lastMatchAttempt;
 
-	public MatchingService(XMOFBasedModel model) {
+	public XMOFMatchingService(XMOFBasedModel model) {
 		this.model = model;
 		initialize();
 	}
@@ -93,9 +93,9 @@ public class MatchingService {
 	}
 
 	private void matchName(String name) {
-		if (name.equals(MatchingService.MAIN)) {
+		if (name.equals(XMOFMatchingService.MAIN)) {
 			lastMatchAttempt.setType(XMOFType.MAIN);
-			lastMatchAttempt.setXmofElementName(MatchingService.MAIN);
+			lastMatchAttempt.setXmofElementName(XMOFMatchingService.MAIN);
 		} else if (allowedActivities.contains(name)) {
 			lastMatchAttempt.setType(XMOFType.ACTITVITY);
 			lastMatchAttempt.setXmofElementName(name);
@@ -104,7 +104,7 @@ public class MatchingService {
 
 	private boolean hasCorrectPrefix(String[] args) {
 		if (args.length == 3) {
-			return MatchingService.MSE_PREFIX.equals(args[0])
+			return XMOFMatchingService.MSE_PREFIX.equals(args[0])
 					&& allowedEObjects.contains(args[1]);
 		}
 		return false;
