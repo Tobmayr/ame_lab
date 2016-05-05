@@ -1,5 +1,7 @@
 package org.modelexecution.xmof.animation.decorator.provider;
 
+import java.util.Set;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 import org.eclipse.graphiti.tb.ColorDecorator;
@@ -12,6 +14,7 @@ public class NodeDecoratorProvider implements IXMOFDecoratorProvider {
 
 	@Override
 	public IDecorator[] getDecorators(PictogramElement pe) {
+		Set<Object> decoEle=DecoratorService.getDecoratedElements();
 		for (EObject businessObject : pe.getLink().getBusinessObjects()) {
 			if (DecoratorService.isDecoratedElement(businessObject)) {
 				return new IDecorator[] { new ColorDecorator(
