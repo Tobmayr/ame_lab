@@ -75,7 +75,7 @@ public class AnimationController {
 
 	private void prepareActivty(Activity activity) {
 		openOrCreateAcitvityDiagram(activity);
-		decorator.setCurrentActvity(activity);
+		
 	}
 
 	private void decorateControlFlowNode(String xmofElementName) {
@@ -84,7 +84,7 @@ public class AnimationController {
 	}
 
 	private void decorateActivityNode(String xmofElementName) {
-		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 			  @Override
 			  public void run() {
 				  decorator.decorateActivityNode(xmofElementName);

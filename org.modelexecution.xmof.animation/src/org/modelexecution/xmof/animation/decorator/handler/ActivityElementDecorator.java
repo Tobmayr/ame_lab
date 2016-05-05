@@ -2,9 +2,6 @@ package org.modelexecution.xmof.animation.decorator.handler;
 
 import java.util.List;
 
-import org.eclipse.core.commands.AbstractHandler;
-import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.eclipse.graphiti.mm.pictograms.Diagram;
@@ -13,17 +10,13 @@ import org.eclipse.graphiti.mm.pictograms.Shape;
 import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.ui.editor.DiagramBehavior;
 import org.eclipse.graphiti.ui.editor.DiagramEditor;
-import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.handlers.HandlerUtil;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 
-public class ActivityElementDecorator implements Runnable {
+public class ActivityElementDecorator  {
 
-	private Activity currentActvity;
 	private KernelEditor editor;
 	public ActivityElementDecorator(KernelEditor editor){
 		this.editor=editor;
@@ -31,13 +24,36 @@ public class ActivityElementDecorator implements Runnable {
 	}
 	public void decorateActivityNode(String nodeName){
 		DiagramEditor activeDiagramEditor = getActiveDiagramEditor();
-		if (activeDiagramEditor!=null && currentActvity!=null){
-			decorate(activeDiagramEditor, currentActvity,nodeName);
+		if (activeDiagramEditor!=null){
+			Activity activity = getActivity(activeDiagramEditor);
+			decorate(activeDiagramEditor, activity,nodeName);
 		}
 		
 	}
 	
+	private Activity getActivity(DiagramEditor editor) {
+		Diagram diagram = getDiagram(editor);
+		return getActivity(diagram);
+	}
 
+	private Activity getActivity(ContainerShape shape) {
+		for (Shape childShape : shape.getChildren()) {
+			Activity activity = getActivity(childShape);
+			if (activity != null) {
+				return activity;
+			}
+		}
+		return null;
+	}
+	
+	private Activity getActivity(Shape shape) {
+		for (EObject businessObject : shape.getLink().getBusinessObjects()) {
+			if (businessObject instanceof Activity) {
+				return (Activity) businessObject;
+			}
+		}
+		return null;
+	}
 
 	private DiagramEditor getActiveDiagramEditor() {
 		DiagramEditor diagramEditor = null;
@@ -86,21 +102,8 @@ public class ActivityElementDecorator implements Runnable {
 		return diagramBehavior;
 	}
 
-	public Activity getCurrentActvity() {
-		return currentActvity;
-	}
-
-	public void setCurrentActvity(Activity currentActvity) {
-		this.currentActvity = currentActvity;
-	}
-
-
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		
-	}
 	
+
 	
 
 }
