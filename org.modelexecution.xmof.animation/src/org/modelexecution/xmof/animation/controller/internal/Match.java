@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.internal;
+package org.modelexecution.xmof.animation.controller.internal;
 
 public class Match {
 

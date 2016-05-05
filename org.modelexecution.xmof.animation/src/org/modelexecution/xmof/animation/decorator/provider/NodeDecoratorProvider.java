@@ -14,7 +14,6 @@ public class NodeDecoratorProvider implements IXMOFDecoratorProvider {
 
 	@Override
 	public IDecorator[] getDecorators(PictogramElement pe) {
-		Set<Object> decoEle=DecoratorService.getDecoratedElements();
 		for (EObject businessObject : pe.getLink().getBusinessObjects()) {
 			if (DecoratorService.isDecoratedElement(businessObject)) {
 				return new IDecorator[] { new ColorDecorator(

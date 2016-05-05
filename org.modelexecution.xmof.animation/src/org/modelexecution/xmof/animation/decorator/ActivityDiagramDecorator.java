@@ -1,7 +1,8 @@
-package org.modelexecution.xmof.animation.decorator.handler;
+package org.modelexecution.xmof.animation.decorator;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
@@ -21,6 +22,11 @@ public class ActivityDiagramDecorator {
 	private KernelEditor kernelEditor;
 	private DiagramEditor diagramEditor;
 	private Map<String, ActivityNode> activityNodeMap;
+	private Object currentlyActiveNode;
+	private Set<Object> decoratedElements;
+
+	public ActivityDiagramDecorator() {
+	}
 
 	public void decorateActivityNode(String nodeName) {
 		if (activityNodeMap == null) {
@@ -28,6 +34,9 @@ public class ActivityDiagramDecorator {
 		}
 		ActivityNode activeNode = activityNodeMap.get(nodeName.trim());
 		if (activeNode != null) {
+			if (currentlyActiveNode!=null){
+				decoratedElements.add(currentlyActiveNode);
+			}
 			refreshDecoration(activeNode);
 		}
 	}
@@ -100,5 +109,15 @@ public class ActivityDiagramDecorator {
 		Diagram diagram = editor.getDiagramTypeProvider().getDiagram();
 		return diagram;
 	}
+
+	public KernelEditor getKernelEditor() {
+		return kernelEditor;
+	}
+
+	public void setKernelEditor(KernelEditor kernelEditor) {
+		this.kernelEditor = kernelEditor;
+	}
+	
+	
 
 }

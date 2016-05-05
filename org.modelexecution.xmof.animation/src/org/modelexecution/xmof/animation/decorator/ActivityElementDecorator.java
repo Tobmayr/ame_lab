@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.decorator.handler;
+package org.modelexecution.xmof.animation.decorator;
 
 import java.util.List;
 

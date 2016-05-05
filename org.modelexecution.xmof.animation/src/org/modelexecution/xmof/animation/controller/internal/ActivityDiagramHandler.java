@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.handler;
+package org.modelexecution.xmof.animation.controller.internal;
 
 
 

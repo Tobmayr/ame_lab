@@ -23,8 +23,4 @@ public class DecoratorService {
 		decoratedElements.clear();
 	}
 
-	public static Set<Object> getDecoratedElements() {
-		return decoratedElements;
-	}
-
 }
