@@ -12,15 +12,18 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
+import org.modelexecution.xmof.animation.decorator.handler.ActivityDiagramDecorator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
-public class XMOFModelProcessor {
+public class XMOFIndexingService {
 
 	private XMOFBasedModel model;
-	private Map<String,Activity> activityMap;
-	public XMOFModelProcessor(XMOFBasedModel model) {
+	private Map<String, Activity> activityMap;
+	private Map<String, ActivityDiagramDecorator> diagramDecoratorMap;
+
+	public XMOFIndexingService(XMOFBasedModel model) {
 		this.model = model;
-		prepareActivityMap();
+		prepareMaps();
 	}
 
 	private Map<String, EObject> obtainDistinctModelElements() {
@@ -34,20 +37,25 @@ public class XMOFModelProcessor {
 
 	}
 
-	public Activity getActivityByName(String name){
+	public ActivityDiagramDecorator getDiagramDecoratorForActivity(String name){
+		return diagramDecoratorMap.get(name);
+	}
+	public Activity getActivityByName(String name) {
 		return activityMap.get(name);
 	}
-	private void prepareActivityMap() {
-		activityMap=new HashMap<String, Activity>();
-		for (Activity activity:obtainActivities(obtainDistinctModelElements().values())){
+
+	private void prepareMaps() {
+		activityMap = new HashMap<String, Activity>();
+		for (Activity activity : obtainActivities(obtainDistinctModelElements()
+				.values())) {
 			activityMap.put(activity.getName(), activity);
+			diagramDecoratorMap.put(activity.getName(), new ActivityDiagramDecorator());
 		}
-		
+
 		return;
 
 	}
-	
-	
+
 	public Map<String, Activity> getActivityMap() {
 		return Collections.unmodifiableMap(activityMap);
 	}
@@ -78,8 +86,6 @@ public class XMOFModelProcessor {
 			return (Activity) eOperation.getMethod().get(0);
 		return null;
 	}
-
-	
 
 	public XMOFBasedModel getModel() {
 		return model;

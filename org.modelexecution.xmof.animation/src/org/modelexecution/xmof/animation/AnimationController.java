@@ -8,22 +8,22 @@ import org.modelexecution.xmof.animation.decorator.handler.ActivityElementDecora
 import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 import org.modelexecution.xmof.animation.handler.ActivityDiagramHandler;
 import org.modelexecution.xmof.animation.internal.Match;
-import org.modelexecution.xmof.animation.internal.MatchingService;
-import org.modelexecution.xmof.animation.internal.XMOFModelProcessor;
+import org.modelexecution.xmof.animation.internal.XMOFMatchingService;
+import org.modelexecution.xmof.animation.internal.XMOFIndexingService;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class AnimationController {
 
-	private XMOFModelProcessor modelProcessor;
+	private XMOFIndexingService modelProcessor;
 	private ActivityDiagramHandler diagramHandler;
-	private MatchingService mseMatcher;
+	private XMOFMatchingService mseMatcher;
 	private ActivityElementDecorator decorator;
 	String s="";
 
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
-		modelProcessor = new XMOFModelProcessor(model);
+		modelProcessor = new XMOFIndexingService(model);
 		diagramHandler = new ActivityDiagramHandler(modelResource);
-		mseMatcher = new MatchingService(model);
+		mseMatcher = new XMOFMatchingService(model);
 		
 		PlatformUI.getWorkbench().getDisplay().asyncExec(diagramHandler);
 		initialize();
