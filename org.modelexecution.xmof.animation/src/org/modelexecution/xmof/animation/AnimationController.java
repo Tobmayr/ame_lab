@@ -18,6 +18,7 @@ public class AnimationController {
 	private ActivityDiagramHandler diagramHandler;
 	private MatchingService mseMatcher;
 	private ActivityElementDecorator decorator;
+	String s="";
 
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
 		modelProcessor = new XMOFModelProcessor(model);
@@ -37,7 +38,7 @@ public class AnimationController {
 	public void processMSEOccurrence(MSEOccurrence mseOccurrence) {
 		String fullName = mseOccurrence.getMse().getName();
 		Match match = mseMatcher.matchMSEOccurence(fullName);
-
+		s+=match.getXmofElementName()+"\n";
 		processType(match);
 
 	}
@@ -62,7 +63,7 @@ public class AnimationController {
 			decorateActivityNode(match.getXmofElementName());
 			return;
 		}
-		case NODE: {
+		case CONTROLNODE: {
 			decorateControlFlowNode(match.getXmofElementName());
 			return;
 		}
@@ -79,7 +80,13 @@ public class AnimationController {
 	}
 
 	private void decorateControlFlowNode(String xmofElementName) {
-		// DecoratorService.decorateNode(xmofElementName);
+		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+			  @Override
+			  public void run() {
+				  decorator.decorateActivityNode(xmofElementName);
+			  }
+
+		});
 
 	}
 
