@@ -9,8 +9,6 @@ import org.modelexecution.xmof.animation.controller.internal.Match;
 import org.modelexecution.xmof.animation.controller.internal.XMOFIndexingService;
 import org.modelexecution.xmof.animation.controller.internal.XMOFMatchingService;
 import org.modelexecution.xmof.animation.decorator.ActivityDiagramDecorator;
-import org.modelexecution.xmof.animation.decorator.ActivityElementDecorator;
-import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class AnimationController {
