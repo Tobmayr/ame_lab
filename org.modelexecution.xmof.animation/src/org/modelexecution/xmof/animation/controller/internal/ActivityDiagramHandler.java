@@ -15,6 +15,8 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 
+import fUML.Syntax.Activities.IntermediateActivities.ActivityNode;
+
 
 public class ActivityDiagramHandler implements Runnable {
 
@@ -22,7 +24,7 @@ public class ActivityDiagramHandler implements Runnable {
 	
 	private KernelEditor activeEditor;
 	private Resource modelResource;
-	
+
 	public ActivityDiagramHandler(Resource modelResource) {
 		this.modelResource=modelResource;
 	
