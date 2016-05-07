@@ -81,7 +81,7 @@ public class AnimationController {
 			@Override
 			public void run() {
 				ActivityDiagramDecorator decorator = modelService
-						.getDiagramDecoratorForActivity(xmofElementName);
+						.getDiagramDecoratorForActivity(currentlyActiveActivity);
 				if (decorator != null) {
 					decorator.decorateActivityNode(xmofElementName);
 				}
@@ -97,7 +97,7 @@ public class AnimationController {
 			@Override
 			public void run() {
 				ActivityDiagramDecorator decorator = modelService
-						.getDiagramDecoratorForActivity(xmofElementName);
+						.getDiagramDecoratorForActivity(currentlyActiveActivity);
 				if (decorator != null) {
 					decorator.decorateActivityNode(xmofElementName);
 				}
