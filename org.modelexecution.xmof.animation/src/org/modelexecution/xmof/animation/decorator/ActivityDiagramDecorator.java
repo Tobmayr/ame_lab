@@ -1,5 +1,6 @@
 package org.modelexecution.xmof.animation.decorator;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -34,7 +35,7 @@ public class ActivityDiagramDecorator {
 		}
 		ActivityNode activeNode = activityNodeMap.get(nodeName.trim());
 		if (activeNode != null) {
-			if (currentlyActiveNode!=null){
+			if (currentlyActiveNode != null) {
 				decoratedElements.add(currentlyActiveNode);
 			}
 			refreshDecoration(activeNode);
@@ -54,6 +55,7 @@ public class ActivityDiagramDecorator {
 
 	private void intializeActivityNodeMap() {
 		diagramEditor = getActiveDiagramEditor();
+		activityNodeMap = new HashMap<String, ActivityNode>();
 		if (diagramEditor != null) {
 			Activity activity = getActivity(diagramEditor);
 			for (ActivityNode node : activity.getNode()) {
@@ -117,7 +119,5 @@ public class ActivityDiagramDecorator {
 	public void setKernelEditor(KernelEditor kernelEditor) {
 		this.kernelEditor = kernelEditor;
 	}
-	
-	
 
 }
