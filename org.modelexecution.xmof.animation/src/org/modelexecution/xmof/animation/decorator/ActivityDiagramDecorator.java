@@ -1,6 +1,8 @@
 package org.modelexecution.xmof.animation.decorator;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -23,8 +25,8 @@ public class ActivityDiagramDecorator {
 	private KernelEditor kernelEditor;
 	private DiagramEditor diagramEditor;
 	private Map<String, ActivityNode> activityNodeMap;
-	private Object currentlyActiveNode;
-	private Set<Object> decoratedElements;
+	private ActivityNode previouslyActiveNode;
+	private Set<Object> decoratedElements = new LinkedHashSet<Object>();
 
 	public ActivityDiagramDecorator() {
 	}
@@ -35,15 +37,20 @@ public class ActivityDiagramDecorator {
 		}
 		ActivityNode activeNode = activityNodeMap.get(nodeName.trim());
 		if (activeNode != null) {
-			if (currentlyActiveNode != null) {
-				decoratedElements.add(currentlyActiveNode);
+			if (previouslyActiveNode != null) {
+				refreshDecoration(previouslyActiveNode, false);
 			}
-			refreshDecoration(activeNode);
+			refreshDecoration(activeNode, true);
+
+			previouslyActiveNode = activeNode;
+			decoratedElements.add(activeNode);
 		}
 	}
 
-	private void refreshDecoration(ActivityNode node) {
-		DecoratorService.addDecoratedElement(node);
+	private void refreshDecoration(ActivityNode node, boolean active) {
+
+		DecoratorService.setDecoratedElement(node, active);
+
 		DiagramBehavior diagramBehavior = getDiagramBehavior(diagramEditor);
 		Diagram diagram = getDiagram(diagramEditor);
 		List<PictogramElement> pictogramElements = Graphiti.getLinkService()
