@@ -53,7 +53,7 @@ public class XMOFIndexingService {
 				.values())) {
 			String name = activity.getName();
 			activityMap.put(name, activity);
-			diagramDecoratorMap.put(name, new ActivityDiagramDecorator(name));
+			diagramDecoratorMap.put(name, new ActivityDiagramDecorator());
 		}
 
 		return;

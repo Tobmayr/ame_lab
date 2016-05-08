@@ -22,20 +22,18 @@ import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 
 public class ActivityDiagramDecorator {
 
-	private int counter=1;
-	private String activityName;
+	private int counter = 0;
 	private KernelEditor kernelEditor;
 	private DiagramEditor diagramEditor;
 	private Map<String, ActivityNode> activityNodeMap;
 	private ActivityNode previouslyActiveNode;
 
-	public ActivityDiagramDecorator(String activityName) {
+	public ActivityDiagramDecorator() {
 	}
 
 	public int getAndIncrementCounter() {
-		int temp = counter;
 		counter++;
-		return temp;
+		return counter;
 	}
 
 	public void decorateActivityNode(String nodeName) {
