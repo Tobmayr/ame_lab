@@ -12,6 +12,7 @@ import org.modelexecution.xmof.animation.controller.internal.Match;
 import org.modelexecution.xmof.animation.controller.internal.XMOFIndexingService;
 import org.modelexecution.xmof.animation.controller.internal.XMOFMatchingService;
 import org.modelexecution.xmof.animation.decorator.ActivityDiagramDecorator;
+import org.modelexecution.xmof.animation.decorator.service.DecorationType;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.animation.ui.Activator;
 
@@ -72,18 +73,19 @@ public class AnimationController {
 					.getDiagramDecoratorForActivity(activity.getName());
 			return;
 		}
+		case CALLOPERATION:
 		case CONTROLNODE:
 		case ACTIVITYNODE: {
-			decorateActivityNode(match.getXmofElementName());
+			decorateActivityNode(match.getXmofElementName(),
+					DecorationType.NODE);
 			return;
 		}
 		case EXPANSIONREGION: {
+			decorateActivityNode(match.getXmofElementName(),
+					DecorationType.EXPANSION_REGION);
 			return;
 		}
-		case CALLOPERATION: {
-			decorateActivityNode(match.getXmofElementName());
-			return;
-		}
+
 		default: {
 
 		}
@@ -91,20 +93,23 @@ public class AnimationController {
 
 	}
 
-	private void decorateActivityNode(String xmofElementName) {
+	private void decorateActivityNode(String xmofElementName,
+			DecorationType type) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 			@Override
 			public void run() {
 				if (activeDecorator != null) {
-					if (!activeDecorator.decorateActivityNode(xmofElementName)) {
+					if (!activeDecorator.decorateActivityNode(xmofElementName,
+							type)) {
 						String callingActivity = activityCallerMap
 								.get(activeDecorator.getActivityName());
 						if (callingActivity != null) {
 							activeDecorator = indexingService
 									.getDiagramDecoratorForActivity(callingActivity);
-							if(activeDecorator
-									.decorateActivityNode(xmofElementName)){
-								openOrCreateAcitvityDiagram(indexingService.getActivityByName(callingActivity));
+							if (activeDecorator.decorateActivityNode(
+									xmofElementName, type)) {
+								openOrCreateAcitvityDiagram(indexingService
+										.getActivityByName(callingActivity));
 							}
 						}
 					}
