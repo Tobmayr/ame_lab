@@ -45,7 +45,6 @@ public class ActivityDiagramDecorator {
 	public boolean decorateActivityNode(String nodeName) {
 		if (activityNodeMap == null) {
 			intializeActivityNodeMap();
-
 		}
 
 		ActivityNode activeNode = activityNodeMap.get(nodeName.trim());
