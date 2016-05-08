@@ -1,7 +1,6 @@
 package org.modelexecution.xmof.animation.decorator;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +14,8 @@ import org.eclipse.graphiti.mm.pictograms.Shape;
 import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.ui.editor.DiagramBehavior;
 import org.eclipse.graphiti.ui.editor.DiagramEditor;
+import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
+import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.impl.ExpansionRegionImpl;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
@@ -34,7 +35,9 @@ public class ActivityDiagramDecorator {
 	public void decorateActivityNode(String nodeName) {
 		if (activityNodeMap == null) {
 			intializeActivityNodeMap();
+
 		}
+
 		ActivityNode activeNode = activityNodeMap.get(nodeName.trim());
 		if (activeNode != null) {
 			if (previouslyActiveNode != null) {
@@ -66,12 +69,26 @@ public class ActivityDiagramDecorator {
 		if (diagramEditor != null) {
 			Activity activity = getActivity(diagramEditor);
 			for (ActivityNode node : activity.getNode()) {
-				if (node.getName() != null) {
-					activityNodeMap.put(node.getName(), node);
-				}
+				processActivityNode(node);
 
 			}
 		}
+	}
+
+	private void processActivityNode(ActivityNode node) {
+		if (node instanceof ExpansionRegionImpl) {
+			getActivityNodes((ExpansionRegionImpl) node);
+		} else if (node.getName() != null) {
+			activityNodeMap.put(node.getName(), node);
+
+		}
+	}
+
+	private void getActivityNodes(ExpansionRegionImpl expNode) {
+		for (ActivityNode actNode : expNode.getNode()) {
+			processActivityNode(actNode);
+		}
+
 	}
 
 	private DiagramBehavior getDiagramBehavior(DiagramEditor editor) {
