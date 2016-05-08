@@ -94,7 +94,7 @@ public class XMOFMatchingService {
 			} else if (type.endsWith(NODE_SUFFIX)) {
 				lastMatchAttempt.setType(XMOFType.CONTROLNODE);
 			} else if (type.endsWith(EXPANSION_SUFFIX)) {
-				lastMatchAttempt.setType(XMOFType.ACTIVITYNODE);
+				lastMatchAttempt.setType(XMOFType.EXPANSIONREGION);
 			}
 			lastMatchAttempt.setXmofElementName(name);
 		}

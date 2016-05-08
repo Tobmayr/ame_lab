@@ -1,5 +1,8 @@
 package org.modelexecution.xmof.animation.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.PlatformUI;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
@@ -10,7 +13,6 @@ import org.modelexecution.xmof.animation.controller.internal.XMOFIndexingService
 import org.modelexecution.xmof.animation.controller.internal.XMOFMatchingService;
 import org.modelexecution.xmof.animation.decorator.ActivityDiagramDecorator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
-
 import org.modelexecution.xmof.animation.ui.Activator;
 
 public class AnimationController {
@@ -19,15 +21,15 @@ public class AnimationController {
 	private ActivityDiagramHandler diagramHandler;
 	private XMOFMatchingService mseMatcher;
 	private ActivityDiagramDecorator activeDecorator;
-	private ActivityDiagramDecorator callingDecorator;
+	private Map<String, String> activityCallerMap;
 	private XMOFBasedModel model;
-	private boolean decorationSuccesful;
 
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
 		this.model = model;
 		diagramHandler = new ActivityDiagramHandler(modelResource);
 		mseMatcher = new XMOFMatchingService(this);
 		indexingService = new XMOFIndexingService(model);
+		activityCallerMap = new HashMap<>();
 		PlatformUI.getWorkbench().getDisplay().asyncExec(diagramHandler);
 		initialize();
 	}
@@ -42,9 +44,8 @@ public class AnimationController {
 		String fullName = mseOccurrence.getMse().getName();
 		Match match = mseMatcher.matchMSEOccurence(fullName);
 		Activator.getDefault().getMessaggingSystem()
-		.debug(fullName, Activator.PLUGIN_ID);
+				.debug(fullName, Activator.PLUGIN_ID);
 		processType(match);
-		
 
 	}
 
@@ -55,7 +56,7 @@ public class AnimationController {
 					.getKernelEditor());
 			Activity activity = indexingService.getActivityByName(match
 					.getXmofElementName());
-			prepareActivty(activity);
+			openOrCreateAcitvityDiagram(activity);
 			activeDecorator = indexingService
 					.getDiagramDecoratorForActivity(activity.getName());
 
@@ -64,19 +65,22 @@ public class AnimationController {
 		case ACTITVITY: {
 			Activity activity = indexingService.getActivityByName(match
 					.getXmofElementName());
-			prepareActivty(activity);
+			openOrCreateAcitvityDiagram(activity);
+			activityCallerMap.put(activity.getName(),
+					activeDecorator.getActivityName());
 			activeDecorator = indexingService
 					.getDiagramDecoratorForActivity(activity.getName());
 			return;
 		}
+		case CONTROLNODE:
 		case ACTIVITYNODE: {
 			decorateActivityNode(match.getXmofElementName());
-			if (!decorationSuccesful){
-				
-			}
 			return;
 		}
-		case CONTROLNODE: {
+		case EXPANSIONREGION: {
+			return;
+		}
+		case CALLOPERATION: {
 			decorateActivityNode(match.getXmofElementName());
 			return;
 		}
@@ -87,20 +91,24 @@ public class AnimationController {
 
 	}
 
-	private void prepareActivty(Activity activity) {
-		openOrCreateAcitvityDiagram(activity);
-
-	}
-
-	
-
 	private void decorateActivityNode(String xmofElementName) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 			@Override
 			public void run() {
-
 				if (activeDecorator != null) {
-					decorationSuccesful=activeDecorator.decorateActivityNode(xmofElementName);
+					if (!activeDecorator.decorateActivityNode(xmofElementName)) {
+						String callingActivity = activityCallerMap
+								.get(activeDecorator.getActivityName());
+						if (callingActivity != null) {
+							activeDecorator = indexingService
+									.getDiagramDecoratorForActivity(callingActivity);
+							if(activeDecorator
+									.decorateActivityNode(xmofElementName)){
+								openOrCreateAcitvityDiagram(indexingService.getActivityByName(callingActivity));
+							}
+						}
+					}
+
 				}
 
 			}
@@ -110,7 +118,7 @@ public class AnimationController {
 	}
 
 	private void openOrCreateAcitvityDiagram(Activity acitvity) {
-		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
+		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 			@Override
 			public void run() {
 				diagramHandler.showDiagram(acitvity);
