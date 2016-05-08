@@ -13,22 +13,23 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class AnimationController {
 
-	private XMOFIndexingService modelService;
+	private XMOFIndexingService indexingService;
 	private ActivityDiagramHandler diagramHandler;
 	private XMOFMatchingService mseMatcher;
-	private String currentlyActiveActivity;
-
+	private ActivityDiagramDecorator activeDecorator;
+	private XMOFBasedModel model;
+	
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
-
+		this.model=model;
 		diagramHandler = new ActivityDiagramHandler(modelResource);
-		mseMatcher = new XMOFMatchingService(model);
-		modelService = new XMOFIndexingService(model);
+		mseMatcher = new XMOFMatchingService(this);
+		indexingService = new XMOFIndexingService(model);
 		PlatformUI.getWorkbench().getDisplay().asyncExec(diagramHandler);
 		initialize();
 	}
 
 	private void initialize() {
-		mseMatcher.setAllowedActivities(modelService.getActivityMap().keySet());
+		mseMatcher.setAllowedActivities(indexingService.getActivityMap().keySet());
 
 	}
 
@@ -42,18 +43,22 @@ public class AnimationController {
 	private void processType(Match match) {
 		switch (match.getType()) {
 		case MAIN: {
-			modelService.passEditorToDiagramDecorator(diagramHandler.getKernelEditor());
-			Activity activity = modelService.getActivityByName(match
+			indexingService.passEditorToDiagramDecorator(diagramHandler
+					.getKernelEditor());
+			Activity activity = indexingService.getActivityByName(match
 					.getXmofElementName());
 			prepareActivty(activity);
-			currentlyActiveActivity = activity.getName();
+			activeDecorator = indexingService
+					.getDiagramDecoratorForActivity(activity.getName());
+
 			return;
 		}
 		case ACTITVITY: {
-			Activity activity = modelService.getActivityByName(match
+			Activity activity = indexingService.getActivityByName(match
 					.getXmofElementName());
 			prepareActivty(activity);
-			currentlyActiveActivity = activity.getName();
+			activeDecorator = indexingService
+					.getDiagramDecoratorForActivity(activity.getName());
 			return;
 		}
 		case ACTIVITYNODE: {
@@ -80,10 +85,9 @@ public class AnimationController {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 			@Override
 			public void run() {
-				ActivityDiagramDecorator decorator = modelService
-						.getDiagramDecoratorForActivity(currentlyActiveActivity);
-				if (decorator != null) {
-					decorator.decorateActivityNode(xmofElementName);
+
+				if (activeDecorator != null) {
+					activeDecorator.decorateActivityNode(xmofElementName);
 				}
 
 			}
@@ -96,10 +100,9 @@ public class AnimationController {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 			@Override
 			public void run() {
-				ActivityDiagramDecorator decorator = modelService
-						.getDiagramDecoratorForActivity(currentlyActiveActivity);
-				if (decorator != null) {
-					decorator.decorateActivityNode(xmofElementName);
+
+				if (activeDecorator != null) {
+					activeDecorator.decorateActivityNode(xmofElementName);
 				}
 
 			}
@@ -117,5 +120,48 @@ public class AnimationController {
 
 		});
 	}
+
+	public XMOFIndexingService getModelService() {
+		return indexingService;
+	}
+
+	public void setModelService(XMOFIndexingService modelService) {
+		this.indexingService = modelService;
+	}
+
+	public ActivityDiagramHandler getDiagramHandler() {
+		return diagramHandler;
+	}
+
+	public void setDiagramHandler(ActivityDiagramHandler diagramHandler) {
+		this.diagramHandler = diagramHandler;
+	}
+
+	public XMOFMatchingService getMseMatcher() {
+		return mseMatcher;
+	}
+
+	public void setMseMatcher(XMOFMatchingService mseMatcher) {
+		this.mseMatcher = mseMatcher;
+	}
+
+	public ActivityDiagramDecorator getActiveDecorator() {
+		return activeDecorator;
+	}
+
+	public void setActiveDecorator(ActivityDiagramDecorator activeDecorator) {
+		this.activeDecorator = activeDecorator;
+	}
+
+	public XMOFBasedModel getModel() {
+		return model;
+	}
+
+	public void setModel(XMOFBasedModel model) {
+		this.model = model;
+	}
+	
+	
+	
 
 }
