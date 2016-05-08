@@ -19,7 +19,9 @@ public class AnimationController {
 	private ActivityDiagramHandler diagramHandler;
 	private XMOFMatchingService mseMatcher;
 	private ActivityDiagramDecorator activeDecorator;
+	private ActivityDiagramDecorator callingDecorator;
 	private XMOFBasedModel model;
+	private boolean decorationSuccesful;
 
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
 		this.model = model;
@@ -69,10 +71,13 @@ public class AnimationController {
 		}
 		case ACTIVITYNODE: {
 			decorateActivityNode(match.getXmofElementName());
+			if (!decorationSuccesful){
+				
+			}
 			return;
 		}
 		case CONTROLNODE: {
-			decorateControlFlowNode(match.getXmofElementName());
+			decorateActivityNode(match.getXmofElementName());
 			return;
 		}
 		default: {
@@ -87,20 +92,7 @@ public class AnimationController {
 
 	}
 
-	private void decorateControlFlowNode(String xmofElementName) {
-		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
-			@Override
-			public void run() {
-
-				if (activeDecorator != null) {
-					activeDecorator.decorateActivityNode(xmofElementName);
-				}
-
-			}
-
-		});
-
-	}
+	
 
 	private void decorateActivityNode(String xmofElementName) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
@@ -108,7 +100,7 @@ public class AnimationController {
 			public void run() {
 
 				if (activeDecorator != null) {
-					activeDecorator.decorateActivityNode(xmofElementName);
+					decorationSuccesful=activeDecorator.decorateActivityNode(xmofElementName);
 				}
 
 			}
