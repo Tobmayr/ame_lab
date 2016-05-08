@@ -18,7 +18,6 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 public class AnimationAddon implements IEngineAddon {
 
 	private AnimationController animationController;
-	String s="";
 
 	@Override
 	public void engineAboutToStart(IBasicExecutionEngine engine) {
@@ -89,7 +88,6 @@ public class AnimationAddon implements IEngineAddon {
 	@Override
 	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
 			MSEOccurrence mseOccurrence) {
-		s+=mseOccurrence.getMse().getName()+"\n";
 		animationController.processMSEOccurrence(mseOccurrence);
 		return;
 	}

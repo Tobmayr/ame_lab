@@ -11,6 +11,8 @@ import org.modelexecution.xmof.animation.controller.internal.XMOFMatchingService
 import org.modelexecution.xmof.animation.decorator.ActivityDiagramDecorator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
+import org.modelexecution.xmof.animation.ui.Activator;
+
 public class AnimationController {
 
 	private XMOFIndexingService indexingService;
@@ -18,9 +20,9 @@ public class AnimationController {
 	private XMOFMatchingService mseMatcher;
 	private ActivityDiagramDecorator activeDecorator;
 	private XMOFBasedModel model;
-	
+
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
-		this.model=model;
+		this.model = model;
 		diagramHandler = new ActivityDiagramHandler(modelResource);
 		mseMatcher = new XMOFMatchingService(this);
 		indexingService = new XMOFIndexingService(model);
@@ -29,14 +31,18 @@ public class AnimationController {
 	}
 
 	private void initialize() {
-		mseMatcher.setAllowedActivities(indexingService.getActivityMap().keySet());
+		mseMatcher.setAllowedActivities(indexingService.getActivityMap()
+				.keySet());
 
 	}
 
 	public void processMSEOccurrence(MSEOccurrence mseOccurrence) {
 		String fullName = mseOccurrence.getMse().getName();
 		Match match = mseMatcher.matchMSEOccurence(fullName);
+		Activator.getDefault().getMessaggingSystem()
+		.debug(fullName, Activator.PLUGIN_ID);
 		processType(match);
+		
 
 	}
 
@@ -160,8 +166,5 @@ public class AnimationController {
 	public void setModel(XMOFBasedModel model) {
 		this.model = model;
 	}
-	
-	
-	
 
 }
