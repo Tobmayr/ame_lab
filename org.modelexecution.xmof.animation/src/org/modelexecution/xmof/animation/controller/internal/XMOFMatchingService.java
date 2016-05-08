@@ -11,15 +11,28 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
+import fUML.Syntax.Actions.BasicActions.CallOperationAction;
+import fUML.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
+import fUML.Syntax.Activities.IntermediateActivities.DecisionNode;
+import fUML.Syntax.Activities.IntermediateActivities.ForkNode;
+import fUML.Syntax.Activities.IntermediateActivities.InitialNode;
+import fUML.Syntax.Activities.IntermediateActivities.JoinNode;
+import fUML.Syntax.Activities.IntermediateActivities.MergeNode;
+
 public class XMOFMatchingService {
 
 	private static final String MSE_PREFIX = "MSE";
 	private static final String MAIN = "main";
 	private static final String ACTION_SUFFIX = "Action";
 	private static final String NODE_SUFFIX = "Node";
-	private static final String EXPANSION_SUFFIX = "ExpansionRegion";
-	private static final String[] NODE_TYPES = { "DecisionNode", "ForkNode",
-			"InitialNode", "JoinNode", "MergeNode" };
+	private static final String EXPANSION_SUFFIX = ExpansionRegion.class
+			.getSimpleName();
+	private static final String CALL_OPERATION = CallOperationAction.class
+			.getSimpleName();
+	private static final String[] NODE_TYPES = {
+			DecisionNode.class.getSimpleName(), ForkNode.class.getSimpleName(),
+			InitialNode.class.getSimpleName(), JoinNode.class.getSimpleName(),
+			MergeNode.class.getSimpleName() };
 
 	private Set<String> allowedEObjects;
 	private Set<String> allowedActivities;
@@ -73,7 +86,11 @@ public class XMOFMatchingService {
 				matchType(type);
 				return;
 			} else if (type.endsWith(ACTION_SUFFIX)) {
-				lastMatchAttempt.setType(XMOFType.ACTIVITYNODE);
+				if (type.equals(CALL_OPERATION)) {
+					lastMatchAttempt.setType(XMOFType.CALLOPERATION);
+				} else {
+					lastMatchAttempt.setType(XMOFType.ACTIVITYNODE);
+				}
 			} else if (type.endsWith(NODE_SUFFIX)) {
 				lastMatchAttempt.setType(XMOFType.CONTROLNODE);
 			} else if (type.endsWith(EXPANSION_SUFFIX)) {
@@ -88,7 +105,8 @@ public class XMOFMatchingService {
 		for (String nodeType : NODE_TYPES) {
 			if (nodeType.equals(type)) {
 				lastMatchAttempt.setType(XMOFType.CONTROLNODE);
-				lastMatchAttempt.setXmofElementName(nodeType+"Impl"
+				lastMatchAttempt.setXmofElementName(nodeType
+						+ "Impl"
 						+ controller.getActiveDecorator()
 								.getAndIncrementCounter());
 				return;

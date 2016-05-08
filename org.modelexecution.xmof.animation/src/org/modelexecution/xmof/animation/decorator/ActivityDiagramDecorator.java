@@ -25,10 +25,12 @@ public class ActivityDiagramDecorator {
 	private int counter = 0;
 	private KernelEditor kernelEditor;
 	private DiagramEditor diagramEditor;
+	private String activityName;
 	private Map<String, ActivityNode> activityNodeMap;
 	private ActivityNode previouslyActiveNode;
 
-	public ActivityDiagramDecorator() {
+	public ActivityDiagramDecorator(String activityName) {
+		this.activityName = activityName;
 	}
 
 	public int getAndIncrementCounter() {
@@ -36,7 +38,11 @@ public class ActivityDiagramDecorator {
 		return counter;
 	}
 
-	public void decorateActivityNode(String nodeName) {
+	public String getActivityName() {
+		return activityName;
+	}
+
+	public boolean decorateActivityNode(String nodeName) {
 		if (activityNodeMap == null) {
 			intializeActivityNodeMap();
 
@@ -49,8 +55,10 @@ public class ActivityDiagramDecorator {
 			}
 			refreshDecoration(activeNode, true);
 			previouslyActiveNode = activeNode;
+			return true;
 
 		}
+		return false;
 	}
 
 	private void refreshDecoration(ActivityNode node, boolean active) {
