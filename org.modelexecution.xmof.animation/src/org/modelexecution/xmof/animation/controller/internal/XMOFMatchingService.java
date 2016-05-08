@@ -4,8 +4,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.sound.midi.ControllerEventListener;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class XMOFMatchingService {
@@ -18,17 +21,17 @@ public class XMOFMatchingService {
 	private static final String[] NODE_TYPES = { "DecisionNode", "ForkNode",
 			"InitialNode", "JoinNode", "MergeNode" };
 
-	private XMOFBasedModel model;
 	private Set<String> allowedEObjects;
 	private Set<String> allowedActivities;
 	private Match lastMatchAttempt;
+	private AnimationController controller;
 
-	public XMOFMatchingService(XMOFBasedModel model) {
-		this.model = model;
-		initialize();
+	public XMOFMatchingService(AnimationController controller) {
+		this.controller = controller;
+		initialize(controller.getModel());
 	}
 
-	private void initialize() {
+	private void initialize(XMOFBasedModel model) {
 		obtainAllowedEObjects(model.getModelElements());
 
 	}
@@ -74,7 +77,7 @@ public class XMOFMatchingService {
 			} else if (type.endsWith(NODE_SUFFIX)) {
 				lastMatchAttempt.setType(XMOFType.CONTROLNODE);
 			} else if (type.endsWith(EXPANSION_SUFFIX)) {
-				lastMatchAttempt.setType(XMOFType.EXPANSIONREGION);
+				lastMatchAttempt.setType(XMOFType.ACTIVITYNODE);
 			}
 			lastMatchAttempt.setXmofElementName(name);
 		}
@@ -84,8 +87,10 @@ public class XMOFMatchingService {
 	private void matchType(String type) {
 		for (String nodeType : NODE_TYPES) {
 			if (nodeType.equals(type)) {
-				lastMatchAttempt.setType(XMOFType.UNNAMED_CONTROLNODE);
-				lastMatchAttempt.setXmofElementName(nodeType);
+				lastMatchAttempt.setType(XMOFType.CONTROLNODE);
+				lastMatchAttempt.setXmofElementName(nodeType+"Impl"
+						+ controller.getActiveDecorator()
+								.getAndIncrementCounter());
 				return;
 			}
 		}

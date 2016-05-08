@@ -14,7 +14,6 @@ import org.eclipse.graphiti.mm.pictograms.Shape;
 import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.ui.editor.DiagramBehavior;
 import org.eclipse.graphiti.ui.editor.DiagramEditor;
-import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
 import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.impl.ExpansionRegionImpl;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
@@ -23,13 +22,20 @@ import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 
 public class ActivityDiagramDecorator {
 
+	private int counter=1;
+	private String activityName;
 	private KernelEditor kernelEditor;
 	private DiagramEditor diagramEditor;
 	private Map<String, ActivityNode> activityNodeMap;
 	private ActivityNode previouslyActiveNode;
-	private Set<Object> decoratedElements = new LinkedHashSet<Object>();
 
-	public ActivityDiagramDecorator() {
+	public ActivityDiagramDecorator(String activityName) {
+	}
+
+	public int getAndIncrementCounter() {
+		int temp = counter;
+		counter++;
+		return temp;
 	}
 
 	public void decorateActivityNode(String nodeName) {
@@ -44,9 +50,8 @@ public class ActivityDiagramDecorator {
 				refreshDecoration(previouslyActiveNode, false);
 			}
 			refreshDecoration(activeNode, true);
-
 			previouslyActiveNode = activeNode;
-			decoratedElements.add(activeNode);
+
 		}
 	}
 
@@ -68,25 +73,32 @@ public class ActivityDiagramDecorator {
 		activityNodeMap = new HashMap<String, ActivityNode>();
 		if (diagramEditor != null) {
 			Activity activity = getActivity(diagramEditor);
+			int counterForUnnamedNodes = 0;
 			for (ActivityNode node : activity.getNode()) {
-				processActivityNode(node);
+				processActivityNode(node, counterForUnnamedNodes);
 
 			}
 		}
 	}
 
-	private void processActivityNode(ActivityNode node) {
+	private void processActivityNode(ActivityNode node,
+			int counterForUnnamedNodes) {
 		if (node instanceof ExpansionRegionImpl) {
-			getActivityNodes((ExpansionRegionImpl) node);
+			getActivityNodes((ExpansionRegionImpl) node, counterForUnnamedNodes);
 		} else if (node.getName() != null) {
 			activityNodeMap.put(node.getName(), node);
 
+		} else {
+			counterForUnnamedNodes++;
+			activityNodeMap.put(node.getClass().getSimpleName()
+					+ counterForUnnamedNodes, node);
 		}
 	}
 
-	private void getActivityNodes(ExpansionRegionImpl expNode) {
+	private void getActivityNodes(ExpansionRegionImpl expNode,
+			int counterForUnnamedNodes) {
 		for (ActivityNode actNode : expNode.getNode()) {
-			processActivityNode(actNode);
+			processActivityNode(actNode, counterForUnnamedNodes);
 		}
 
 	}

@@ -48,12 +48,12 @@ public class XMOFIndexingService {
 
 	private void prepareMaps() {
 		activityMap = new HashMap<>();
-		diagramDecoratorMap= new HashMap<>();
+		diagramDecoratorMap = new HashMap<>();
 		for (Activity activity : obtainActivities(obtainDistinctModelElements()
 				.values())) {
-			activityMap.put(activity.getName(), activity);
-			diagramDecoratorMap.put(activity.getName(),
-					new ActivityDiagramDecorator());
+			String name = activity.getName();
+			activityMap.put(name, activity);
+			diagramDecoratorMap.put(name, new ActivityDiagramDecorator(name));
 		}
 
 		return;
