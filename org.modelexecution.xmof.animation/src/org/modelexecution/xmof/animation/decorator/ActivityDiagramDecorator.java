@@ -12,12 +12,14 @@ import org.eclipse.graphiti.mm.pictograms.Diagram;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 import org.eclipse.graphiti.mm.pictograms.Shape;
 import org.eclipse.graphiti.services.Graphiti;
+import org.eclipse.graphiti.tb.IDecorator;
 import org.eclipse.graphiti.ui.editor.DiagramBehavior;
 import org.eclipse.graphiti.ui.editor.DiagramEditor;
 import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.impl.ExpansionRegionImpl;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
+import org.modelexecution.xmof.animation.decorator.service.DecorationType;
 import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
 
 public class ActivityDiagramDecorator {
@@ -28,6 +30,7 @@ public class ActivityDiagramDecorator {
 	private String activityName;
 	private Map<String, ActivityNode> activityNodeMap;
 	private ActivityNode previouslyActiveNode;
+	private DecorationType previouslyDecorationType;
 
 	public ActivityDiagramDecorator(String activityName) {
 		this.activityName = activityName;
@@ -42,7 +45,7 @@ public class ActivityDiagramDecorator {
 		return activityName;
 	}
 
-	public boolean decorateActivityNode(String nodeName) {
+	public boolean decorateActivityNode(String nodeName, DecorationType type) {
 		if (activityNodeMap == null) {
 			intializeActivityNodeMap();
 		}
@@ -50,19 +53,21 @@ public class ActivityDiagramDecorator {
 		ActivityNode activeNode = activityNodeMap.get(nodeName.trim());
 		if (activeNode != null) {
 			if (previouslyActiveNode != null) {
-				refreshDecoration(previouslyActiveNode, false);
+				refreshDecoration(previouslyActiveNode,
+						previouslyDecorationType.getDecorators(false));
 			}
-			refreshDecoration(activeNode, true);
+			refreshDecoration(activeNode, type.getDecorators(true));
 			previouslyActiveNode = activeNode;
+			previouslyDecorationType = type;
 			return true;
 
 		}
 		return false;
 	}
 
-	private void refreshDecoration(ActivityNode node, boolean active) {
+	private void refreshDecoration(ActivityNode node, IDecorator[] decorators) {
 
-		DecoratorService.setDecoratedElement(node, active);
+		DecoratorService.setDecoratedElement(node, decorators);
 
 		DiagramBehavior diagramBehavior = getDiagramBehavior(diagramEditor);
 		Diagram diagram = getDiagram(diagramEditor);
@@ -88,11 +93,13 @@ public class ActivityDiagramDecorator {
 
 	private void processActivityNode(ActivityNode node,
 			int counterForUnnamedNodes) {
-		if (node instanceof ExpansionRegionImpl) {
-			getActivityNodes((ExpansionRegionImpl) node, counterForUnnamedNodes);
-		} else if (node.getName() != null) {
-			activityNodeMap.put(node.getName(), node);
+		if (node.getName() != null) {
+			if (node instanceof ExpansionRegionImpl) {
 
+				getActivityNodes((ExpansionRegionImpl) node,
+						counterForUnnamedNodes);
+			}
+			activityNodeMap.put(node.getName(), node);
 		} else {
 			counterForUnnamedNodes++;
 			activityNodeMap.put(node.getClass().getSimpleName()
