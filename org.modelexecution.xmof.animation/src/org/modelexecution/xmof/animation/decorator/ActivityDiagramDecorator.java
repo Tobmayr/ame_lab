@@ -72,7 +72,12 @@ public class ActivityDiagramDecorator {
 	}
 
 	private void resetDecorations() {
-		// TODO Auto-generated method stub
+		previouslyActiveNode=null;
+		DecoratorService.clear();
+		for (ActivityNode node:activityNodeMap.values()){
+			
+			refreshDecoration(node, new IDecorator[0]);
+		}
 		
 	}
 
