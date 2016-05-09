@@ -101,6 +101,7 @@ public class AnimationController {
 				if (activeDecorator != null) {
 					if (!activeDecorator.decorateActivityNode(xmofElementName,
 							type)) {
+						
 						String callingActivity = activityCallerMap
 								.get(activeDecorator.getActivityName());
 						if (callingActivity != null) {
