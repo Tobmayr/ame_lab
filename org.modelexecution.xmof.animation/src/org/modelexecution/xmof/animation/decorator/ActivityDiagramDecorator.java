@@ -31,6 +31,7 @@ public class ActivityDiagramDecorator {
 	private Map<String, ActivityNode> activityNodeMap;
 	private ActivityNode previouslyActiveNode;
 	private DecorationType previouslyDecorationType;
+	private boolean activityFinished = false;
 
 	public ActivityDiagramDecorator(String activityName) {
 		this.activityName = activityName;
@@ -49,21 +50,30 @@ public class ActivityDiagramDecorator {
 		if (activityNodeMap == null) {
 			intializeActivityNodeMap();
 		}
-
+		if (activityFinished) {
+			resetDecorations();
+			activityFinished = false;
+		}
 		ActivityNode activeNode = activityNodeMap.get(nodeName.trim());
-		if (previouslyActiveNode != null ) {
+		if (previouslyActiveNode != null) {
 			refreshDecoration(previouslyActiveNode,
 					previouslyDecorationType.getDecorators(false));
 		}
 		if (activeNode != null) {
-			
+
 			refreshDecoration(activeNode, type.getDecorators(true));
 			previouslyActiveNode = activeNode;
 			previouslyDecorationType = type;
 			return true;
 
 		}
+
 		return false;
+	}
+
+	private void resetDecorations() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private void refreshDecoration(ActivityNode node, IDecorator[] decorators) {
@@ -169,8 +179,11 @@ public class ActivityDiagramDecorator {
 		this.kernelEditor = kernelEditor;
 	}
 
-	
-	
+	public void setActivityFinished(boolean activityFinshed) {
+		this.activityFinished = activityFinshed;
+
+	}
+
 	
 
 }
