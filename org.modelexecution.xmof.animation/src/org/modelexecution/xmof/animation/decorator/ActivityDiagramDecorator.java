@@ -51,11 +51,12 @@ public class ActivityDiagramDecorator {
 		}
 
 		ActivityNode activeNode = activityNodeMap.get(nodeName.trim());
+		if (previouslyActiveNode != null ) {
+			refreshDecoration(previouslyActiveNode,
+					previouslyDecorationType.getDecorators(false));
+		}
 		if (activeNode != null) {
-			if (previouslyActiveNode != null) {
-				refreshDecoration(previouslyActiveNode,
-						previouslyDecorationType.getDecorators(false));
-			}
+			
 			refreshDecoration(activeNode, type.getDecorators(true));
 			previouslyActiveNode = activeNode;
 			previouslyDecorationType = type;
@@ -167,5 +168,9 @@ public class ActivityDiagramDecorator {
 	public void setKernelEditor(KernelEditor kernelEditor) {
 		this.kernelEditor = kernelEditor;
 	}
+
+	
+	
+	
 
 }
