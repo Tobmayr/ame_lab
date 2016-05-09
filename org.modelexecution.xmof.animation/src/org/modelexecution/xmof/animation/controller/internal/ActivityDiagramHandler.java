@@ -33,9 +33,6 @@ public class ActivityDiagramHandler implements Runnable {
 	public void showDiagram(Activity activity){
 		activeEditor.showDiagram(activity);
 	}
-	public void showDiagram(BehavioredEOperation operation){
-		activeEditor.showDiagram(operation);
-	}
 
 	private boolean openModel(){
 		IEditorInput editorInput= getEditorInput();

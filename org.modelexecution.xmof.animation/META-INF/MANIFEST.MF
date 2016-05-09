@@ -13,7 +13,22 @@ Require-Bundle: org.gemoc.xdsmlframework.api,
  org.eclipse.graphiti;bundle-version="0.11.2",
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.graphiti.ui,
- fr.inria.diverse.commons.eclipse.messagingsystem.api
+ fr.inria.diverse.commons.eclipse.messagingsystem.api,
+ org.eclipse.ui,
+ org.eclipse.debug.ui;bundle-version="3.10.2",
+ org.gemoc.executionframework.engine.ui,
+ fr.obeo.dsl.debug.ide.sirius.ui;bundle-version="1.0.0",
+ fr.obeo.dsl.debug;bundle-version="1.0.0",
+ fr.obeo.dsl.debug.ide;bundle-version="1.0.0",
+ fr.obeo.dsl.debug.ide.ui;bundle-version="1.0.0",
+ org.gemoc.xdsmlframework.api;bundle-version="0.1.0",
+ org.gemoc.xdsmlframework.ui.utils,
+ org.gemoc.executionframework.ui,
+ org.gemoc.executionframework.extensions.sirius,
+ fr.inria.diverse.trace.gemoc.api,
+ org.gemoc.execution.sequential.javaengine.ui,
+ org.modelexecution.xmof.gemoc.engine,
+ org.eclipse.debug.ui;bundle-version="3.10.2"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.modelexecution.xmof.animation
 Import-Package: org.eclipse.emf.ecore.presentation,
