@@ -34,6 +34,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private boolean suspendForNodes = false;
 
+	private XMOFBasedModelLoader loader;
+
 	public XMOFExecutionEngine() {
 		super();
 	}
@@ -48,7 +50,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		suspendForNodes = ((RunConfiguration) executionContext
 				.getRunConfiguration()).getNodewiseStepping();
 
-		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
+		loader = new XMOFBasedModelLoader(executionContext);
 		XMOFBasedModel model = loader.loadXMOFBasedModel();
 		configurationMap = loader.getConfigurationMap();
 
@@ -155,6 +157,14 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	public ConfigurationObjectMap getConfigurationMap() {
 		return configurationMap;
+	}
+
+	public XMOFBasedModel getModel() {
+		return vm.getModel();
+	}
+
+	public XMOFBasedModelLoader getLoader() {
+		return loader;
 	}
 
 }

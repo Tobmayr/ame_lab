@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.gemoc.engine.ui.launcher;
+package org.modelexecution.xmof.animation.launcher;
 
 import java.util.Set;
 
@@ -8,9 +8,9 @@ import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.AnimationAddon;
+import org.modelexecution.xmof.animation.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
-import org.modelexecution.xmof.gemoc.engine.ui.Activator;
-import org.modelexecution.xmof.vm.XMOFBasedModel;
+import org.modelexecution.xmof.gemoc.engine.ui.launcher.Launcher;
 
 public class LauncherAnim extends Launcher {
 
@@ -34,7 +34,7 @@ public class LauncherAnim extends Launcher {
 					.getAddonsTypedBy(IEngineAddon.class);
 			for (IEngineAddon addon : addons) {
 				if (addon instanceof AnimationAddon) {
-					initializeAnimationAddon((AnimationAddon)addon, xmofEngine);
+					initializeAnimationAddon((AnimationAddon) addon, xmofEngine);
 				}
 			}
 
@@ -43,9 +43,9 @@ public class LauncherAnim extends Launcher {
 
 	private void initializeAnimationAddon(AnimationAddon addon,
 			XMOFExecutionEngine xmofEngine) {
-		addon.initialize(xmofEngine.getModel(), xmofEngine.getLoader().getXMOFModelResource());
-		
+		addon.initialize(xmofEngine.getModel(), xmofEngine.getLoader()
+				.getXMOFModelResource());
+
 	}
 
-	
 }
