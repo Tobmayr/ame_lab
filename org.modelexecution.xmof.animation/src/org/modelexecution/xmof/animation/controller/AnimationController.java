@@ -100,15 +100,19 @@ public class AnimationController {
 			public void run() {
 				if (activeDecorator != null) {
 					if (!tryDecorateInCurrentActivity(xmofElementName, type)) {
-						activeDecorator.setActivityFinished(true);
-						tryDecorateInCallingAcitivty(xmofElementName, type);
+						
+						if (tryDecorateInCallingAcitivty(xmofElementName, type)){
+							activeDecorator.setActivityFinished(true);
+						}else{
+							activeDecorator.setActivityFinished(false);
+						}
 					}
 
 				}
 
 			}
 
-			private void tryDecorateInCallingAcitivty(String xmofElementName,
+			private boolean tryDecorateInCallingAcitivty(String xmofElementName,
 					DecorationType type) {
 				String callingActivity = activityCallerMap
 						.get(activeDecorator.getActivityName());
@@ -120,7 +124,9 @@ public class AnimationController {
 						openOrCreateAcitvityDiagram(indexingService
 								.getActivityByName(callingActivity));
 					}
+					return true;
 				}
+				return false;
 
 			}
 
