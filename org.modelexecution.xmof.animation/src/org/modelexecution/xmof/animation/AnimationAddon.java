@@ -3,12 +3,8 @@ package org.modelexecution.xmof.animation;
 import java.util.Collection;
 import java.util.List;
 
-import javafx.scene.AmbientLight;
-
 import org.eclipse.emf.ecore.resource.Resource;
-import org.gemoc.executionframework.engine.mse.LogicalStep;
-import org.gemoc.executionframework.engine.mse.MSEOccurrence;
-import org.gemoc.executionframework.engine.mse.impl.MSEImpl;
+import org.gemoc.executionframework.engine.mse.Step;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
@@ -19,102 +15,111 @@ public class AnimationAddon implements IEngineAddon {
 
 	private AnimationController animationController;
 
-	@Override
-	public void engineAboutToStart(IBasicExecutionEngine engine) {
+	
 
-		return;
+	public void initialize(XMOFBasedModel model, Resource resource) {
+		animationController = new AnimationController(model, resource);
 
 	}
+
+
+	@Override
+	public void engineAboutToStart(IBasicExecutionEngine engine) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 	@Override
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
-	
-
+		// TODO Auto-generated method stub
+		
 	}
+
+
 
 	@Override
 	public void engineAboutToStop(IBasicExecutionEngine engine) {
 		// TODO Auto-generated method stub
-
+		
 	}
+
+
 
 	@Override
 	public void engineStopped(IBasicExecutionEngine engine) {
 		// TODO Auto-generated method stub
-
+		
 	}
+
+
 
 	@Override
 	public void engineAboutToDispose(IBasicExecutionEngine engine) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
-	@Override
-	public void aboutToSelectLogicalStep(IBasicExecutionEngine engine,
-			Collection<LogicalStep> logicalSteps) {
-		// TODO Auto-generated method stub
 
+
+	@Override
+	public void aboutToSelectStep(IBasicExecutionEngine engine,
+			Collection<Step> steps) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	@Override
-	public void proposedLogicalStepsChanged(IBasicExecutionEngine engine,
-			Collection<LogicalStep> logicalSteps) {
-		// TODO Auto-generated method stub
 
+
+	@Override
+	public void proposedStepsChanged(IBasicExecutionEngine engine,
+			Collection<Step> steps) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	@Override
-	public void logicalStepSelected(IBasicExecutionEngine engine,
-			LogicalStep selectedLogicalStep) {
-		// TODO Auto-generated method stub
 
+
+	@Override
+	public void stepSelected(IBasicExecutionEngine engine, Step selectedStep) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	@Override
-	public void aboutToExecuteLogicalStep(IBasicExecutionEngine engine,
-			LogicalStep logicalStepToExecute) {
-		// TODO Auto-generated method stub
 
-	}
 
 	@Override
-	public void logicalStepExecuted(IBasicExecutionEngine engine,
-			LogicalStep logicalStepExecuted) {
+	public void aboutToExecuteStep(IBasicExecutionEngine engine,
+			Step stepToExecute) {
 		// TODO Auto-generated method stub
+		animationController.processMSEOccurrence(stepToExecute.getMseoccurrence());
 		return;
 	}
 
-	@Override
-	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
-			MSEOccurrence mseOccurrence) {
-		animationController.processMSEOccurrence(mseOccurrence);
-		return;
-	}
+
 
 	@Override
-	public void mseOccurrenceExecuted(IBasicExecutionEngine engine,
-			MSEOccurrence mseOccurrence) {
-	
-
+	public void stepExecuted(IBasicExecutionEngine engine, Step stepExecuted) {
+		// TODO Auto-generated method stub
+		
 	}
+
+
 
 	@Override
 	public void engineStatusChanged(IBasicExecutionEngine engine,
 			RunStatus newStatus) {
 		// TODO Auto-generated method stub
-
+		
 	}
+
+
 
 	@Override
 	public List<String> validate(List<IEngineAddon> otherAddons) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	public void initialize(XMOFBasedModel model, Resource resource) {
-		animationController = new AnimationController(model, resource);
-
 	}
 
 }
