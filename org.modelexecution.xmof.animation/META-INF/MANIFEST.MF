@@ -30,7 +30,8 @@ Require-Bundle: org.gemoc.xdsmlframework.api,
  org.modelexecution.xmof.gemoc.engine,
  org.eclipse.debug.ui;bundle-version="3.10.2"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.modelexecution.xmof.animation
+Export-Package: org.modelexecution.xmof.animation,
+ org.modelexecution.xmof.animation.decorator.service
 Import-Package: org.eclipse.emf.ecore.presentation,
  org.modelexecution.xmof.diagram.decoration
 Bundle-ActivationPolicy: lazy
