@@ -4,7 +4,8 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.gemoc.executionframework.engine.mse.Step;
+import org.gemoc.executionframework.engine.mse.LogicalStep;
+import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
@@ -21,6 +22,7 @@ public class AnimationAddon implements IEngineAddon {
 		animationController = new AnimationController(model, resource);
 
 	}
+
 
 
 	@Override
@@ -64,8 +66,8 @@ public class AnimationAddon implements IEngineAddon {
 
 
 	@Override
-	public void aboutToSelectStep(IBasicExecutionEngine engine,
-			Collection<Step> steps) {
+	public void aboutToSelectLogicalStep(IBasicExecutionEngine engine,
+			Collection<LogicalStep> logicalSteps) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -73,8 +75,8 @@ public class AnimationAddon implements IEngineAddon {
 
 
 	@Override
-	public void proposedStepsChanged(IBasicExecutionEngine engine,
-			Collection<Step> steps) {
+	public void proposedLogicalStepsChanged(IBasicExecutionEngine engine,
+			Collection<LogicalStep> logicalSteps) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -82,7 +84,8 @@ public class AnimationAddon implements IEngineAddon {
 
 
 	@Override
-	public void stepSelected(IBasicExecutionEngine engine, Step selectedStep) {
+	public void logicalStepSelected(IBasicExecutionEngine engine,
+			LogicalStep selectedLogicalStep) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -90,17 +93,38 @@ public class AnimationAddon implements IEngineAddon {
 
 
 	@Override
-	public void aboutToExecuteStep(IBasicExecutionEngine engine,
-			Step stepToExecute) {
-		// TODO Auto-generated method stub
-		animationController.processMSEOccurrence(stepToExecute.getMseoccurrence());
-		return;
+	public void aboutToExecuteLogicalStep(IBasicExecutionEngine engine,
+			LogicalStep logicalStepToExecute) {
+
+		
 	}
 
 
 
 	@Override
-	public void stepExecuted(IBasicExecutionEngine engine, Step stepExecuted) {
+	public void logicalStepExecuted(IBasicExecutionEngine engine,
+			LogicalStep logicalStepExecuted) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
+			MSEOccurrence mseOccurrence) {
+		if (animationController!=null){
+			animationController.processMSEOccurrence(mseOccurrence);
+		}
+
+		
+	}
+
+
+
+	@Override
+	public void mseOccurrenceExecuted(IBasicExecutionEngine engine,
+			MSEOccurrence mseOccurrence) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -121,5 +145,7 @@ public class AnimationAddon implements IEngineAddon {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
 
 }
