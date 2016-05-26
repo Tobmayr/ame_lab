@@ -2,14 +2,14 @@ package org.modelexecution.xmof.animation.decorator.service;
 
 import org.eclipse.graphiti.tb.IDecorator;
 
-public class DecoratorService {
+public class GraphitiDecoratorService {
 
 	private static Object decoratedElement;
 	private static IDecorator[] decorators;
 
 	public static void setDecoratedElement(Object element,
 			IDecorator[] decorators) {
-		DecoratorService.decorators = decorators;
+		GraphitiDecoratorService.decorators = decorators;
 		decoratedElement = element;
 	}
 

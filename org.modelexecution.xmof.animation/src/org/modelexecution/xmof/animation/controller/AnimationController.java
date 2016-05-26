@@ -10,7 +10,7 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.animation.controller.internal.Match;
 import org.modelexecution.xmof.animation.controller.internal.XMOFIndexingService;
 import org.modelexecution.xmof.animation.controller.internal.XMOFMatchingService;
-import org.modelexecution.xmof.animation.decorator.ActivityDiagramDecorator;
+import org.modelexecution.xmof.animation.decorator.GraphitiActivityDiagramDecorator;
 import org.modelexecution.xmof.animation.decorator.service.DecorationType;
 import org.modelexecution.xmof.animation.handler.ActivityDiagramHandler;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
@@ -21,7 +21,7 @@ public class AnimationController {
 	private XMOFIndexingService indexingService;
 	private ActivityDiagramHandler diagramHandler;
 	private XMOFMatchingService mseMatcher;
-	private ActivityDiagramDecorator activeDecorator;
+	private GraphitiActivityDiagramDecorator activeDecorator;
 	private Map<String, String> activityCallerMap;
 	private XMOFBasedModel model;
 
@@ -174,11 +174,11 @@ public class AnimationController {
 		this.mseMatcher = mseMatcher;
 	}
 
-	public ActivityDiagramDecorator getActiveDecorator() {
+	public GraphitiActivityDiagramDecorator getActiveDecorator() {
 		return activeDecorator;
 	}
 
-	public void setActiveDecorator(ActivityDiagramDecorator activeDecorator) {
+	public void setActiveDecorator(GraphitiActivityDiagramDecorator activeDecorator) {
 		this.activeDecorator = activeDecorator;
 	}
 

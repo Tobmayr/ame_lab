@@ -28,5 +28,7 @@
         </containerMappings>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.sirius.design.services.SiriusXMOFAnimatorServices"/>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.animation.decorator.service.SiriusDecorationService"/>
   </ownedViewpoints>
 </description:Group>

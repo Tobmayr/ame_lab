@@ -20,9 +20,9 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 import org.modelexecution.xmof.animation.decorator.service.DecorationType;
-import org.modelexecution.xmof.animation.decorator.service.DecoratorService;
+import org.modelexecution.xmof.animation.decorator.service.GraphitiDecoratorService;
 
-public class ActivityDiagramDecorator {
+public class GraphitiActivityDiagramDecorator {
 
 	private int counter = 0;
 	private KernelEditor kernelEditor;
@@ -33,7 +33,7 @@ public class ActivityDiagramDecorator {
 	private DecorationType previouslyDecorationType;
 	private boolean activityFinished = false;
 
-	public ActivityDiagramDecorator(String activityName) {
+	public GraphitiActivityDiagramDecorator(String activityName) {
 		this.activityName = activityName;
 	}
 
@@ -73,7 +73,7 @@ public class ActivityDiagramDecorator {
 
 	private void resetDecorations() {
 		previouslyActiveNode=null;
-		DecoratorService.clear();
+		GraphitiDecoratorService.clear();
 		for (ActivityNode node:activityNodeMap.values()){
 			
 			refreshDecoration(node, new IDecorator[0]);
@@ -83,7 +83,7 @@ public class ActivityDiagramDecorator {
 
 	private void refreshDecoration(ActivityNode node, IDecorator[] decorators) {
 
-		DecoratorService.setDecoratedElement(node, decorators);
+		GraphitiDecoratorService.setDecoratedElement(node, decorators);
 
 		DiagramBehavior diagramBehavior = getDiagramBehavior(diagramEditor);
 		Diagram diagram = getDiagram(diagramEditor);
