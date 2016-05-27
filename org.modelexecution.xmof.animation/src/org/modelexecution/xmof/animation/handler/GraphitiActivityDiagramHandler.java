@@ -13,14 +13,14 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 
 
-public class ActivityDiagramHandler implements Runnable {
+public class GraphitiActivityDiagramHandler implements Runnable {
 
 	private static final String KERNEL_EDITOR_ID="org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditorID";
 	
 	private KernelEditor activeEditor;
 	private Resource modelResource;
 
-	public ActivityDiagramHandler(Resource modelResource) {
+	public GraphitiActivityDiagramHandler(Resource modelResource) {
 		this.modelResource=modelResource;
 	
 	}

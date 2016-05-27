@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="activity" version="10.1.3.201511131800">
   <ownedViewpoints name="ActivityViewpoint" label="activity" modelFileExtension="xmof">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ActivityViewpoint" label="activity" initialisation="true" domainClass="IntermediateActivities.Activity">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ActivityViewpoint" label="activity" titleExpression="feature:name" initialisation="true" domainClass="IntermediateActivities.Activity">
       <defaultLayer name="Default">
         <containerMappings name="Activity" semanticCandidatesExpression="var:self" domainClass="IntermediateActivities.Activity">
           <subNodeMappings name="ControlNode" semanticCandidatesExpression="feature:node" domainClass="IntermediateActivities.ControlNode">
@@ -26,6 +26,9 @@
             <foregroundColor xsi:type="description:UserFixedColor" href="../../org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@userColorsPalettes[name='UMLPalette']/@entries[name='lighter%20purple']"/>
           </style>
         </containerMappings>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="feature:"/>
+        </customization>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.sirius.design.services.SiriusXMOFAnimatorServices"/>

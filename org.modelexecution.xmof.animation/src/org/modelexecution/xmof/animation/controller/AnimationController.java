@@ -12,14 +12,14 @@ import org.modelexecution.xmof.animation.controller.internal.XMOFIndexingService
 import org.modelexecution.xmof.animation.controller.internal.XMOFMatchingService;
 import org.modelexecution.xmof.animation.decorator.GraphitiActivityDiagramDecorator;
 import org.modelexecution.xmof.animation.decorator.service.DecorationType;
-import org.modelexecution.xmof.animation.handler.ActivityDiagramHandler;
+import org.modelexecution.xmof.animation.handler.GraphitiActivityDiagramHandler;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.animation.ui.Activator;
 
 public class AnimationController {
 
 	private XMOFIndexingService indexingService;
-	private ActivityDiagramHandler diagramHandler;
+	private GraphitiActivityDiagramHandler diagramHandler;
 	private XMOFMatchingService mseMatcher;
 	private GraphitiActivityDiagramDecorator activeDecorator;
 	private Map<String, String> activityCallerMap;
@@ -27,7 +27,7 @@ public class AnimationController {
 
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
 		this.model = model;
-		diagramHandler = new ActivityDiagramHandler(modelResource);
+		diagramHandler = new GraphitiActivityDiagramHandler(modelResource);
 		mseMatcher = new XMOFMatchingService(this);
 		indexingService = new XMOFIndexingService(model);
 		activityCallerMap = new HashMap<>();
@@ -158,11 +158,11 @@ public class AnimationController {
 		this.indexingService = modelService;
 	}
 
-	public ActivityDiagramHandler getDiagramHandler() {
+	public GraphitiActivityDiagramHandler getDiagramHandler() {
 		return diagramHandler;
 	}
 
-	public void setDiagramHandler(ActivityDiagramHandler diagramHandler) {
+	public void setDiagramHandler(GraphitiActivityDiagramHandler diagramHandler) {
 		this.diagramHandler = diagramHandler;
 	}
 
