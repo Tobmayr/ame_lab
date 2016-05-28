@@ -29,19 +29,13 @@ public class XMOFMatchingService {
 			.getSimpleName();
 	private static final String CALL_OPERATION = CallOperationAction.class
 			.getSimpleName();
-	private static final String[] NODE_TYPES = {
-			DecisionNode.class.getSimpleName(), ForkNode.class.getSimpleName(),
-			InitialNode.class.getSimpleName(), JoinNode.class.getSimpleName(),
-			MergeNode.class.getSimpleName() };
 
 	private Set<String> allowedEObjects;
 	private Set<String> allowedActivities;
 	private Match lastMatchAttempt;
-	private AnimationController controller;
 
-	public XMOFMatchingService(AnimationController controller) {
-		this.controller = controller;
-		initialize(controller.getModel());
+	public XMOFMatchingService(XMOFBasedModel model) {
+		initialize(model);
 	}
 
 	private void initialize(XMOFBasedModel model) {
@@ -82,10 +76,7 @@ public class XMOFMatchingService {
 
 	private void matchNameAndType(String name, String type) {
 		if (!type.isEmpty()) {
-			if (name == null || name.isEmpty()) {
-				matchType(type);
-				return;
-			} else if (type.endsWith(ACTION_SUFFIX)) {
+		if (type.endsWith(ACTION_SUFFIX)) {
 				if (type.equals(CALL_OPERATION)) {
 					lastMatchAttempt.setType(XMOFType.CALLOPERATION);
 				} else {
@@ -101,19 +92,6 @@ public class XMOFMatchingService {
 
 	}
 
-	private void matchType(String type) {
-		for (String nodeType : NODE_TYPES) {
-			if (nodeType.equals(type)) {
-				lastMatchAttempt.setType(XMOFType.CONTROLNODE);
-				lastMatchAttempt.setXmofElementName(nodeType
-						+ "Impl"
-						+ controller.getActiveDecorator()
-								.getAndIncrementCounter());
-				return;
-			}
-		}
-
-	}
 
 	private void matchName(String name) {
 		if (name.equals(XMOFMatchingService.MAIN)) {
