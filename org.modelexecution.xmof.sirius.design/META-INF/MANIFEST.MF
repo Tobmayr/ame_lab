@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.modelexecution.xmof.sirius
 Bundle-SymbolicName: org.modelexecution.xmof.sirius.design;singleton:=true
 Bundle-Version: 1.0.0
-Bundle-Activator: org.modelexecution.xmof.sirius.Activator
+Bundle-Activator: org.modelexecution.xmof.sirius.design.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,

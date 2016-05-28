@@ -27,7 +27,7 @@
           </style>
         </containerMappings>
         <customization>
-          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:callMe()"/>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:callMe"/>
         </customization>
       </defaultLayer>
     </ownedRepresentations>
