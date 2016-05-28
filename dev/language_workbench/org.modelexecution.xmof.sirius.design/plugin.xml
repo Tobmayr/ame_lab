@@ -2,9 +2,9 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="org.modelexecution.xmof.sirius.Activator"
-               id="org.modelexecution.xmof.sirius"
-	       name="sirius">
+    <component class="org.modelexecution.xmof.sirius.design.Activator"
+               id="org.modelexecution.xmof.sirius.design"
+	       name="xmof">
     </component>
   </extension>
 </plugin>
