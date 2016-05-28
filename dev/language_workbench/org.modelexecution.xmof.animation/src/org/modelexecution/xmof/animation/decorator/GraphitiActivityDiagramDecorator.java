@@ -24,7 +24,7 @@ import org.modelexecution.xmof.animation.decorator.service.GraphitiDecoratorServ
 
 public class GraphitiActivityDiagramDecorator {
 
-	private int counter = 0;
+	
 	private KernelEditor kernelEditor;
 	private DiagramEditor diagramEditor;
 	private String activityName;
@@ -35,11 +35,6 @@ public class GraphitiActivityDiagramDecorator {
 
 	public GraphitiActivityDiagramDecorator(String activityName) {
 		this.activityName = activityName;
-	}
-
-	public int getAndIncrementCounter() {
-		counter++;
-		return counter;
 	}
 
 	public String getActivityName() {
@@ -99,34 +94,27 @@ public class GraphitiActivityDiagramDecorator {
 		activityNodeMap = new HashMap<String, ActivityNode>();
 		if (diagramEditor != null) {
 			Activity activity = getActivity(diagramEditor);
-			int counterForUnnamedNodes = 0;
 			for (ActivityNode node : activity.getNode()) {
-				processActivityNode(node, counterForUnnamedNodes);
+				processActivityNode(node);
 
 			}
 		}
 	}
 
-	private void processActivityNode(ActivityNode node,
-			int counterForUnnamedNodes) {
+	private void processActivityNode(ActivityNode node) {
 		if (node.getName() != null) {
 			if (node instanceof ExpansionRegionImpl) {
 
-				getActivityNodes((ExpansionRegionImpl) node,
-						counterForUnnamedNodes);
+				getActivityNodes((ExpansionRegionImpl) node);
 			}
 			activityNodeMap.put(node.getName(), node);
-		} else {
-			counterForUnnamedNodes++;
-			activityNodeMap.put(node.getClass().getSimpleName()
-					+ counterForUnnamedNodes, node);
 		}
 	}
 
-	private void getActivityNodes(ExpansionRegionImpl expNode,
-			int counterForUnnamedNodes) {
+	private void getActivityNodes(ExpansionRegionImpl expNode
+			) {
 		for (ActivityNode actNode : expNode.getNode()) {
-			processActivityNode(actNode, counterForUnnamedNodes);
+			processActivityNode(actNode);
 		}
 
 	}
