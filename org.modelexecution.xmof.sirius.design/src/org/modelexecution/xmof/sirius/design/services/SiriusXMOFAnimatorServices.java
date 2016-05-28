@@ -11,7 +11,7 @@ public class SiriusXMOFAnimatorServices extends AbstractGemocAnimatorServices {
 	protected List<StringCouple> getRepresentationRefreshList() {
 		final List<StringCouple> res = new ArrayList<StringCouple>();
 		
-		res.add(new StringCouple("SiriusXmofDiagram","Default"));
+		res.add(new StringCouple("ActivityDiagram","Default"));
 		
 		return res;
 	}
