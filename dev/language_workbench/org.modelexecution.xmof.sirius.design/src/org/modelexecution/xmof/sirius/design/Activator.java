@@ -6,6 +6,7 @@ import java.util.Set;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.modelexecution.xmof.sirius.design.services.ActivityAnimatorServices;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -36,6 +37,7 @@ public class Activator extends AbstractUIPlugin {
 	  plugin = this;
 	  viewpoints = new HashSet<Viewpoint>();
 	  viewpoints.addAll(ViewpointRegistry.getInstance().registerFromPlugin(PLUGIN_ID + "/description/xmof.odesign")); 
+	  new ActivityAnimatorServices();
     }
 
     /*
