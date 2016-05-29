@@ -33,8 +33,10 @@ public class GraphitiActivityDiagramDecorator {
 	private DecorationType previouslyDecorationType;
 	private boolean activityFinished = false;
 
-	public GraphitiActivityDiagramDecorator(String activityName) {
+
+	public GraphitiActivityDiagramDecorator(String activityName, KernelEditor kernelEditor) {
 		this.activityName = activityName;
+		this.kernelEditor=kernelEditor;
 	}
 
 	public String getActivityName() {
@@ -111,8 +113,7 @@ public class GraphitiActivityDiagramDecorator {
 		}
 	}
 
-	private void getActivityNodes(ExpansionRegionImpl expNode
-			) {
+	private void getActivityNodes(ExpansionRegionImpl expNode) {
 		for (ActivityNode actNode : expNode.getNode()) {
 			processActivityNode(actNode);
 		}

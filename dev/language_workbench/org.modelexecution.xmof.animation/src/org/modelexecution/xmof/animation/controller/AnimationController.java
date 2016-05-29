@@ -24,11 +24,12 @@ public class AnimationController {
 	private GraphitiActivityDiagramDecorator activeDecorator;
 	private Map<String, String> activityCallerMap;
 	private XMOFBasedModel model;
+	private Map<String, GraphitiActivityDiagramDecorator> diagramDecoratorMap;
 
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
 		this.model = model;
 		diagramHandler = new GraphitiActivityDiagramHandler(modelResource);
-		mseMatcher = new XMOFMatchingService(this);
+		mseMatcher = new XMOFMatchingService(model);
 		indexingService = new XMOFIndexingService(model);
 		activityCallerMap = new HashMap<>();
 		PlatformUI.getWorkbench().getDisplay().asyncExec(diagramHandler);
@@ -39,6 +40,13 @@ public class AnimationController {
 		mseMatcher.setAllowedActivities(indexingService.getActivityMap()
 				.keySet());
 
+	}
+	
+	private void initializeDecorators(){
+		diagramDecoratorMap= new HashMap<>();
+		for (String activityName:indexingService.getActivityMap().keySet()){
+			diagramDecoratorMap.put(activityName, new GraphitiActivityDiagramDecorator(activityName,diagramHandler.getKernelEditor()));
+		}
 	}
 
 	public void processMSEOccurrence(MSEOccurrence mseOccurrence) {
@@ -53,13 +61,11 @@ public class AnimationController {
 	private void processType(Match match) {
 		switch (match.getType()) {
 		case MAIN: {
-			indexingService.passEditorToDiagramDecorator(diagramHandler
-					.getKernelEditor());
+			initializeDecorators();
 			Activity activity = indexingService.getActivityByName(match
 					.getXmofElementName());
 			openOrCreateAcitvityDiagram(activity);
-			activeDecorator = indexingService
-					.getDiagramDecoratorForActivity(activity.getName());
+			activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
 
 			return;
 		}
@@ -69,8 +75,8 @@ public class AnimationController {
 			openOrCreateAcitvityDiagram(activity);
 			activityCallerMap.put(activity.getName(),
 					activeDecorator.getActivityName());
-			activeDecorator = indexingService
-					.getDiagramDecoratorForActivity(activity.getName());
+			activeDecorator = 
+					diagramDecoratorMap.get(activity.getName().trim());
 			return;
 		}
 		case CALLOPERATION:
@@ -117,8 +123,7 @@ public class AnimationController {
 				String callingActivity = activityCallerMap
 						.get(activeDecorator.getActivityName());
 				if (callingActivity != null) {
-					activeDecorator = indexingService
-							.getDiagramDecoratorForActivity(callingActivity);
+					activeDecorator = diagramDecoratorMap.get(callingActivity.trim());
 					if (activeDecorator.decorateActivityNode(
 							xmofElementName, type)) {
 						openOrCreateAcitvityDiagram(indexingService
@@ -129,6 +134,8 @@ public class AnimationController {
 				return false;
 
 			}
+
+		
 
 			private boolean tryDecorateInCurrentActivity(
 					String xmofElementName, DecorationType type) {

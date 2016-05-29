@@ -20,7 +20,7 @@ public class XMOFIndexingService {
 
 	private XMOFBasedModel model;
 	private Map<String, Activity> activityMap;
-	private Map<String, GraphitiActivityDiagramDecorator> diagramDecoratorMap;
+	//private Map<String, GraphitiActivityDiagramDecorator> diagramDecoratorMap;
 
 	public XMOFIndexingService(XMOFBasedModel model) {
 		this.model = model;
@@ -38,9 +38,7 @@ public class XMOFIndexingService {
 
 	}
 
-	public GraphitiActivityDiagramDecorator getDiagramDecoratorForActivity(String name) {
-		return diagramDecoratorMap.get(name.trim());
-	}
+	
 
 	public Activity getActivityByName(String name) {
 		return activityMap.get(name);
@@ -48,12 +46,12 @@ public class XMOFIndexingService {
 
 	private void prepareMaps() {
 		activityMap = new HashMap<>();
-		diagramDecoratorMap = new HashMap<>();
+		
 		for (Activity activity : obtainActivities(obtainDistinctModelElements()
 				.values())) {
 			String name = activity.getName();
 			activityMap.put(name, activity);
-			diagramDecoratorMap.put(name, new GraphitiActivityDiagramDecorator(name));
+			
 		}
 
 		return;
@@ -95,11 +93,6 @@ public class XMOFIndexingService {
 		return model;
 	}
 
-	public void passEditorToDiagramDecorator(KernelEditor kernelEditor) {
-		for (GraphitiActivityDiagramDecorator decorator : diagramDecoratorMap.values()) {
-			decorator.setKernelEditor(kernelEditor);
-		}
-
-	}
+	
 
 }
