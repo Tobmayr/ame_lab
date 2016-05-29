@@ -19,6 +19,8 @@ import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.impl.
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
+import org.modelexecution.xmof.animation.controller.internal.Match;
+import org.modelexecution.xmof.animation.controller.internal.XMOFType;
 import org.modelexecution.xmof.animation.decorator.service.DecorationType;
 import org.modelexecution.xmof.animation.decorator.service.GraphitiDecoratorService;
 
@@ -43,7 +45,7 @@ public class GraphitiActivityDiagramDecorator {
 		return activityName;
 	}
 
-	public boolean decorateActivityNode(String nodeName, DecorationType type) {
+	public boolean decorateActivityNode(Match match) {
 		if (activityNodeMap == null) {
 			intializeActivityNodeMap();
 		}
@@ -51,13 +53,13 @@ public class GraphitiActivityDiagramDecorator {
 			resetDecorations();
 			activityFinished = false;
 		}
-		ActivityNode activeNode = activityNodeMap.get(nodeName.trim());
+		ActivityNode activeNode = activityNodeMap.get(match.getXmofElementName().trim());
 		if (previouslyActiveNode != null) {
 			refreshDecoration(previouslyActiveNode,
 					previouslyDecorationType.getDecorators(false));
 		}
 		if (activeNode != null) {
-
+			DecorationType type= convertToDecorationType(match.getType());
 			refreshDecoration(activeNode, type.getDecorators(true));
 			previouslyActiveNode = activeNode;
 			previouslyDecorationType = type;
@@ -66,6 +68,15 @@ public class GraphitiActivityDiagramDecorator {
 		}
 
 		return false;
+	}
+
+	private DecorationType convertToDecorationType(XMOFType type) {
+		switch (type) {
+		case EXPANSIONREGION:
+			return DecorationType.EXPANSION_REGION;
+		default:
+			return DecorationType.NODE;
+		}
 	}
 
 	private void resetDecorations() {

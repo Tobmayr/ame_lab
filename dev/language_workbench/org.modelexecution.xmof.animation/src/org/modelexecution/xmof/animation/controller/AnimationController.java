@@ -84,5 +84,5 @@ public abstract class AnimationController {
 		this.model = model;
 	}
 	
-	
+	protected abstract void decorateActivityNode(Match match);
 }
