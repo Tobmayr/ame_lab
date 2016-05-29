@@ -10,6 +10,7 @@ import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.controller.AnimationController;
+import org.modelexecution.xmof.animation.controller.GraphitiAnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class AnimationAddon implements IEngineAddon {
@@ -17,7 +18,7 @@ public class AnimationAddon implements IEngineAddon {
 	private AnimationController animationController;
 
 	public void initialize(XMOFBasedModel model, Resource resource) {
-		animationController = new AnimationController(model, resource);
+		animationController = new GraphitiAnimationController(model, resource);
 
 	}
 
@@ -90,7 +91,7 @@ public class AnimationAddon implements IEngineAddon {
 	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
 			MSEOccurrence mseOccurrence) {
 		if (animationController!=null){
-			animationController.processMSEOccurrence(mseOccurrence);
+			animationController.processMSEOccurrence(mseOccurrence,true);
 		}
 		
 	}
