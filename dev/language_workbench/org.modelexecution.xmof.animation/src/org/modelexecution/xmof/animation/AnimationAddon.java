@@ -15,11 +15,11 @@ import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class AnimationAddon implements IEngineAddon {
-	private static final boolean USE_GRAPHITY = false;
+	private static final boolean USE_GRAPHITI = true;
 	private AnimationController animationController;
 
 	public void initialize(XMOFBasedModel model, Resource resource) {
-		if (USE_GRAPHITY) {
+		if (USE_GRAPHITI) {
 			animationController = new GraphitiAnimationController(model,
 					resource);
 		} else {
