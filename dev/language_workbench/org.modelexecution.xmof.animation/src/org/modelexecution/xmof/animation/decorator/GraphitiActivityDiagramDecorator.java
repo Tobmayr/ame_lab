@@ -1,10 +1,8 @@
 package org.modelexecution.xmof.animation.decorator;
 
 import java.util.HashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
@@ -24,34 +22,29 @@ import org.modelexecution.xmof.animation.controller.internal.XMOFType;
 import org.modelexecution.xmof.animation.decorator.service.DecorationType;
 import org.modelexecution.xmof.animation.decorator.service.GraphitiDecoratorService;
 
-public class GraphitiActivityDiagramDecorator {
+public class GraphitiActivityDiagramDecorator extends ActivityDiagramDecorator{
 
 	
 	private KernelEditor kernelEditor;
 	private DiagramEditor diagramEditor;
-	private String activityName;
 	private Map<String, ActivityNode> activityNodeMap;
 	private ActivityNode previouslyActiveNode;
 	private DecorationType previouslyDecorationType;
-	private boolean activityFinished = false;
 
 
 	public GraphitiActivityDiagramDecorator(String activityName, KernelEditor kernelEditor) {
-		this.activityName = activityName;
+		super(activityName);
 		this.kernelEditor=kernelEditor;
 	}
 
-	public String getActivityName() {
-		return activityName;
-	}
 
 	public boolean decorateActivityNode(Match match) {
 		if (activityNodeMap == null) {
 			intializeActivityNodeMap();
 		}
-		if (activityFinished) {
+		if (isActivityFinished()) {
 			resetDecorations();
-			activityFinished = false;
+			setActivityFinished(false);
 		}
 		ActivityNode activeNode = activityNodeMap.get(match.getXmofElementName().trim());
 		if (previouslyActiveNode != null) {
@@ -184,10 +177,6 @@ public class GraphitiActivityDiagramDecorator {
 		this.kernelEditor = kernelEditor;
 	}
 
-	public void setActivityFinished(boolean activityFinshed) {
-		this.activityFinished = activityFinshed;
-
-	}
 
 	
 

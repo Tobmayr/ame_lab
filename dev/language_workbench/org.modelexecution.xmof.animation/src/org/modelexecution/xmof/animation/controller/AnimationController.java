@@ -1,8 +1,14 @@
 package org.modelexecution.xmof.animation.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.ui.PlatformUI;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.controller.internal.Match;
 import org.modelexecution.xmof.animation.controller.internal.XMOFModelProcessor;
+import org.modelexecution.xmof.animation.decorator.ActivityDiagramDecorator;
 import org.modelexecution.xmof.animation.ui.Activator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
@@ -10,14 +16,19 @@ public abstract class AnimationController {
 
 	private XMOFModelProcessor modelProcessor;
 	private XMOFBasedModel model;
+	protected Map<String, ActivityDiagramDecorator> diagramDecoratorMap;
+	protected ActivityDiagramDecorator activeDecorator;
+	protected Map<String, String> activityCallerMap;
 
 	public AnimationController(XMOFBasedModel model) {
 		this.model = model;
 		modelProcessor = new XMOFModelProcessor(model);
+		diagramDecoratorMap = new HashMap<String, ActivityDiagramDecorator>();
+		activityCallerMap = new HashMap<>();
 	}
 
-	
-	public void processMSEOccurrence(MSEOccurrence mseOccurrence, boolean verbose) {
+	public void processMSEOccurrence(MSEOccurrence mseOccurrence,
+			boolean verbose) {
 		Match match = modelProcessor.matchMSEOccurence(mseOccurrence.getMse()
 				.getName());
 		if (verbose) {
@@ -29,17 +40,27 @@ public abstract class AnimationController {
 		processType(match);
 
 	}
-	
-	public abstract void handleMain(Match match);
-	public abstract void handleActivity(Match match);
-	public abstract void handleExecutableNode(Match match);
-	public abstract void handleControlNode(Match match);
-	public abstract void handleExpansionRegion(Match match);
-	
-	
-	
-	
-	private void processType(Match match){
+
+	public void handleMain(Match match) {
+		initializeDecorators();
+		Activity activity = getModelProcessor().getActivityByName(
+				match.getXmofElementName());
+		openOrCreateAcitvityDiagram(activity);
+		activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
+	}
+
+	protected abstract void openOrCreateAcitvityDiagram(Activity activity);
+
+	public void handleActivity(Match match) {
+		Activity activity = getModelProcessor().getActivityByName(
+				match.getXmofElementName());
+		openOrCreateAcitvityDiagram(activity);
+		activityCallerMap.put(activity.getName(),
+				activeDecorator.getActivityName());
+		activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
+	}
+
+	private void processType(Match match) {
 		switch (match.getType()) {
 		case MAIN:
 			handleMain(match);
@@ -48,41 +69,73 @@ public abstract class AnimationController {
 			handleActivity(match);
 			return;
 		case CONTROLNODE:
-			handleControlNode(match);
-			return;
 		case CALLOPERATION:
 		case ACTIVITYNODE:
-			handleExecutableNode(match);
-			return;
 		case EXPANSIONREGION:
-			handleExpansionRegion(match);
+			decorateActivityNode(match);
 			return;
-		default: 
-		
+		default:
+
 		}
 	}
-	
 
-
+	protected abstract void initializeDecorators();
 
 	public XMOFModelProcessor getModelProcessor() {
 		return modelProcessor;
 	}
 
-
 	public void setModelProcessor(XMOFModelProcessor modelProcessor) {
 		this.modelProcessor = modelProcessor;
 	}
-
 
 	public XMOFBasedModel getModel() {
 		return model;
 	}
 
-
 	public void setModel(XMOFBasedModel model) {
 		this.model = model;
 	}
-	
-	protected abstract void decorateActivityNode(Match match);
+
+	protected void decorateActivityNode(Match match) {
+		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+			@Override
+			public void run() {
+				if (activeDecorator != null) {
+					if (!tryDecorateInCurrentActivity(match)) {
+
+						if (tryDecorateInCallingAcitivty(match)) {
+							activeDecorator.setActivityFinished(true);
+						} else {
+							activeDecorator.setActivityFinished(false);
+						}
+					}
+
+				}
+
+			}
+
+			private boolean tryDecorateInCallingAcitivty(Match match) {
+				String callingActivity = activityCallerMap.get(activeDecorator
+						.getActivityName());
+				if (callingActivity != null) {
+					activeDecorator = diagramDecoratorMap.get(callingActivity
+							.trim());
+					if (activeDecorator.decorateActivityNode(match)) {
+						openOrCreateAcitvityDiagram(getModelProcessor()
+								.getActivityByName(callingActivity));
+					}
+					return true;
+				}
+				return false;
+
+			}
+
+			private boolean tryDecorateInCurrentActivity(Match match) {
+				return activeDecorator.decorateActivityNode(match);
+			}
+
+		});
+
+	}
 }
