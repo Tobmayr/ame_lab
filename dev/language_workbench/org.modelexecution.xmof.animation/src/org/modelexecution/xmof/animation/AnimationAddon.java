@@ -15,7 +15,7 @@ import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class AnimationAddon implements IEngineAddon {
-	private static final boolean USE_GRAPHITY = true;
+	private static final boolean USE_GRAPHITY = false;
 	private AnimationController animationController;
 
 	public void initialize(XMOFBasedModel model, Resource resource) {
