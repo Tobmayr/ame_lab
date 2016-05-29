@@ -26,7 +26,24 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subContainerMappings[name='ExecutableNode']/@style" referenceName="foregroundColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subContainerMappings[name='ExecutableNode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subContainerMappings[name='ExecutableNode']/@style" referenceName="foregroundColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.sirius.design.services.ActivityAnimatorServices"/>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.animation.decorator.service.ActivityAnimatorServices"/>
   </ownedViewpoints>
 </description:Group>
