@@ -8,8 +8,7 @@ import org.eclipse.ui.PlatformUI;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.controller.internal.Match;
-import org.modelexecution.xmof.animation.controller.internal.XMOFIndexingService;
-import org.modelexecution.xmof.animation.controller.internal.XMOFMatchingService;
+import org.modelexecution.xmof.animation.controller.internal.XMOFModelProcessor;
 import org.modelexecution.xmof.animation.decorator.GraphitiActivityDiagramDecorator;
 import org.modelexecution.xmof.animation.decorator.service.DecorationType;
 import org.modelexecution.xmof.animation.handler.GraphitiActivityDiagramHandler;
@@ -18,9 +17,8 @@ import org.modelexecution.xmof.animation.ui.Activator;
 
 public class AnimationController {
 
-	private XMOFIndexingService indexingService;
+	private XMOFModelProcessor modelProcessor;
 	private GraphitiActivityDiagramHandler diagramHandler;
-	private XMOFMatchingService mseMatcher;
 	private GraphitiActivityDiagramDecorator activeDecorator;
 	private Map<String, String> activityCallerMap;
 	private XMOFBasedModel model;
@@ -29,29 +27,23 @@ public class AnimationController {
 	public AnimationController(XMOFBasedModel model, Resource modelResource) {
 		this.model = model;
 		diagramHandler = new GraphitiActivityDiagramHandler(modelResource);
-		mseMatcher = new XMOFMatchingService(model);
-		indexingService = new XMOFIndexingService(model);
+		modelProcessor = new XMOFModelProcessor(model);
 		activityCallerMap = new HashMap<>();
 		PlatformUI.getWorkbench().getDisplay().asyncExec(diagramHandler);
-		initialize();
+		
 	}
 
-	private void initialize() {
-		mseMatcher.setAllowedActivities(indexingService.getActivityMap()
-				.keySet());
-
-	}
 	
 	private void initializeDecorators(){
 		diagramDecoratorMap= new HashMap<>();
-		for (String activityName:indexingService.getActivityMap().keySet()){
+		for (String activityName:modelProcessor.getActivityNames()){
 			diagramDecoratorMap.put(activityName, new GraphitiActivityDiagramDecorator(activityName,diagramHandler.getKernelEditor()));
 		}
 	}
 
 	public void processMSEOccurrence(MSEOccurrence mseOccurrence) {
 		String fullName = mseOccurrence.getMse().getName();
-		Match match = mseMatcher.matchMSEOccurence(fullName);
+		Match match = modelProcessor.matchMSEOccurence(fullName);
 		Activator.getDefault().getMessaggingSystem()
 				.debug(fullName, Activator.PLUGIN_ID);
 		processType(match);
@@ -62,7 +54,7 @@ public class AnimationController {
 		switch (match.getType()) {
 		case MAIN: {
 			initializeDecorators();
-			Activity activity = indexingService.getActivityByName(match
+			Activity activity = modelProcessor.getActivityByName(match
 					.getXmofElementName());
 			openOrCreateAcitvityDiagram(activity);
 			activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
@@ -70,7 +62,7 @@ public class AnimationController {
 			return;
 		}
 		case ACTITVITY: {
-			Activity activity = indexingService.getActivityByName(match
+			Activity activity = modelProcessor.getActivityByName(match
 					.getXmofElementName());
 			openOrCreateAcitvityDiagram(activity);
 			activityCallerMap.put(activity.getName(),
@@ -126,7 +118,7 @@ public class AnimationController {
 					activeDecorator = diagramDecoratorMap.get(callingActivity.trim());
 					if (activeDecorator.decorateActivityNode(
 							xmofElementName, type)) {
-						openOrCreateAcitvityDiagram(indexingService
+						openOrCreateAcitvityDiagram(modelProcessor
 								.getActivityByName(callingActivity));
 					}
 					return true;
@@ -157,12 +149,12 @@ public class AnimationController {
 		});
 	}
 
-	public XMOFIndexingService getModelService() {
-		return indexingService;
+	public XMOFModelProcessor getModelService() {
+		return modelProcessor;
 	}
 
-	public void setModelService(XMOFIndexingService modelService) {
-		this.indexingService = modelService;
+	public void setModelService(XMOFModelProcessor modelService) {
+		this.modelProcessor = modelService;
 	}
 
 	public GraphitiActivityDiagramHandler getDiagramHandler() {
@@ -173,13 +165,6 @@ public class AnimationController {
 		this.diagramHandler = diagramHandler;
 	}
 
-	public XMOFMatchingService getMseMatcher() {
-		return mseMatcher;
-	}
-
-	public void setMseMatcher(XMOFMatchingService mseMatcher) {
-		this.mseMatcher = mseMatcher;
-	}
 
 	public GraphitiActivityDiagramDecorator getActiveDecorator() {
 		return activeDecorator;
