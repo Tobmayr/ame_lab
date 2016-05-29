@@ -10,7 +10,6 @@ public class SiriusAnimationController extends AnimationController {
 
 	public SiriusAnimationController(XMOFBasedModel model) {
 		super(model);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package org.modelexecution.xmof.animation.decorator;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.impl.ExpansionRegionImpl;
@@ -18,6 +19,7 @@ public class SiriusActivityDiagramDecorator extends ActivityDiagramDecorator {
 	}
 
 	private void intializeActivityNodesSet(Activity activity) {
+		activityNodes= new HashSet<>();
 		for (ActivityNode node : activity.getNode()) {
 			processActivityNode(node);
 		}

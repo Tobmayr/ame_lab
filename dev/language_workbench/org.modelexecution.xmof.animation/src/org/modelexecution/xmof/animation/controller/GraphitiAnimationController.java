@@ -40,48 +40,6 @@ public class GraphitiAnimationController extends AnimationController {
 		}
 	}
 
-	protected void decorateActivityNode(Match match) {
-		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
-			@Override
-			public void run() {
-				if (activeDecorator != null) {
-					if (!tryDecorateInCurrentActivity(match)) {
-
-						if (tryDecorateInCallingAcitivty(match)) {
-							activeDecorator.setActivityFinished(true);
-						} else {
-							activeDecorator.setActivityFinished(false);
-						}
-					}
-
-				}
-
-			}
-
-			private boolean tryDecorateInCallingAcitivty(Match match) {
-				String callingActivity = activityCallerMap.get(activeDecorator
-						.getActivityName());
-				if (callingActivity != null) {
-					activeDecorator = diagramDecoratorMap.get(callingActivity
-							.trim());
-					if (activeDecorator.decorateActivityNode(match)) {
-						openOrCreateAcitvityDiagram(getModelProcessor()
-								.getActivityByName(callingActivity));
-					}
-					return true;
-				}
-				return false;
-
-			}
-
-			private boolean tryDecorateInCurrentActivity(Match match) {
-				return activeDecorator.decorateActivityNode(match);
-			}
-
-		});
-
-	}
-
 	protected void openOrCreateAcitvityDiagram(Activity acitvity) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 			@Override
