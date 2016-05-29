@@ -1,9 +1,12 @@
 package org.modelexecution.xmof.animation.controller;
 
-import org.modelexecution.xmof.animation.controller.internal.Match;
+import java.util.HashMap;
+
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
+import org.modelexecution.xmof.animation.decorator.SiriusActivityDiagramDecorator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
-public class SiriusAnimationController extends AnimationController{
+public class SiriusAnimationController extends AnimationController {
 
 	public SiriusAnimationController(XMOFBasedModel model) {
 		super(model);
@@ -11,37 +14,21 @@ public class SiriusAnimationController extends AnimationController{
 	}
 
 	@Override
-	public void handleMain(Match match) {
-		// TODO Auto-generated method stub
-		
+	protected void initializeDecorators() {
+		diagramDecoratorMap = new HashMap<>();
+		for (String activityName : getModelProcessor().getActivityNames()) {
+			diagramDecoratorMap.put(activityName,
+					new SiriusActivityDiagramDecorator(getModelProcessor()
+							.getActivityByName(activityName)));
+		}
+
 	}
 
-	@Override
-	public void handleActivity(Match match) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void handleExecutableNode(Match match) {
-		// TODO Auto-generated method stub
-		
-	}
 
+	
 	@Override
-	public void handleControlNode(Match match) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void handleExpansionRegion(Match match) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void decorateActivityNode(Match match) {
+	protected void openOrCreateAcitvityDiagram(Activity activity) {
 		// TODO Auto-generated method stub
 		
 	}

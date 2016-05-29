@@ -15,6 +15,7 @@ import org.modelexecution.xmof.gemoc.engine.ui.launcher.Launcher;
 public class LauncherAnim extends Launcher {
 
 	public final static String TYPE_ID = Activator.PLUGIN_ID + ".launcheranim";
+	
 
 	@Override
 	protected IBasicExecutionEngine createExecutionEngine(
