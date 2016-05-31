@@ -52,7 +52,7 @@ public class SiriusDiagramDecorator extends DiagramDecorator {
 	 }
 	 
 	 if (activityNodes.contains(match.getXmofElementName().trim())){
-		 SiriusDecoratorService.setActiveElement(match.getXmofElementName(), getActivityName());
+		 SiriusDecoratorService.setActiveElement(match, getActivityName());
 		 return true;
 	 }
 	 

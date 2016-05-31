@@ -5,14 +5,17 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
+import org.modelexecution.xmof.animation.controller.internal.Match;
 
 public class SiriusDecoratorService {
 
 	private static String currentlyActiveElement = null;
 	private static Set<String> traversedElements = new HashSet<>();
+	private static String callerObject = "";
 
-	public static void setActiveElement(String elementName, String activityName) {
-		String identifier = activityName.trim() + "|" + elementName.trim();
+	public static void setActiveElement(Match match, String activityName) {
+		String identifier = activityName.trim() + "|" + match.getXmofElementName().trim();
+		callerObject = match.getInvokerObjectName();
 		if (currentlyActiveElement != null) {
 			traversedElements.add(currentlyActiveElement);
 		}
@@ -45,4 +48,14 @@ public class SiriusDecoratorService {
 		traversedElements = new HashSet<>();
 		currentlyActiveElement = null;
 	}
+
+	public static String getCallerObject(EObject o) {
+		return "Activity has been called by:\n" + callerObject;
+
+	}
+
+	public static boolean animatorRunning(EObject o) {
+		return callerObject.isEmpty() || callerObject == null;
+	}
+
 }

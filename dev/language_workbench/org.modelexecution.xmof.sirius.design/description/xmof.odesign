@@ -14,6 +14,16 @@
       <metamodel href="http://www.modelexecution.org/xmof/syntax/classes/mykernel#/"/>
       <metamodel href="http://www.modelexecution.org/xmof/syntax/commonbehaviors/basicbehaviors#/"/>
       <metamodel href="http://www.modelexecution.org/xmof/syntax/commonbehaviors/communications#/"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#/"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Syntax"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Semantics"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Syntax/CommonBehaviors"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Syntax/Classes"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Syntax/Activities"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Syntax/Actions"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Semantics/Classes"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Semantics/Loci"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Semantics/CommonBehaviors"/>
       <defaultLayer name="Default">
         <containerMappings name="Activity" semanticCandidatesExpression="var:self" domainClass="IntermediateActivities.Activity">
           <subNodeMappings name="ControlNode" semanticCandidatesExpression="feature:node" domainClass=" IntermediateActivities.ControlNode">
@@ -71,6 +81,14 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
             </style>
           </subContainerMappings>
+          <subContainerMappings name="Caller" semanticCandidatesExpression="var:self" domainClass="IntermediateActivities.Activity">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="service:getCallerObject()" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" backgroundStyle="Liquid">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -84,6 +102,20 @@
               <value href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
             </featureCustomizations>
             <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subContainerMappings[name='ExecutableNode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.5/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.4/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.1/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.2/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.3/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.0/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:isTraveresedElement()">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subContainerMappings[name='ExecutableNode']/@style" referenceName="foregroundColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subContainerMappings[name='ExecutableNode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.5/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.4/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.1/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.2/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.3/@style //@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subNodeMappings[name='ControlNode']/@conditionnalStyles.0/@style" referenceName="borderColor">
               <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
             </featureCustomizations>
           </vsmElementCustomizations>
