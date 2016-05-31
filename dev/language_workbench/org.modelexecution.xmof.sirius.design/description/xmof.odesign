@@ -2,6 +2,16 @@
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="xmof" version="10.1.3.201511131800">
   <ownedViewpoints name="ActivityViewpoint" label="activity" modelFileExtension="xmof">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ActivityDiagram" label="activity" titleExpression="feature:name" domainClass="IntermediateActivities.Activity" enablePopupBars="true">
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#/"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Syntax"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Semantics"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Syntax/CommonBehaviors"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Syntax/Classes"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Syntax/Activities"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Syntax/Actions"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Semantics/Classes"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Semantics/Loci"/>
+      <metamodel href="../../org.modelexecution.xmof/model/xmof.ecore#//Semantics/CommonBehaviors"/>
       <defaultLayer name="Default">
         <containerMappings name="Activity" semanticCandidatesExpression="var:self" domainClass="IntermediateActivities.Activity">
           <subNodeMappings name="ControlNode" semanticCandidatesExpression="feature:node" domainClass="IntermediateActivities.ControlNode">
@@ -27,7 +37,7 @@
           </style>
         </containerMappings>
         <customization>
-          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:isActiveElement">
             <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subContainerMappings[name='ExecutableNode']/@style" referenceName="foregroundColor">
               <value href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
             </featureCustomizations>
@@ -35,15 +45,10 @@
               <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
             </featureCustomizations>
           </vsmElementCustomizations>
-          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
-            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subContainerMappings[name='ExecutableNode']/@style" referenceName="foregroundColor">
-              <value href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
-            </featureCustomizations>
-          </vsmElementCustomizations>
         </customization>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.animation.decorator.service.SiriusDecoratorService"/>
     <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.sirius.design.services.ActivityAnimatorServices"/>
-    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.animation.decorator.service.ActivityAnimatorServices"/>
   </ownedViewpoints>
 </description:Group>

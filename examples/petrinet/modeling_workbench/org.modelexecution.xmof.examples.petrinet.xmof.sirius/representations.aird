@@ -315,7 +315,14 @@
     </ownedRepresentations>
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_unyRQCTCEeatWPNyI-z66w" name="addToken">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_unyRQSTCEeatWPNyI-z66w" source="DANNOTATION_CUSTOMIZATION_KEY">
-        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_unyRQiTCEeatWPNyI-z66w"/>
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_unyRQiTCEeatWPNyI-z66w">
+          <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_1SdmECceEeatCeNk4A1iUQ" borderSizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            <foregroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+          </computedStyleDescriptions>
+        </data>
       </ownedAnnotationEntries>
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uny4UCTCEeatWPNyI-z66w" source="GMF_DIAGRAMS">
         <data xmi:type="notation:Diagram" xmi:id="_uny4USTCEeatWPNyI-z66w" type="Sirius" element="_unyRQCTCEeatWPNyI-z66w" measurementUnit="Pixel">
@@ -419,9 +426,7 @@
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_unyRRSTCEeatWPNyI-z66w" name="Read self">
           <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Read%20self"/>
           <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Read%20self"/>
-          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_unyRRiTCEeatWPNyI-z66w" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="114,73,110">
-            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subContainerMappings[name='ExecutableNode']/@style"/>
-          </ownedStyle>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_1SfbQCceEeatCeNk4A1iUQ" description="_1SdmECceEeatCeNk4A1iUQ" borderSize="1" borderSizeComputationExpression="1" borderColor="252,233,79" backgroundColor="255,245,181" foregroundColor="246,139,139"/>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='ActivityViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@containerMappings[name='Activity']/@subContainerMappings[name='ExecutableNode']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_unyRRyTCEeatWPNyI-z66w" name="Specify 1">
