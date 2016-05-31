@@ -5,6 +5,9 @@ public class Match {
 	private XMOFType type = XMOFType.UNKOWN;
 	private String mseOccurenceName;
 	private String xmofElementName;
+	private String invokerObjectName;
+
+
 
 	public Match() {
 		super();
@@ -38,6 +41,14 @@ public class Match {
 
 	public void setType(XMOFType type) {
 		this.type = type;
+	}
+	
+	public String getInvokerObjectName() {
+		return invokerObjectName;
+	}
+
+	public void setInvokerObjectName(String invokerObjectName) {
+		this.invokerObjectName = invokerObjectName;
 	}
 
 }

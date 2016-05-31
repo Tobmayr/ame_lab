@@ -25,10 +25,8 @@ public class MappingService {
 	private static final String MAIN = "main";
 	private static final String ACTION_SUFFIX = "Action";
 	private static final String NODE_SUFFIX = "Node";
-	private static final String EXPANSION_SUFFIX = ExpansionRegion.class
-			.getSimpleName();
-	private static final String CALL_OPERATION = CallOperationAction.class
-			.getSimpleName();
+	private static final String EXPANSION_SUFFIX = ExpansionRegion.class.getSimpleName();
+	private static final String CALL_OPERATION = CallOperationAction.class.getSimpleName();
 	private XMOFBasedModel model;
 	private Set<String> allowedEObjects;
 	private Map<String, Activity> activityMap;
@@ -65,8 +63,7 @@ public class MappingService {
 	private void prepareMap() {
 		activityMap = new HashMap<>();
 
-		for (Activity activity : obtainActivities(obtainDistinctModelElements()
-				.values())) {
+		for (Activity activity : obtainActivities(obtainDistinctModelElements().values())) {
 			String name = activity.getName();
 			activityMap.put(name, activity);
 
@@ -106,7 +103,6 @@ public class MappingService {
 			return (Activity) eOperation.getMethod().get(0);
 		return null;
 	}
-
 
 	private void tryToFindMatch(String name) {
 		String[] args = name.split(":");
@@ -153,8 +149,8 @@ public class MappingService {
 
 	private boolean hasCorrectPrefix(String[] args) {
 		if (args.length == 3) {
-			return MappingService.MSE_PREFIX.equals(args[0])
-					&& allowedEObjects.contains(args[1]);
+			lastMatchAttempt.setInvokerObjectName(args[1]);
+			return MappingService.MSE_PREFIX.equals(args[0]) && allowedEObjects.contains(args[1]);
 		}
 		return false;
 	}
@@ -162,7 +158,6 @@ public class MappingService {
 	public XMOFBasedModel getModel() {
 		return model;
 	}
-
 
 	public Match matchDebugEvent(String debugevent) {
 		lastMatchAttempt = new Match(debugevent);
