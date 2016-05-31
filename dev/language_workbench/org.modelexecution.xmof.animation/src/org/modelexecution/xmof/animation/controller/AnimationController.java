@@ -8,7 +8,7 @@ import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.controller.internal.Match;
 import org.modelexecution.xmof.animation.controller.internal.MappingService;
-import org.modelexecution.xmof.animation.decorator.ActivityDiagramDecorator;
+import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.ui.Activator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
@@ -16,14 +16,14 @@ public abstract class AnimationController {
 
 	private MappingService modelProcessor;
 	private XMOFBasedModel model;
-	protected Map<String, ActivityDiagramDecorator> diagramDecoratorMap;
-	protected ActivityDiagramDecorator activeDecorator;
+	protected Map<String, DiagramDecorator> diagramDecoratorMap;
+	protected DiagramDecorator activeDecorator;
 	protected Map<String, String> activityCallerMap;
 
 	public AnimationController(XMOFBasedModel model) {
 		this.model = model;
 		modelProcessor = new MappingService(model);
-		diagramDecoratorMap = new HashMap<String, ActivityDiagramDecorator>();
+		diagramDecoratorMap = new HashMap<String, DiagramDecorator>();
 		activityCallerMap = new HashMap<>();
 	}
 

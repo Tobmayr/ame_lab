@@ -12,7 +12,7 @@ public class SiriusDecoratorService {
 	private static Set<String> traversedElements = new HashSet<>();
 
 	public static void setActiveElement(String elementName, String activityName) {
-		String identifier = activityName + "|" + elementName;
+		String identifier = activityName.trim() + "|" + elementName.trim();
 		if (currentlyActiveElement != null) {
 			traversedElements.add(currentlyActiveElement);
 		}

@@ -14,8 +14,8 @@ import org.modelexecution.xmof.animation.controller.GraphitiAnimationController;
 import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
-public class XMOFModelAnimator implements IEngineAddon {
-	private static final boolean USE_GRAPHITI = true;
+public class ModelAnimator implements IEngineAddon {
+	private static final boolean USE_GRAPHITI = false;
 	private AnimationController animationController;
 
 	public void initialize(XMOFBasedModel model, Resource resource) {

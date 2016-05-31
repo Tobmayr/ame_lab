@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
-import org.modelexecution.xmof.animation.decorator.GraphitiActivityDiagramDecorator;
+import org.modelexecution.xmof.animation.decorator.GraphitiDiagramDecorator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fUML.Syntax.Actions.BasicActions.CallOperationAction;

@@ -22,7 +22,7 @@ import org.modelexecution.xmof.animation.controller.internal.XMOFType;
 import org.modelexecution.xmof.animation.decorator.service.DecorationType;
 import org.modelexecution.xmof.animation.decorator.service.GraphitiDecoratorService;
 
-public class GraphitiActivityDiagramDecorator extends ActivityDiagramDecorator{
+public class GraphitiDiagramDecorator extends DiagramDecorator{
 
 	
 	private KernelEditor kernelEditor;
@@ -32,7 +32,7 @@ public class GraphitiActivityDiagramDecorator extends ActivityDiagramDecorator{
 	private DecorationType previouslyDecorationType;
 
 
-	public GraphitiActivityDiagramDecorator(String activityName, KernelEditor kernelEditor) {
+	public GraphitiDiagramDecorator(String activityName, KernelEditor kernelEditor) {
 		super(activityName);
 		this.kernelEditor=kernelEditor;
 	}
