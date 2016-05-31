@@ -7,7 +7,7 @@ import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.impl.
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.animation.controller.internal.Match;
-import org.modelexecution.xmof.animation.decorator.service.SiriusDecorationService;
+import org.modelexecution.xmof.animation.decorator.service.SiriusDecoratorService;
 
 public class SiriusActivityDiagramDecorator extends ActivityDiagramDecorator {
 
@@ -47,12 +47,12 @@ public class SiriusActivityDiagramDecorator extends ActivityDiagramDecorator {
 	@Override
 	public boolean decorateActivityNode(Match match) {
 	 if (isActivityFinished()){
-		SiriusDecorationService.clear();
+		SiriusDecoratorService.clear();
 		setActivityFinished(false);
 	 }
 	 
 	 if (activityNodes.contains(match.getXmofElementName().trim())){
-		 SiriusDecorationService.setActiveElement(match.getXmofElementName(), getActivityName());
+		 SiriusDecoratorService.setActiveElement(match.getXmofElementName(), getActivityName());
 		 return true;
 	 }
 	 
