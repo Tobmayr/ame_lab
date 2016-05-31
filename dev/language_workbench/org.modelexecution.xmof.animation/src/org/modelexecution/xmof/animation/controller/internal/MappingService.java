@@ -20,7 +20,7 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 import fUML.Syntax.Actions.BasicActions.CallOperationAction;
 import fUML.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
 
-public class XMOFModelProcessor {
+public class MappingService {
 	private static final String MSE_PREFIX = "MSE";
 	private static final String MAIN = "main";
 	private static final String ACTION_SUFFIX = "Action";
@@ -34,7 +34,7 @@ public class XMOFModelProcessor {
 	private Map<String, Activity> activityMap;
 	private Match lastMatchAttempt;
 
-	public XMOFModelProcessor(XMOFBasedModel model) {
+	public MappingService(XMOFBasedModel model) {
 		this.model = model;
 		prepareMap();
 		obtainAllowedEObjects();
@@ -107,14 +107,6 @@ public class XMOFModelProcessor {
 		return null;
 	}
 
-	public Match matchMSEOccurence(String name) {
-		lastMatchAttempt = new Match(name);
-		String[] prefixArgs = name.split("_");
-		if (hasCorrectPrefix(prefixArgs)) {
-			tryToFindMatch(prefixArgs[2]);
-		}
-		return lastMatchAttempt;
-	}
 
 	private void tryToFindMatch(String name) {
 		String[] args = name.split(":");
@@ -133,15 +125,15 @@ public class XMOFModelProcessor {
 
 	private void matchNameAndType(String name, String type) {
 		if (!type.isEmpty()) {
-			if (type.endsWith(XMOFModelProcessor.ACTION_SUFFIX)) {
-				if (type.equals(XMOFModelProcessor.CALL_OPERATION)) {
+			if (type.endsWith(MappingService.ACTION_SUFFIX)) {
+				if (type.equals(MappingService.CALL_OPERATION)) {
 					lastMatchAttempt.setType(XMOFType.CALLOPERATION);
 				} else {
 					lastMatchAttempt.setType(XMOFType.ACTIVITYNODE);
 				}
-			} else if (type.endsWith(XMOFModelProcessor.NODE_SUFFIX)) {
+			} else if (type.endsWith(MappingService.NODE_SUFFIX)) {
 				lastMatchAttempt.setType(XMOFType.CONTROLNODE);
-			} else if (type.endsWith(XMOFModelProcessor.EXPANSION_SUFFIX)) {
+			} else if (type.endsWith(MappingService.EXPANSION_SUFFIX)) {
 				lastMatchAttempt.setType(XMOFType.EXPANSIONREGION);
 			}
 			lastMatchAttempt.setXmofElementName(name);
@@ -150,9 +142,9 @@ public class XMOFModelProcessor {
 	}
 
 	private void matchName(String name) {
-		if (name.equals(XMOFModelProcessor.MAIN)) {
+		if (name.equals(MappingService.MAIN)) {
 			lastMatchAttempt.setType(XMOFType.MAIN);
-			lastMatchAttempt.setXmofElementName(XMOFModelProcessor.MAIN);
+			lastMatchAttempt.setXmofElementName(MappingService.MAIN);
 		} else if (getActivityNames().contains(name)) {
 			lastMatchAttempt.setType(XMOFType.ACTITVITY);
 			lastMatchAttempt.setXmofElementName(name);
@@ -161,7 +153,7 @@ public class XMOFModelProcessor {
 
 	private boolean hasCorrectPrefix(String[] args) {
 		if (args.length == 3) {
-			return XMOFModelProcessor.MSE_PREFIX.equals(args[0])
+			return MappingService.MSE_PREFIX.equals(args[0])
 					&& allowedEObjects.contains(args[1]);
 		}
 		return false;
@@ -169,6 +161,16 @@ public class XMOFModelProcessor {
 
 	public XMOFBasedModel getModel() {
 		return model;
+	}
+
+
+	public Match matchDebugEvent(String debugevent) {
+		lastMatchAttempt = new Match(debugevent);
+		String[] prefixArgs = debugevent.split("_");
+		if (hasCorrectPrefix(prefixArgs)) {
+			tryToFindMatch(prefixArgs[2]);
+		}
+		return lastMatchAttempt;
 	}
 
 }

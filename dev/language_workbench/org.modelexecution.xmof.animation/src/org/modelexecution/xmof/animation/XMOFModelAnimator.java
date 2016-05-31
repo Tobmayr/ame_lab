@@ -14,7 +14,7 @@ import org.modelexecution.xmof.animation.controller.GraphitiAnimationController;
 import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
-public class AnimationAddon implements IEngineAddon {
+public class XMOFModelAnimator implements IEngineAddon {
 	private static final boolean USE_GRAPHITI = true;
 	private AnimationController animationController;
 
@@ -90,7 +90,7 @@ public class AnimationAddon implements IEngineAddon {
 	public void logicalStepExecuted(IBasicExecutionEngine engine,
 			LogicalStep logicalStepExecuted) {
 		// TODO Auto-generated method stub
-
+return;
 	}
 
 	@Override

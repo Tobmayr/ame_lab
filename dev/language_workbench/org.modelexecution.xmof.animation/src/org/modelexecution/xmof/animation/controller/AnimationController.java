@@ -7,14 +7,14 @@ import org.eclipse.ui.PlatformUI;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.controller.internal.Match;
-import org.modelexecution.xmof.animation.controller.internal.XMOFModelProcessor;
+import org.modelexecution.xmof.animation.controller.internal.MappingService;
 import org.modelexecution.xmof.animation.decorator.ActivityDiagramDecorator;
 import org.modelexecution.xmof.animation.ui.Activator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public abstract class AnimationController {
 
-	private XMOFModelProcessor modelProcessor;
+	private MappingService modelProcessor;
 	private XMOFBasedModel model;
 	protected Map<String, ActivityDiagramDecorator> diagramDecoratorMap;
 	protected ActivityDiagramDecorator activeDecorator;
@@ -22,14 +22,14 @@ public abstract class AnimationController {
 
 	public AnimationController(XMOFBasedModel model) {
 		this.model = model;
-		modelProcessor = new XMOFModelProcessor(model);
+		modelProcessor = new MappingService(model);
 		diagramDecoratorMap = new HashMap<String, ActivityDiagramDecorator>();
 		activityCallerMap = new HashMap<>();
 	}
 
 	public void processMSEOccurrence(MSEOccurrence mseOccurrence,
 			boolean verbose) {
-		Match match = modelProcessor.matchMSEOccurence(mseOccurrence.getMse()
+		Match match = modelProcessor.matchDebugEvent(mseOccurrence.getMse()
 				.getName());
 		if (verbose) {
 			String info = mseOccurrence.getMse().getName()
@@ -81,11 +81,11 @@ public abstract class AnimationController {
 
 	protected abstract void initializeDecorators();
 
-	public XMOFModelProcessor getModelProcessor() {
+	public MappingService getModelProcessor() {
 		return modelProcessor;
 	}
 
-	public void setModelProcessor(XMOFModelProcessor modelProcessor) {
+	public void setModelProcessor(MappingService modelProcessor) {
 		this.modelProcessor = modelProcessor;
 	}
 

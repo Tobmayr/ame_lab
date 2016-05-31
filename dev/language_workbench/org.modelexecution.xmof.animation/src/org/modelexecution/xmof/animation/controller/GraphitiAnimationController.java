@@ -8,7 +8,7 @@ import org.eclipse.ui.PlatformUI;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.controller.internal.Match;
-import org.modelexecution.xmof.animation.controller.internal.XMOFModelProcessor;
+import org.modelexecution.xmof.animation.controller.internal.MappingService;
 import org.modelexecution.xmof.animation.decorator.ActivityDiagramDecorator;
 import org.modelexecution.xmof.animation.decorator.GraphitiActivityDiagramDecorator;
 import org.modelexecution.xmof.animation.decorator.service.DecorationType;

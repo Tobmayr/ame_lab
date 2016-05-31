@@ -7,7 +7,7 @@ import org.gemoc.executionframework.engine.commons.EngineContextException;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
-import org.modelexecution.xmof.animation.AnimationAddon;
+import org.modelexecution.xmof.animation.XMOFModelAnimator;
 import org.modelexecution.xmof.animation.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.ui.launcher.Launcher;
@@ -34,15 +34,15 @@ public class LauncherAnim extends Launcher {
 			Set<IEngineAddon> addons = xmofEngine
 					.getAddonsTypedBy(IEngineAddon.class);
 			for (IEngineAddon addon : addons) {
-				if (addon instanceof AnimationAddon) {
-					initializeAnimationAddon((AnimationAddon) addon, xmofEngine);
+				if (addon instanceof XMOFModelAnimator) {
+					initializeAnimationAddon((XMOFModelAnimator) addon, xmofEngine);
 				}
 			}
 
 		}
 	}
 
-	private void initializeAnimationAddon(AnimationAddon addon,
+	private void initializeAnimationAddon(XMOFModelAnimator addon,
 			XMOFExecutionEngine xmofEngine) {
 		addon.initialize(xmofEngine.getModel(), xmofEngine.getLoader()
 				.getXMOFModelResource());
