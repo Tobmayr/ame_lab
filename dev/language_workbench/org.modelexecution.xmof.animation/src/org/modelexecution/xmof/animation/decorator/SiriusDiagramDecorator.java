@@ -9,11 +9,11 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.animation.controller.internal.Match;
 import org.modelexecution.xmof.animation.decorator.service.SiriusDecoratorService;
 
-public class SiriusActivityDiagramDecorator extends ActivityDiagramDecorator {
+public class SiriusDiagramDecorator extends DiagramDecorator {
 
 	private Set<String> activityNodes;
 
-	public SiriusActivityDiagramDecorator(Activity activity) {
+	public SiriusDiagramDecorator(Activity activity) {
 		super(activity.getName());
 		intializeActivityNodesSet(activity);
 	}

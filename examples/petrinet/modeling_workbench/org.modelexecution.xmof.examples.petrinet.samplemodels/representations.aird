@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:petrinet_1.0="http://petrinet/1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_Swq9oO9SEeWQio0NoAerxQ" selectedViews="_WMngEO9SEeWQio0NoAerxQ" version="10.1.0.201509162000">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:petrinet="http://petrinet/1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_Swq9oO9SEeWQio0NoAerxQ" selectedViews="_WMngEO9SEeWQio0NoAerxQ" version="10.1.0.201509162000">
   <semanticResources>net1.petrinet</semanticResources>
   <semanticResources>gemoc-gen/execution/execution-20160529_184114/net1.petrinet</semanticResources>
   <semanticResources>platform:/resource/org.modelexecution.xmof.examples.petrinet/model/petrinet.genmodel</semanticResources>
   <semanticResources>platform:/resource/org.modelexecution.xmof.examples.petrinet/model/petrinet.ecore</semanticResources>
   <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160531_134714/net1.petrinet</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160531_134834/net1.petrinet</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WMngEO9SEeWQio0NoAerxQ">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_WQ7_YO9SEeWQio0NoAerxQ" name="petrinet">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_WRYrUO9SEeWQio0NoAerxQ" source="GMF_DIAGRAMS">
@@ -80,50 +82,50 @@
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_8R42oCW7Eea-tZ_b9Ze3eA" source="DANNOTATION_CUSTOMIZATION_KEY">
         <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_8R5dsCW7Eea-tZ_b9Ze3eA"/>
       </ownedAnnotationEntries>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_WQ7_Ye9SEeWQio0NoAerxQ" name="p1&#xA;-1" incomingEdges="_WQ7_cO9SEeWQio0NoAerxQ" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_WQ7_Ye9SEeWQio0NoAerxQ" incomingEdges="_WQ7_cO9SEeWQio0NoAerxQ" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="petrinet:Place" href="net1.petrinet#//@places.0"/>
+        <semanticElements xmi:type="petrinet:Place" href="net1.petrinet#//@places.0"/>
         <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_WQ7_Yu9SEeWQio0NoAerxQ" showIcon="false">
           <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']"/>
-        <target xmi:type="petrinet_1.0:Place" href="net1.petrinet#//@places.0"/>
-        <semanticElements xmi:type="petrinet_1.0:Place" href="net1.petrinet#//@places.0"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_WQ7_Zu9SEeWQio0NoAerxQ" name="p2&#xA;-1" incomingEdges="_WQ7_de9SEeWQio0NoAerxQ" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_WQ7_Zu9SEeWQio0NoAerxQ" incomingEdges="_WQ7_de9SEeWQio0NoAerxQ" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="petrinet:Place" href="net1.petrinet#//@places.1"/>
+        <semanticElements xmi:type="petrinet:Place" href="net1.petrinet#//@places.1"/>
         <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_WQ7_Z-9SEeWQio0NoAerxQ" showIcon="false">
           <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']"/>
-        <target xmi:type="petrinet_1.0:Place" href="net1.petrinet#//@places.1"/>
-        <semanticElements xmi:type="petrinet_1.0:Place" href="net1.petrinet#//@places.1"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_WQ7_a-9SEeWQio0NoAerxQ" name="t" outgoingEdges="_WQ7_cO9SEeWQio0NoAerxQ _WQ7_de9SEeWQio0NoAerxQ" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="petrinet:Transition" href="net1.petrinet#//@transitions.0"/>
+        <semanticElements xmi:type="petrinet:Transition" href="net1.petrinet#//@transitions.0"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_WQ7_bO9SEeWQio0NoAerxQ">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='TransitionNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='TransitionNode']"/>
-        <target xmi:type="petrinet_1.0:Transition" href="net1.petrinet#//@transitions.0"/>
-        <semanticElements xmi:type="petrinet_1.0:Transition" href="net1.petrinet#//@transitions.0"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_WQ7_cO9SEeWQio0NoAerxQ" sourceNode="_WQ7_a-9SEeWQio0NoAerxQ" targetNode="_WQ7_Ye9SEeWQio0NoAerxQ">
+        <target xmi:type="petrinet:Transition" href="net1.petrinet#//@transitions.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_WQ7_ce9SEeWQio0NoAerxQ" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@edgeMappings[name='IncomingEdge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_WQ7_c-9SEeWQio0NoAerxQ"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@edgeMappings[name='IncomingEdge']"/>
-        <target xmi:type="petrinet_1.0:Transition" href="net1.petrinet#//@transitions.0"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_WQ7_de9SEeWQio0NoAerxQ" sourceNode="_WQ7_a-9SEeWQio0NoAerxQ" targetNode="_WQ7_Zu9SEeWQio0NoAerxQ">
+        <target xmi:type="petrinet:Transition" href="net1.petrinet#//@transitions.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_WQ7_du9SEeWQio0NoAerxQ" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@edgeMappings[name='OutgoingEdge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_WQ7_eO9SEeWQio0NoAerxQ"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@edgeMappings[name='OutgoingEdge']"/>
-        <target xmi:type="petrinet_1.0:Transition" href="net1.petrinet#//@transitions.0"/>
       </ownedDiagramElements>
       <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']"/>
       <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_WQ7_eu9SEeWQio0NoAerxQ"/>
       <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer"/>
-      <target xmi:type="petrinet_1.0:Net" href="net1.petrinet#/"/>
+      <target xmi:type="petrinet:Net" href="net1.petrinet#/"/>
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']"/>
   </ownedViews>

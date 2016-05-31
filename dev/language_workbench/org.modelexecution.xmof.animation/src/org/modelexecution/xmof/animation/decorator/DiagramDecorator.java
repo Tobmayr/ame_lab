@@ -2,11 +2,11 @@ package org.modelexecution.xmof.animation.decorator;
 
 import org.modelexecution.xmof.animation.controller.internal.Match;
 
-public abstract class ActivityDiagramDecorator {
+public abstract class DiagramDecorator {
 	private boolean activityFinished = false;
 	private String activityName;
 
-	public ActivityDiagramDecorator(String activityName) {
+	public DiagramDecorator(String activityName) {
 		this.activityName = activityName;
 	}
 
