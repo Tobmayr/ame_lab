@@ -1,5 +1,7 @@
 package org.modelexecution.xmof.animation.handler;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,6 +10,8 @@ import javax.inject.Inject;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.ui.business.api.dialect.DialectEditor;
@@ -23,6 +27,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
+import org.gemoc.executionframework.engine.core.CommandExecution;
 import org.gemoc.executionframework.extensions.sirius.modelloader.DebugPermissionProvider;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 
@@ -78,34 +83,48 @@ public class SiriusDiagramHandler implements DiagramHandler {
 		}
 	}
 
-
-
 	@Override
 	public void openOrShowDiagram(Activity activity) {
-		String key= activity.getName().toUpperCase();
-		if (diagramEditorMap.containsKey(key)){
+		String key = activity.getName().toUpperCase();
+		if (diagramEditorMap.containsKey(key)) {
 			activateDiagramEditor(key);
-		}else{
+		} else {
 			openDiagramEditor(key);
 		}
 	}
 
+	public void refreshDiagram(String diagramKey) {
+		String key = diagramKey.trim().toUpperCase();
+		final Session session = SessionManager.INSTANCE.getExistingSession(airdURI);
+		if (session == null || !diagramEditorMap.containsKey(key))
+			return;
+		DialectEditor editor = (DialectEditor) diagramEditorMap.get(key);
+
+		Collection<DRepresentation> representations = Arrays.asList(editor.getRepresentation());
+		TransactionalEditingDomain editingDomain = session.getTransactionalEditingDomain();
+
+		final RefreshRepresentationsCommand refresh = new RefreshRepresentationsCommand(editingDomain,
+				new NullProgressMonitor(), representations);
+		CommandExecution.execute(editingDomain, refresh);
+
+	}
+
 	private void openDiagramEditor(String key) {
 		Session siriusSession = SessionManager.INSTANCE.getExistingSession(airdURI);
-		if (siriusSession==null){
-			siriusSession=SessionManager.INSTANCE.getSession(airdURI, new NullProgressMonitor());
+		if (siriusSession == null) {
+			siriusSession = SessionManager.INSTANCE.getSession(airdURI, new NullProgressMonitor());
 		}
 		DAnalysis root = (DAnalysis) siriusSession.getSessionResource().getContents().get(0);
 		DView dView = root.getOwnedViews().get(0);
-		for (DRepresentation representation:dView.getOwnedRepresentations()){
-			if (representation.getName().toUpperCase().contains(key)){
+		for (DRepresentation representation : dView.getOwnedRepresentations()) {
+			if (representation.getName().toUpperCase().contains(key)) {
 				IEditorPart editor = DialectUIManager.INSTANCE.openEditor(siriusSession, representation,
 						new NullProgressMonitor());
 				diagramEditorMap.put(key, editor);
 				return;
 			}
 		}
-		
+
 	}
 
 	private void activateDiagramEditor(String key) {
@@ -120,9 +139,7 @@ public class SiriusDiagramHandler implements DiagramHandler {
 
 			}
 		});
-		
-	}
 
-	
+	}
 
 }
