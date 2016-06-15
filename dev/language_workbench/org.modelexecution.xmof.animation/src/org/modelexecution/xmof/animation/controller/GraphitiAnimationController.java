@@ -18,15 +18,15 @@ import org.modelexecution.xmof.animation.ui.Activator;
 
 public class GraphitiAnimationController extends AnimationController {
 
-	private GraphitiDiagramHandler diagramHandler;
+
 
 
 	public GraphitiAnimationController(XMOFBasedModel model,
 			Resource modelResource) {
-		super(model);
-		diagramHandler = new GraphitiDiagramHandler(modelResource);
+		super(model,new GraphitiDiagramHandler(modelResource));
+		
 	
-		PlatformUI.getWorkbench().getDisplay().asyncExec(diagramHandler);
+		PlatformUI.getWorkbench().getDisplay().asyncExec((GraphitiDiagramHandler)diagramHandler);
 
 	}
 
@@ -36,7 +36,7 @@ public class GraphitiAnimationController extends AnimationController {
 		for (String activityName : getModelProcessor().getActivityNames()) {
 			diagramDecoratorMap.put(activityName,
 					new GraphitiDiagramDecorator(activityName,
-							diagramHandler.getKernelEditor()));
+							((GraphitiDiagramHandler)diagramHandler).getKernelEditor()));
 		}
 	}
 
@@ -48,14 +48,6 @@ public class GraphitiAnimationController extends AnimationController {
 			}
 
 		});
-	}
-
-	public GraphitiDiagramHandler getDiagramHandler() {
-		return diagramHandler;
-	}
-
-	public void setDiagramHandler(GraphitiDiagramHandler diagramHandler) {
-		this.diagramHandler = diagramHandler;
 	}
 
 
