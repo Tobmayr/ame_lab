@@ -29,6 +29,7 @@ public class GraphitiDiagramHandler implements DiagramHandler,Runnable {
 		activeEditor.showDiagram(activity);
 	}
 
+
 	private boolean openModel(){
 		IEditorInput editorInput= getEditorInput();
 		

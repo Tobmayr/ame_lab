@@ -2,14 +2,17 @@ package org.modelexecution.xmof.animation.controller;
 
 import java.util.HashMap;
 
+import org.eclipse.emf.common.util.URI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.decorator.SiriusDiagramDecorator;
+import org.modelexecution.xmof.animation.handler.SiriusDiagramHandler;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class SiriusAnimationController extends AnimationController {
 
-	public SiriusAnimationController(XMOFBasedModel model) {
-		super(model);
+	public SiriusAnimationController(XMOFBasedModel model,URI airdURI) {
+	
+		super(model,new SiriusDiagramHandler(airdURI));
 	}
 
 	@Override
@@ -24,7 +27,7 @@ public class SiriusAnimationController extends AnimationController {
 
 	@Override
 	protected void openOrCreateAcitvityDiagram(Activity activity) {
-		
+		diagramHandler.openOrShowDiagram(activity);
 		
 	}
 

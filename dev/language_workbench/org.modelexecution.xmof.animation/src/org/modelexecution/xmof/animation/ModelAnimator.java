@@ -3,6 +3,7 @@ package org.modelexecution.xmof.animation;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.gemoc.executionframework.engine.mse.LogicalStep;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
@@ -23,7 +24,9 @@ public class ModelAnimator implements IEngineAddon {
 			animationController = new GraphitiAnimationController(model,
 					resource);
 		} else {
-			animationController = new SiriusAnimationController(model);
+			URI airdURI = URI.createURI(
+					"platform:/resource/org.modelexecution.xmof.examples.petrinet.xmof.sirius/representations.aird");
+			animationController = new SiriusAnimationController(model,airdURI);
 		}
 
 	}

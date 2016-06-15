@@ -9,6 +9,7 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.animation.controller.internal.Match;
 import org.modelexecution.xmof.animation.controller.internal.MappingService;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
+import org.modelexecution.xmof.animation.handler.DiagramHandler;
 import org.modelexecution.xmof.animation.ui.Activator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
@@ -19,12 +20,14 @@ public abstract class AnimationController {
 	protected Map<String, DiagramDecorator> diagramDecoratorMap;
 	protected DiagramDecorator activeDecorator;
 	protected Map<String, String> activityCallerMap;
+	protected DiagramHandler diagramHandler;
 
-	public AnimationController(XMOFBasedModel model) {
+	public AnimationController(XMOFBasedModel model, DiagramHandler concreteHandler) {
 		this.model = model;
 		modelProcessor = new MappingService(model);
 		diagramDecoratorMap = new HashMap<String, DiagramDecorator>();
 		activityCallerMap = new HashMap<>();
+		this.diagramHandler=concreteHandler;
 	}
 
 	public void processMSEOccurrence(MSEOccurrence mseOccurrence,
@@ -138,4 +141,6 @@ public abstract class AnimationController {
 		});
 
 	}
+	
+	
 }
