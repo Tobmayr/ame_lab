@@ -41,6 +41,8 @@ public class MappingService {
 	public Activity getActivityByName(String name) {
 		return activityMap.get(name);
 	}
+	
+
 
 	private void obtainAllowedEObjects() {
 		allowedEObjects = new HashSet<>();

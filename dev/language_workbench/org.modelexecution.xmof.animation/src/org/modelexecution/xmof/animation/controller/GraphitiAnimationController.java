@@ -50,5 +50,13 @@ public class GraphitiAnimationController extends AnimationController {
 		});
 	}
 
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
 
 }
