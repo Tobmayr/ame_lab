@@ -31,7 +31,7 @@ import org.gemoc.executionframework.engine.core.CommandExecution;
 import org.gemoc.executionframework.extensions.sirius.modelloader.DebugPermissionProvider;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 
-public class SiriusDiagramHandler implements DiagramHandler {
+public class SiriusDiagramHandler extends DiagramHandler {
 
 	private Map<String, IEditorPart> diagramEditorMap = new HashMap<>();
 	private URI airdURI;

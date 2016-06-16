@@ -7,6 +7,9 @@
   <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
   <semanticResources>gemoc-gen/execution/execution-20160531_134714/net1.petrinet</semanticResources>
   <semanticResources>gemoc-gen/execution/execution-20160531_134834/net1.petrinet</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160614_142934/net1.petrinet</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160614_143111/net1.petrinet</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160614_143634/net1.petrinet</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WMngEO9SEeWQio0NoAerxQ">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_WQ7_YO9SEeWQio0NoAerxQ" name="petrinet">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_WRYrUO9SEeWQio0NoAerxQ" source="GMF_DIAGRAMS">

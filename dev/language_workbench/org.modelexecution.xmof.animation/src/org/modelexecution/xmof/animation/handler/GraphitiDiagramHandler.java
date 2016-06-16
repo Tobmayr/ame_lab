@@ -13,7 +13,7 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 
 
-public class GraphitiDiagramHandler implements DiagramHandler,Runnable {
+public class GraphitiDiagramHandler extends DiagramHandler implements Runnable {
 
 	private static final String KERNEL_EDITOR_ID="org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditorID";
 	
