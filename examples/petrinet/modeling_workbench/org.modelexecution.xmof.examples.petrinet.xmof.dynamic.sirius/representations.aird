@@ -1,0 +1,1312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:fUML.Syntax.Actions.BasicActions="http://www.modelexecution.org/xmof/syntax/actions/basicactions" xmlns:fUML.Syntax.Actions.IntermediateActions="http://www.modelexecution.org/xmof/syntax/actions/intermediateactions" xmlns:fUML.Syntax.Activities.ExtraStructuredActivities="http://www.modelexecution.org/xmof/syntax/activities/extrastructuredactivities" xmlns:fUML.Syntax.Activities.IntermediateActivities="http://www.modelexecution.org/xmof/syntax/activities/intermediateactivities" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_riB0gDNYEeaUx41ZKAgLmg" selectedViews="_uvLF8DNYEeaUx41ZKAgLmg" version="10.1.0.201509162000">
+  <semanticResources>petrinet.xmof</semanticResources>
+  <semanticResources>http://petrinet/1.0</semanticResources>
+  <semanticResources>pathmap://XMOF_LIBRARY/xmof_library.xmof</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_uvLF8DNYEeaUx41ZKAgLmg">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_uvbkoDNYEeaUx41ZKAgLmg" name="main">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uvbkoTNYEeaUx41ZKAgLmg" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_uvbkojNYEeaUx41ZKAgLmg"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uvhEMDNYEeaUx41ZKAgLmg" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_uvhEMTNYEeaUx41ZKAgLmg" type="Sirius" element="_uvbkoDNYEeaUx41ZKAgLmg" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_uvkukDNYEeaUx41ZKAgLmg" type="2002" element="_uvbkozNYEeaUx41ZKAgLmg">
+            <children xmi:type="notation:Node" xmi:id="_uvnx4DNYEeaUx41ZKAgLmg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_uvoY8DNYEeaUx41ZKAgLmg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_-LPyYDNYEeaUx41ZKAgLmg" type="3007" element="_-LK54DNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_-LRAgDNYEeaUx41ZKAgLmg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_-LRAgTNYEeaUx41ZKAgLmg" x="-12" y="33"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_9eaFEDNZEeaUx41ZKAgLmg" type="3005" element="_9eNQwDNZEeaUx41ZKAgLmg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_9eaFETNZEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9eaFEjNZEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_-LPyYTNYEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-LPyYjNYEeaUx41ZKAgLmg" x="38" y="76" width="32" height="32"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_-LSOoDNYEeaUx41ZKAgLmg" type="3007" element="_-LMIADNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_-LS1sDNYEeaUx41ZKAgLmg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_-LS1sTNYEeaUx41ZKAgLmg" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_KdVZoDNaEeaUx41ZKAgLmg" type="3003" element="_KdRvQDNaEeaUx41ZKAgLmg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_KdVZoTNaEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KdVZojNaEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_-LSOoTNYEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-LSOojNYEeaUx41ZKAgLmg" x="350" y="77" width="10" height="30"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_IcOgsDNeEeaUx41ZKAgLmg" type="3008" element="_Ib5wkDNeEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_IcOgszNeEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_IcPHwDNeEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_IcPHwTNeEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_IcPHwjNeEeaUx41ZKAgLmg"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_IcPu0DNeEeaUx41ZKAgLmg" type="3012" element="_IcLdYDNeEeaUx41ZKAgLmg">
+                  <children xmi:type="notation:Node" xmi:id="_IcPu0zNeEeaUx41ZKAgLmg" type="5010">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_IcPu1DNeEeaUx41ZKAgLmg" x="-1"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_IcQV4DNeEeaUx41ZKAgLmg" type="3003" element="_IcLdYTNeEeaUx41ZKAgLmg">
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_IcQV4TNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcQV4jNeEeaUx41ZKAgLmg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_IcPu0TNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcPu0jNeEeaUx41ZKAgLmg" x="-12" width="20" height="20"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_IcOgsTNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcOgsjNeEeaUx41ZKAgLmg" x="182" y="198"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_IcPHwzNeEeaUx41ZKAgLmg" type="3008" element="_Ib6-sDNeEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_IcPHxjNeEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_IcPHxzNeEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_IcPHyDNeEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_IcPHyTNeEeaUx41ZKAgLmg"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_IcQV4zNeEeaUx41ZKAgLmg" type="3012" element="_IcMEcDNeEeaUx41ZKAgLmg">
+                  <children xmi:type="notation:Node" xmi:id="_IcQV5jNeEeaUx41ZKAgLmg" type="5010">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_IcQV5zNeEeaUx41ZKAgLmg" x="-1"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_IcQV6DNeEeaUx41ZKAgLmg" type="3003" element="_IcMEcTNeEeaUx41ZKAgLmg">
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_IcQV6TNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcQV6jNeEeaUx41ZKAgLmg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_IcQV5DNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcQV5TNeEeaUx41ZKAgLmg" x="-12" width="20" height="20"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_IcPHxDNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcPHxTNeEeaUx41ZKAgLmg" x="134" y="46"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_IcPHyjNeEeaUx41ZKAgLmg" type="3008" element="_IcDhkTNeEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_IcPHzTNeEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_IcPHzjNeEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_IcPHzzNeEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_IcPH0DNeEeaUx41ZKAgLmg"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_IcQV6zNeEeaUx41ZKAgLmg" type="3012" element="_IcMEcjNeEeaUx41ZKAgLmg">
+                  <children xmi:type="notation:Node" xmi:id="_IcQV7jNeEeaUx41ZKAgLmg" type="5010">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_IcQV7zNeEeaUx41ZKAgLmg" x="-1"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_IcRkADNeEeaUx41ZKAgLmg" type="3003" element="_IcMEczNeEeaUx41ZKAgLmg">
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_IcRkATNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcRkAjNeEeaUx41ZKAgLmg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_IcQV7DNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcQV7TNeEeaUx41ZKAgLmg" x="-12" width="20" height="20"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_IcQ88DNeEeaUx41ZKAgLmg" type="3012" element="_IcMrgDNeEeaUx41ZKAgLmg">
+                  <children xmi:type="notation:Node" xmi:id="_IcQ88zNeEeaUx41ZKAgLmg" type="5010">
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_IcQ89DNeEeaUx41ZKAgLmg" x="-1"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_IcRkAzNeEeaUx41ZKAgLmg" type="3003" element="_IcMrgTNeEeaUx41ZKAgLmg">
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_IcRkBDNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcRkBTNeEeaUx41ZKAgLmg"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_IcQ88TNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcQ88jNeEeaUx41ZKAgLmg" x="-12" y="21" width="20" height="20"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_IcPHyzNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IcPHzDNeEeaUx41ZKAgLmg" x="386" y="46"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_OBijYDNeEeaUx41ZKAgLmg" type="3008" element="_OBgHIDNeEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_OBijYzNeEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_OBijZDNeEeaUx41ZKAgLmg" type="7002">
+                  <children xmi:type="notation:Node" xmi:id="_aNBBwDNeEeaUx41ZKAgLmg" visible="false" type="3008" element="_aMdoIDNeEeaUx41ZKAgLmg">
+                    <children xmi:type="notation:Node" xmi:id="_aNBo0DNeEeaUx41ZKAgLmg" type="5005"/>
+                    <children xmi:type="notation:Node" xmi:id="_aNBo0TNeEeaUx41ZKAgLmg" type="7002">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_aNBo0jNeEeaUx41ZKAgLmg"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_aNBo0zNeEeaUx41ZKAgLmg"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_aNCP5TNeEeaUx41ZKAgLmg" visible="false" type="3012" element="_aM2psDNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_aNC28DNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aNC28TNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_aNDeBDNeEeaUx41ZKAgLmg" type="3003" element="_aM2psTNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_aNDeBTNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNDeBjNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_aNCP5jNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNCP5zNeEeaUx41ZKAgLmg" x="-12" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_aNC28jNeEeaUx41ZKAgLmg" visible="false" type="3012" element="_aM2psjNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_aNC29TNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aNC29jNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_aNDeBzNeEeaUx41ZKAgLmg" type="3003" element="_aM2pszNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_aNDeCDNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNDeCTNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_aNC28zNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNC29DNeEeaUx41ZKAgLmg" x="-12" y="45" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_aNC29zNeEeaUx41ZKAgLmg" visible="false" type="3012" element="_aM2ptDNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_aNDeAjNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aNDeAzNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_aNDeCjNeEeaUx41ZKAgLmg" type="3003" element="_aM2ptTNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_aNDeCzNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNDeDDNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_aNDeADNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNDeATNeEeaUx41ZKAgLmg" x="140" y="21" width="20" height="20"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_aNBBwTNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNBBwjNeEeaUx41ZKAgLmg" x="31" y="29"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_aNBo1DNeEeaUx41ZKAgLmg" visible="false" type="3008" element="_aMqccDNeEeaUx41ZKAgLmg">
+                    <children xmi:type="notation:Node" xmi:id="_aNBo1zNeEeaUx41ZKAgLmg" type="5005"/>
+                    <children xmi:type="notation:Node" xmi:id="_aNBo2DNeEeaUx41ZKAgLmg" type="7002">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_aNBo2TNeEeaUx41ZKAgLmg"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_aNBo2jNeEeaUx41ZKAgLmg"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_aNDeDTNeEeaUx41ZKAgLmg" visible="false" type="3012" element="_aM3QwDNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_aNDeEDNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aNDeETNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_aNEFFTNeEeaUx41ZKAgLmg" type="3003" element="_aM3QwTNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_aNEFFjNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNEFFzNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_aNDeDjNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNDeDzNeEeaUx41ZKAgLmg" x="-12" y="21" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_aNEFEDNeEeaUx41ZKAgLmg" visible="false" type="3012" element="_aM3QwjNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_aNEFEzNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_aNEFFDNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_aNEsIDNeEeaUx41ZKAgLmg" type="3003" element="_aM3QwzNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_aNEsITNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNEsIjNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_aNEFETNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNEFEjNeEeaUx41ZKAgLmg" x="140" y="21" width="20" height="20"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_aNBo1TNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNBo1jNeEeaUx41ZKAgLmg" x="211" y="29"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_aNCP4DNeEeaUx41ZKAgLmg" visible="false" type="3007" element="_aM3QxDNeEeaUx41ZKAgLmg">
+                    <children xmi:type="notation:Node" xmi:id="_aNCP4zNeEeaUx41ZKAgLmg" visible="false" type="5003">
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_aNCP5DNeEeaUx41ZKAgLmg" x="-1"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_aNEsIzNeEeaUx41ZKAgLmg" type="3003" element="_aM8wUDNeEeaUx41ZKAgLmg">
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_aNEsJDNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNEsJTNeEeaUx41ZKAgLmg"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_aNCP4TNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNCP4jNeEeaUx41ZKAgLmg" x="415" y="26" width="10" height="30"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_eMM0IDNeEeaUx41ZKAgLmg" type="3007" element="_eMJw0DNeEeaUx41ZKAgLmg">
+                    <children xmi:type="notation:Node" xmi:id="_eMNbMDNeEeaUx41ZKAgLmg" visible="false" type="5003">
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_eMNbMTNeEeaUx41ZKAgLmg" x="-1"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_eMNbMjNeEeaUx41ZKAgLmg" type="3003" element="_eMKX4DNeEeaUx41ZKAgLmg">
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_eMNbMzNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eMNbNDNeEeaUx41ZKAgLmg"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_eMM0ITNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eMM0IjNeEeaUx41ZKAgLmg" x="103" y="85" width="10" height="30"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_fDCVgDNeEeaUx41ZKAgLmg" type="3008" element="_fCuMcDNeEeaUx41ZKAgLmg">
+                    <children xmi:type="notation:Node" xmi:id="_fDC8kDNeEeaUx41ZKAgLmg" type="5005"/>
+                    <children xmi:type="notation:Node" xmi:id="_fDC8kTNeEeaUx41ZKAgLmg" type="7002">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_fDC8kjNeEeaUx41ZKAgLmg"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_fDC8kzNeEeaUx41ZKAgLmg"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fDC8mzNeEeaUx41ZKAgLmg" visible="false" type="3012" element="_fC-rIDNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_fDC8njNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_fDC8nzNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fDDjqjNeEeaUx41ZKAgLmg" type="3003" element="_fC-rITNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_fDDjqzNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDDjrDNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_fDC8nDNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDC8nTNeEeaUx41ZKAgLmg" x="-12" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fDDjoDNeEeaUx41ZKAgLmg" visible="false" type="3012" element="_fC-rIjNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_fDDjozNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_fDDjpDNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fDDjrTNeEeaUx41ZKAgLmg" type="3003" element="_fC-rIzNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_fDDjrjNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDDjrzNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_fDDjoTNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDDjojNeEeaUx41ZKAgLmg" x="-12" y="21" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fDDjpTNeEeaUx41ZKAgLmg" visible="false" type="3012" element="_fC-rJDNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_fDDjqDNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_fDDjqTNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fDEKsDNeEeaUx41ZKAgLmg" type="3003" element="_fC_SMDNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_fDEKsTNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDEKsjNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_fDDjpjNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDDjpzNeEeaUx41ZKAgLmg" x="-12" y="42" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_hsTd0DNeEeaUx41ZKAgLmg" type="3012" element="_hsPMYDNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_hsTd0zNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_hsTd1DNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_hsUr8TNeEeaUx41ZKAgLmg" type="3003" element="_hsPMYTNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_hsUr8jNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hsUr8zNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_hsTd0TNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hsTd0jNeEeaUx41ZKAgLmg" x="-12" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_hsUE4DNeEeaUx41ZKAgLmg" type="3012" element="_hsPzcDNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_hsUE4zNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_hsUE5DNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_hsUr9DNeEeaUx41ZKAgLmg" type="3003" element="_hsPzcTNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_hsUr9TNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hsUr9jNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_hsUE4TNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hsUE4jNeEeaUx41ZKAgLmg" x="-12" y="21" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_hsUE5TNeEeaUx41ZKAgLmg" type="3012" element="_hsPzcjNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_hsUE6DNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_hsUr8DNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_hsUr9zNeEeaUx41ZKAgLmg" type="3003" element="_hsPzczNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_hsUr-DNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hsUr-TNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_hsUE5jNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hsUE5zNeEeaUx41ZKAgLmg" x="-12" y="42" width="20" height="20"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_fDCVgTNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDCVgjNeEeaUx41ZKAgLmg" x="235" y="100"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_fDC8lDNeEeaUx41ZKAgLmg" type="3008" element="_fC3WYDNeEeaUx41ZKAgLmg">
+                    <children xmi:type="notation:Node" xmi:id="_fDC8lzNeEeaUx41ZKAgLmg" type="5005"/>
+                    <children xmi:type="notation:Node" xmi:id="_fDC8mDNeEeaUx41ZKAgLmg" type="7002">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_fDC8mTNeEeaUx41ZKAgLmg"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_fDC8mjNeEeaUx41ZKAgLmg"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fDEKszNeEeaUx41ZKAgLmg" visible="false" type="3012" element="_fC_SMTNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_fDEKtjNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_fDEKtzNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fDEKvTNeEeaUx41ZKAgLmg" type="3003" element="_fC_SMjNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_fDEKvjNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDEKvzNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_fDEKtDNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDEKtTNeEeaUx41ZKAgLmg" x="-12" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_fDEKuDNeEeaUx41ZKAgLmg" visible="false" type="3012" element="_fC_SMzNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_fDEKuzNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_fDEKvDNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_fDExwDNeEeaUx41ZKAgLmg" type="3003" element="_fC_SNDNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_fDExwTNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDExwjNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_fDEKuTNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDEKujNeEeaUx41ZKAgLmg" x="-12" y="21" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_hsVTADNeEeaUx41ZKAgLmg" type="3012" element="_hsPzdDNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_hsVTAzNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_hsVTBDNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_hsVTCjNeEeaUx41ZKAgLmg" type="3003" element="_hsPzdTNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_hsVTCzNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hsVTDDNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_hsVTATNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hsVTAjNeEeaUx41ZKAgLmg" x="-12" width="20" height="20"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_hsVTBTNeEeaUx41ZKAgLmg" type="3012" element="_hsPzdjNeEeaUx41ZKAgLmg">
+                      <children xmi:type="notation:Node" xmi:id="_hsVTCDNeEeaUx41ZKAgLmg" type="5010">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_hsVTCTNeEeaUx41ZKAgLmg" x="-1"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_hsV6EDNeEeaUx41ZKAgLmg" type="3003" element="_hsQagDNeEeaUx41ZKAgLmg">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_hsV6ETNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hsV6EjNeEeaUx41ZKAgLmg"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_hsVTBjNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hsVTBzNeEeaUx41ZKAgLmg" x="-12" y="21" width="20" height="20"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_fDC8lTNeEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fDC8ljNeEeaUx41ZKAgLmg" x="247" y="21"/>
+                  </children>
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_OBijZTNeEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_OBijZjNeEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_OBijYTNeEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OBijYjNeEeaUx41ZKAgLmg" x="475" y="151" width="495" height="215"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_fbIP8DNfEeaUx41ZKAgLmg" type="3007" element="_fbFzsDNfEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_fbI3ADNfEeaUx41ZKAgLmg" visible="false" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_fbI3ATNfEeaUx41ZKAgLmg" x="-1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_fbKsMDNfEeaUx41ZKAgLmg" type="3005" element="_fbFzsTNfEeaUx41ZKAgLmg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_fbKsMTNfEeaUx41ZKAgLmg" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fbKsMjNfEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_fbIP8TNfEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fbIP8jNfEeaUx41ZKAgLmg" x="463" y="210" width="20" height="70"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_uvoY8TNYEeaUx41ZKAgLmg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_uvoY8jNYEeaUx41ZKAgLmg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_uvkukTNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uvkukjNYEeaUx41ZKAgLmg" x="180" y="96" width="1023" height="423"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_uvhEMjNYEeaUx41ZKAgLmg"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uvbkozNYEeaUx41ZKAgLmg" name="main">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//NetConfiguration/main.1"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//NetConfiguration/main.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uvbkpDNYEeaUx41ZKAgLmg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="114,73,110" backgroundStyle="Liquid" foregroundColor="245,239,244">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-LK54DNYEeaUx41ZKAgLmg" name="initialNode" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:InitialNode" href="petrinet.xmof#//NetConfiguration/main.1/initialNode"/>
+          <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:InitialNode" href="petrinet.xmof#//NetConfiguration/main.1/initialNode"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_9eNQwDNZEeaUx41ZKAgLmg" showIcon="false" hideLabelByDefault="true" workspacePath="/org.modelexecution.xmof.representation.sirius.design/images/InitNode.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']/@conditionnalStyles.0/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-LMIADNYEeaUx41ZKAgLmg" width="1" height="3" resizeKind="NSEW">
+          <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" href="petrinet.xmof#//NetConfiguration/main.1/f1"/>
+          <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" href="petrinet.xmof#//NetConfiguration/main.1/f1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_KdRvQDNaEeaUx41ZKAgLmg" showIcon="false" borderColor="39,76,114" hideLabelByDefault="true" width="1" height="3" color="114,159,207">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']/@conditionnalStyles.1/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_Ib5wkDNeEeaUx41ZKAgLmg" name="Call run">
+          <target xmi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" href="petrinet.xmof#//NetConfiguration/main.1/Call%20run"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" href="petrinet.xmof#//NetConfiguration/main.1/Call%20run"/>
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_IcLdYDNeEeaUx41ZKAgLmg" width="2" height="2" resizeKind="NSEW">
+            <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Call%20run/target"/>
+            <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Call%20run/target"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_IcLdYTNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+              <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_InputPin']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_InputPin']"/>
+          </ownedBorderedNodes>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Ib5wkTNeEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="214,197,66" backgroundStyle="Liquid" foregroundColor="255,245,181">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@conditionnalStyles.0/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_Ib6-sDNeEeaUx41ZKAgLmg" name="Read self">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//NetConfiguration/main.1/Read%20self"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//NetConfiguration/main.1/Read%20self"/>
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_IcMEcDNeEeaUx41ZKAgLmg" width="2" height="2" resizeKind="NSEW">
+            <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Read%20self/result"/>
+            <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Read%20self/result"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_IcMEcTNeEeaUx41ZKAgLmg" showIcon="false" borderColor="69,69,69" color="69,69,69">
+              <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']"/>
+          </ownedBorderedNodes>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_IcDhkDNeEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_IcDhkTNeEeaUx41ZKAgLmg" name="Read places">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//NetConfiguration/main.1/Read%20places"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//NetConfiguration/main.1/Read%20places"/>
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_IcMEcjNeEeaUx41ZKAgLmg" width="2" height="2" resizeKind="NSEW">
+            <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Read%20places/object"/>
+            <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Read%20places/object"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_IcMEczNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+              <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_InputPin']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_InputPin']"/>
+          </ownedBorderedNodes>
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_IcMrgDNeEeaUx41ZKAgLmg" width="2" height="2" resizeKind="NSEW">
+            <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Read%20places/result"/>
+            <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Read%20places/result"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_IcMrgTNeEeaUx41ZKAgLmg" showIcon="false" borderColor="69,69,69" color="69,69,69">
+              <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']"/>
+          </ownedBorderedNodes>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_IcK2UDNeEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_OBgHIDNeEeaUx41ZKAgLmg" name="Expansion Region">
+          <target xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region"/>
+          <semanticElements xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Q4MAYDNeEeaUx41ZKAgLmg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="224,133,3" backgroundStyle="Liquid" foregroundColor="214,197,66">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_aMdoIDNeEeaUx41ZKAgLmg" name="Set tokens" visible="false">
+            <target xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens"/>
+            <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens"/>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_aM2psDNeEeaUx41ZKAgLmg" visible="false" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/object"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/object"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_aM2psTNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_InputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_InputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_aM2psjNeEeaUx41ZKAgLmg" visible="false" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/value"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/value"/>
+              <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+              <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+              <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_aM2pszNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_InputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_InputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_aM2ptDNeEeaUx41ZKAgLmg" visible="false" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/result"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/result"/>
+              <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+              <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+              <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_aM2ptTNeEeaUx41ZKAgLmg" showIcon="false" borderColor="69,69,69" color="69,69,69">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']"/>
+            </ownedBorderedNodes>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_aMp1YDNeEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_aMqccDNeEeaUx41ZKAgLmg" name="Read initialTokens" visible="false">
+            <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens"/>
+            <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens"/>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_aM3QwDNeEeaUx41ZKAgLmg" visible="false" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/object"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/object"/>
+              <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+              <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+              <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_aM3QwTNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_InputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_InputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_aM3QwjNeEeaUx41ZKAgLmg" visible="false" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/result"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/result"/>
+              <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+              <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+              <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_aM3QwzNeEeaUx41ZKAgLmg" showIcon="false" borderColor="69,69,69" color="69,69,69">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']"/>
+            </ownedBorderedNodes>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_aM2CoDNeEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_ExecutableNode']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_aM3QxDNeEeaUx41ZKAgLmg" visible="false" width="1" height="3" resizeKind="NSEW">
+            <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/f2"/>
+            <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/f2"/>
+            <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_aM9-cDNeEeaUx41ZKAgLmg"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_aM8wUDNeEeaUx41ZKAgLmg" showIcon="false" borderColor="39,76,114" hideLabelByDefault="true" width="1" height="3" color="114,159,207">
+              <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subNodeMappings[name='AD_ControlNode']/@conditionnalStyles.1/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subNodeMappings[name='AD_ControlNode']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_eMJw0DNeEeaUx41ZKAgLmg" width="1" height="3" resizeKind="NSEW">
+            <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/f2"/>
+            <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/f2"/>
+            <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_eMKX4TNeEeaUx41ZKAgLmg"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_eMKX4DNeEeaUx41ZKAgLmg" showIcon="false" borderColor="39,76,114" hideLabelByDefault="true" width="1" height="3" color="114,159,207">
+              <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subNodeMappings[name='AD_NestedControlNode']/@conditionnalStyles.1/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subNodeMappings[name='AD_NestedControlNode']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_fCuMcDNeEeaUx41ZKAgLmg" name="Set tokens">
+            <target xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens"/>
+            <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens"/>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_fC-rIDNeEeaUx41ZKAgLmg" visible="false" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/object"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/object"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_fC-rITNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_InputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_InputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_fC-rIjNeEeaUx41ZKAgLmg" visible="false" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/value"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/value"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_fC-rIzNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_InputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_InputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_fC-rJDNeEeaUx41ZKAgLmg" visible="false" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/result"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/result"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_fC_SMDNeEeaUx41ZKAgLmg" showIcon="false" borderColor="69,69,69" color="69,69,69">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_hsPMYDNeEeaUx41ZKAgLmg" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/object"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/object"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_hsPMYTNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_NestedInputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_NestedInputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_hsPzcDNeEeaUx41ZKAgLmg" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/value"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/value"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_hsPzcTNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_NestedInputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_NestedInputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_hsPzcjNeEeaUx41ZKAgLmg" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/result"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Set%20tokens/result"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_hsPzczNeEeaUx41ZKAgLmg" showIcon="false" borderColor="69,69,69" color="69,69,69">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_NestedOutputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_NestedOutputPin']"/>
+            </ownedBorderedNodes>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fC2vUDNeEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_fC3WYDNeEeaUx41ZKAgLmg" name="Read initialTokens">
+            <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens"/>
+            <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens"/>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_fC_SMTNeEeaUx41ZKAgLmg" visible="false" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/object"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/object"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_fC_SMjNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_InputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_InputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_fC_SMzNeEeaUx41ZKAgLmg" visible="false" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/result"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/result"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_fC_SNDNeEeaUx41ZKAgLmg" showIcon="false" borderColor="69,69,69" color="69,69,69">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_OutputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_hsPzdDNeEeaUx41ZKAgLmg" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/object"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/object"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_hsPzdTNeEeaUx41ZKAgLmg" showIcon="false" borderColor="136,136,136" color="209,209,209">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_NestedInputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_NestedInputPin']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_hsPzdjNeEeaUx41ZKAgLmg" width="2" height="2" resizeKind="NSEW">
+              <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/result"/>
+              <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="petrinet.xmof#//NetConfiguration/main.1/Expansion%20Region/Read%20initialTokens/result"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_hsQagDNeEeaUx41ZKAgLmg" showIcon="false" borderColor="69,69,69" color="69,69,69">
+                <description xmi:type="style:SquareDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_NestedOutputPin']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@borderedNodeMappings[name='AD_NestedOutputPin']"/>
+            </ownedBorderedNodes>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_fC-EEDNeEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_fbFzsDNfEeaUx41ZKAgLmg" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" href="petrinet.xmof#//NetConfiguration/main.1/e1"/>
+          <semanticElements xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" href="petrinet.xmof#//NetConfiguration/main.1/e1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_fbGawDNfEeaUx41ZKAgLmg"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_fbFzsTNfEeaUx41ZKAgLmg" showIcon="false" hideLabelByDefault="true" workspacePath="/org.modelexecution.xmof.representation.sirius.design/images/en.png">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='ExpansionNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='ExpansionNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_uvbkrTNYEeaUx41ZKAgLmg"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer"/>
+      <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//NetConfiguration/main.1"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_uvxi4DNYEeaUx41ZKAgLmg" name="run">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uvxi4TNYEeaUx41ZKAgLmg" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_uvxi4jNYEeaUx41ZKAgLmg"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uvxi8jNYEeaUx41ZKAgLmg" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_uvxi8zNYEeaUx41ZKAgLmg" type="Sirius" element="_uvxi4DNYEeaUx41ZKAgLmg" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_uvyJ8DNYEeaUx41ZKAgLmg" type="2002" element="_uvxi4zNYEeaUx41ZKAgLmg">
+            <children xmi:type="notation:Node" xmi:id="_uvyJ8zNYEeaUx41ZKAgLmg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_uvyJ9DNYEeaUx41ZKAgLmg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_uvyxADNYEeaUx41ZKAgLmg" type="3008" element="_uvxi5TNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uvyxAzNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uvyxBDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uvyxBTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uvyxBjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uvyxATNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uvyxAjNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uvyxBzNYEeaUx41ZKAgLmg" type="3008" element="_uvxi5zNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uvzYEDNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uvz_IDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uvz_ITNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uvz_IjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uvyxCDNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uvyxCTNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uvz_IzNYEeaUx41ZKAgLmg" type="3008" element="_uvxi6TNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uvz_JjNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uvz_JzNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uvz_KDNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uvz_KTNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uvz_JDNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uvz_JTNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uv0mMDNYEeaUx41ZKAgLmg" type="3008" element="_uvxi6zNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uv0mMzNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uv0mNDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uv0mNTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uv0mNjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uv0mMTNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uv0mMjNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uv1NQDNYEeaUx41ZKAgLmg" type="3008" element="_uvxi7TNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uv1NQzNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uv1NRDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uv1NRTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uv1NRjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uv1NQTNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uv1NQjNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uv10UDNYEeaUx41ZKAgLmg" type="3008" element="_uvxi7zNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uv10UzNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uv10VDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uv10VTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uv10VjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uv10UTNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uv10UjNYEeaUx41ZKAgLmg"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_uvyJ9TNYEeaUx41ZKAgLmg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_uvyJ9jNYEeaUx41ZKAgLmg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_uvyJ8TNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uvyJ8jNYEeaUx41ZKAgLmg"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_uvxi9DNYEeaUx41ZKAgLmg"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uvxi4zNYEeaUx41ZKAgLmg" name="run">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//NetConfiguration/run.1"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//NetConfiguration/run.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uvxi5DNYEeaUx41ZKAgLmg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="114,73,110" backgroundStyle="Liquid" foregroundColor="245,239,244">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uvxi5TNYEeaUx41ZKAgLmg" name="Read self">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//NetConfiguration/run.1/Read%20self"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//NetConfiguration/run.1/Read%20self"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uvxi5jNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uvxi5zNYEeaUx41ZKAgLmg" name="Read transitions">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//NetConfiguration/run.1/Read%20transitions"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//NetConfiguration/run.1/Read%20transitions"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uvxi6DNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uvxi6TNYEeaUx41ZKAgLmg" name="Expansion Region">
+          <target xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" href="petrinet.xmof#//NetConfiguration/run.1/Expansion%20Region"/>
+          <semanticElements xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" href="petrinet.xmof#//NetConfiguration/run.1/Expansion%20Region"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uvxi6jNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uvxi6zNYEeaUx41ZKAgLmg" name="Call listGet">
+          <target xmi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" href="petrinet.xmof#//NetConfiguration/run.1/Call%20listGet"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" href="petrinet.xmof#//NetConfiguration/run.1/Call%20listGet"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uvxi7DNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uvxi7TNYEeaUx41ZKAgLmg" name="Call fire">
+          <target xmi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" href="petrinet.xmof#//NetConfiguration/run.1/Call%20fire"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" href="petrinet.xmof#//NetConfiguration/run.1/Call%20fire"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uvxi7jNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uvxi7zNYEeaUx41ZKAgLmg" name="Specify 1">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//NetConfiguration/run.1/Specify%201"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//NetConfiguration/run.1/Specify%201"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uvxi8DNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_uvxi8TNYEeaUx41ZKAgLmg"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer"/>
+      <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//NetConfiguration/run.1"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_uv6s0DNYEeaUx41ZKAgLmg" name="addToken">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uv6s0TNYEeaUx41ZKAgLmg" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_uv6s0jNYEeaUx41ZKAgLmg"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uv6s4DNYEeaUx41ZKAgLmg" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_uv6s4TNYEeaUx41ZKAgLmg" type="Sirius" element="_uv6s0DNYEeaUx41ZKAgLmg" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_uv6s4zNYEeaUx41ZKAgLmg" type="2002" element="_uv6s0zNYEeaUx41ZKAgLmg">
+            <children xmi:type="notation:Node" xmi:id="_uv7T4DNYEeaUx41ZKAgLmg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_uv7T4TNYEeaUx41ZKAgLmg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_uv768DNYEeaUx41ZKAgLmg" type="3008" element="_uv6s1TNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uv768zNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uv769DNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uv769TNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uv769jNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uv768TNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uv768jNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uv8iADNYEeaUx41ZKAgLmg" type="3008" element="_uv6s1zNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uv8iAzNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uv9JEDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uv9JETNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uv9JEjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uv8iATNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uv8iAjNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uv9JEzNYEeaUx41ZKAgLmg" type="3008" element="_uv6s2TNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uv-XMDNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uv--QDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uv--QTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uv--QjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uv9JFDNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uv9JFTNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uv--QzNYEeaUx41ZKAgLmg" type="3008" element="_uv6s2zNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uv--RjNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uv_lUDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uv_lUTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uv_lUjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uv--RDNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uv--RTNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uv_lUzNYEeaUx41ZKAgLmg" type="3008" element="_uv6s3TNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uv_lVjNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uv_lVzNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uv_lWDNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uv_lWTNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uv_lVDNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uv_lVTNYEeaUx41ZKAgLmg"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_uv7T4jNYEeaUx41ZKAgLmg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_uv7T4zNYEeaUx41ZKAgLmg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_uv6s5DNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uv6s5TNYEeaUx41ZKAgLmg"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_uv6s4jNYEeaUx41ZKAgLmg"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uv6s0zNYEeaUx41ZKAgLmg" name="addToken">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//PlaceConfiguration/addToken.1"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//PlaceConfiguration/addToken.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uv6s1DNYEeaUx41ZKAgLmg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="114,73,110" backgroundStyle="Liquid" foregroundColor="245,239,244">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uv6s1TNYEeaUx41ZKAgLmg" name="Read self">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Read%20self"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Read%20self"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uv6s1jNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uv6s1zNYEeaUx41ZKAgLmg" name="Specify 1">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Specify%201"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Specify%201"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uv6s2DNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uv6s2TNYEeaUx41ZKAgLmg" name="Read tokens">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Read%20tokens"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Read%20tokens"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uv6s2jNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uv6s2zNYEeaUx41ZKAgLmg" name="Call add">
+          <target xmi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Call%20add"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Call%20add"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uv6s3DNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uv6s3TNYEeaUx41ZKAgLmg" name="Set tokens">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Set%20tokens"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="petrinet.xmof#//PlaceConfiguration/addToken.1/Set%20tokens"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uv6s3jNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_uv6s3zNYEeaUx41ZKAgLmg"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer"/>
+      <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//PlaceConfiguration/addToken.1"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_uwD2wDNYEeaUx41ZKAgLmg" name="removeToken">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uwD2wTNYEeaUx41ZKAgLmg" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_uwD2wjNYEeaUx41ZKAgLmg"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uwEd0DNYEeaUx41ZKAgLmg" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_uwEd0TNYEeaUx41ZKAgLmg" type="Sirius" element="_uwD2wDNYEeaUx41ZKAgLmg" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_uwEd0zNYEeaUx41ZKAgLmg" type="2002" element="_uwD2wzNYEeaUx41ZKAgLmg">
+            <children xmi:type="notation:Node" xmi:id="_uwFE4DNYEeaUx41ZKAgLmg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_uwFE4TNYEeaUx41ZKAgLmg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_uwFr8DNYEeaUx41ZKAgLmg" type="3008" element="_uwD2xTNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwFr8zNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwGTADNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwGTATNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwGTAjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwFr8TNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwFr8jNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwGTAzNYEeaUx41ZKAgLmg" type="3008" element="_uwD2xzNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwGTBjNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwGTBzNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwGTCDNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwGTCTNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwGTBDNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwGTBTNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwG6EDNYEeaUx41ZKAgLmg" type="3008" element="_uwD2yTNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwG6EzNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwG6FDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwG6FTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwG6FjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwG6ETNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwG6EjNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwG6FzNYEeaUx41ZKAgLmg" type="3008" element="_uwD2yzNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwHhIDNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwHhITNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwHhIjNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwHhIzNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwG6GDNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwG6GTNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwHhJDNYEeaUx41ZKAgLmg" type="3008" element="_uwD2zTNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwIIMDNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwIIMTNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwIIMjNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwIIMzNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwHhJTNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwHhJjNYEeaUx41ZKAgLmg"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_uwFE4jNYEeaUx41ZKAgLmg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_uwFE4zNYEeaUx41ZKAgLmg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_uwEd1DNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwEd1TNYEeaUx41ZKAgLmg"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_uwEd0jNYEeaUx41ZKAgLmg"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwD2wzNYEeaUx41ZKAgLmg" name="removeToken">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//PlaceConfiguration/removeToken.1"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//PlaceConfiguration/removeToken.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwD2xDNYEeaUx41ZKAgLmg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="114,73,110" backgroundStyle="Liquid" foregroundColor="245,239,244">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwD2xTNYEeaUx41ZKAgLmg" name="Specify 1">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//PlaceConfiguration/removeToken.1/Specify%201"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//PlaceConfiguration/removeToken.1/Specify%201"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwD2xjNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwD2xzNYEeaUx41ZKAgLmg" name="Read self">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//PlaceConfiguration/removeToken.1/Read%20self"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//PlaceConfiguration/removeToken.1/Read%20self"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwD2yDNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwD2yTNYEeaUx41ZKAgLmg" name="Call subtract">
+          <target xmi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" href="petrinet.xmof#//PlaceConfiguration/removeToken.1/Call%20subtract"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" href="petrinet.xmof#//PlaceConfiguration/removeToken.1/Call%20subtract"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwD2yjNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwD2yzNYEeaUx41ZKAgLmg" name="Read tokens">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//PlaceConfiguration/removeToken.1/Read%20tokens"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//PlaceConfiguration/removeToken.1/Read%20tokens"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwD2zDNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwD2zTNYEeaUx41ZKAgLmg" name="Set tokens">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="petrinet.xmof#//PlaceConfiguration/removeToken.1/Set%20tokens"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="petrinet.xmof#//PlaceConfiguration/removeToken.1/Set%20tokens"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwD2zjNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_uwD2zzNYEeaUx41ZKAgLmg"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer"/>
+      <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//PlaceConfiguration/removeToken.1"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_uwNAsDNYEeaUx41ZKAgLmg" name="isEnabled">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uwNAsTNYEeaUx41ZKAgLmg" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_uwNAsjNYEeaUx41ZKAgLmg"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uwNAxDNYEeaUx41ZKAgLmg" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_uwNAxTNYEeaUx41ZKAgLmg" type="Sirius" element="_uwNAsDNYEeaUx41ZKAgLmg" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_uwNnwDNYEeaUx41ZKAgLmg" type="2002" element="_uwNAszNYEeaUx41ZKAgLmg">
+            <children xmi:type="notation:Node" xmi:id="_uwNnwzNYEeaUx41ZKAgLmg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_uwNnxDNYEeaUx41ZKAgLmg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_uwOO0DNYEeaUx41ZKAgLmg" type="3008" element="_uwNAtTNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwOO0zNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwOO1DNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwOO1TNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwOO1jNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwOO0TNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwOO0jNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwOO1zNYEeaUx41ZKAgLmg" type="3008" element="_uwNAtzNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwO14DNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwO14TNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwO14jNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwO14zNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwOO2DNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwOO2TNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwO15DNYEeaUx41ZKAgLmg" type="3008" element="_uwNAuTNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwO15zNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwO16DNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwO16TNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwO16jNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwO15TNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwO15jNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwPc8DNYEeaUx41ZKAgLmg" type="3008" element="_uwNAuzNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwPc8zNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwPc9DNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwPc9TNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwPc9jNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwPc8TNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwPc8jNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwPc9zNYEeaUx41ZKAgLmg" type="3008" element="_uwNAvTNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwQEADNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwQEATNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwQEAjNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwQEAzNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwPc-DNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwPc-TNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwQEBDNYEeaUx41ZKAgLmg" type="3008" element="_uwNAvzNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwQEBzNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwQECDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwQECTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwQECjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwQEBTNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwQEBjNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwQrEDNYEeaUx41ZKAgLmg" type="3008" element="_uwNAwTNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwQrEzNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwQrFDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwQrFTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwQrFjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwQrETNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwQrEjNYEeaUx41ZKAgLmg"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_uwNnxTNYEeaUx41ZKAgLmg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_uwNnxjNYEeaUx41ZKAgLmg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_uwNnwTNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwNnwjNYEeaUx41ZKAgLmg"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_uwNAxjNYEeaUx41ZKAgLmg"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwNAszNYEeaUx41ZKAgLmg" name="isEnabled">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwNAtDNYEeaUx41ZKAgLmg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="114,73,110" backgroundStyle="Liquid" foregroundColor="245,239,244">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwNAtTNYEeaUx41ZKAgLmg" name="Read self">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Read%20self"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Read%20self"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwNAtjNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwNAtzNYEeaUx41ZKAgLmg" name="Read input">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Read%20input"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Read%20input"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwNAuDNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwNAuTNYEeaUx41ZKAgLmg" name="Expansion Region">
+          <target xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Expansion%20Region"/>
+          <semanticElements xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Expansion%20Region"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwNAujNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwNAuzNYEeaUx41ZKAgLmg" name="Specify 0">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Specify%200"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Specify%200"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwNAvDNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwNAvTNYEeaUx41ZKAgLmg" name="Call listSize">
+          <target xmi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Call%20listSize"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Call%20listSize"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwNAvjNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwNAvzNYEeaUx41ZKAgLmg" name="Specify true">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Specify%20true"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Specify%20true"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwNAwDNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwNAwTNYEeaUx41ZKAgLmg" name="Specify false">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Specify%20false"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1/Specify%20false"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwNAwjNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_uwNAwzNYEeaUx41ZKAgLmg"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer"/>
+      <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//TransitionConfiguration/isEnabled.1"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_uwU8gDNYEeaUx41ZKAgLmg" name="fire">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uwU8gTNYEeaUx41ZKAgLmg" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_uwU8gjNYEeaUx41ZKAgLmg"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uwU8kDNYEeaUx41ZKAgLmg" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_uwU8kTNYEeaUx41ZKAgLmg" type="Sirius" element="_uwU8gDNYEeaUx41ZKAgLmg" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_uwVjkDNYEeaUx41ZKAgLmg" type="2002" element="_uwU8gzNYEeaUx41ZKAgLmg">
+            <children xmi:type="notation:Node" xmi:id="_uwVjkzNYEeaUx41ZKAgLmg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_uwWKoDNYEeaUx41ZKAgLmg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_uwWKozNYEeaUx41ZKAgLmg" type="3008" element="_uwU8hTNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwWKpjNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwWKpzNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwWKqDNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwWKqTNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwWKpDNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwWKpTNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwWxsDNYEeaUx41ZKAgLmg" type="3008" element="_uwU8hzNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwWxszNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwWxtDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwWxtTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwWxtjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwWxsTNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwWxsjNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwWxtzNYEeaUx41ZKAgLmg" type="3008" element="_uwU8iTNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwWxujNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwXYwDNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwXYwTNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwXYwjNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwWxuDNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwWxuTNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwXYwzNYEeaUx41ZKAgLmg" type="3008" element="_uwU8izNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwXYxjNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwXYxzNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwXYyDNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwXYyTNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwXYxDNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwXYxTNYEeaUx41ZKAgLmg"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_uwXYyjNYEeaUx41ZKAgLmg" type="3008" element="_uwU8jTNYEeaUx41ZKAgLmg">
+                <children xmi:type="notation:Node" xmi:id="_uwX_0DNYEeaUx41ZKAgLmg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_uwX_0TNYEeaUx41ZKAgLmg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_uwX_0jNYEeaUx41ZKAgLmg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_uwX_0zNYEeaUx41ZKAgLmg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_uwXYyzNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwXYzDNYEeaUx41ZKAgLmg"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_uwWKoTNYEeaUx41ZKAgLmg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_uwWKojNYEeaUx41ZKAgLmg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_uwVjkTNYEeaUx41ZKAgLmg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uwVjkjNYEeaUx41ZKAgLmg"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_uwU8kjNYEeaUx41ZKAgLmg"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwU8gzNYEeaUx41ZKAgLmg" name="fire">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//TransitionConfiguration/fire.1"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//TransitionConfiguration/fire.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwU8hDNYEeaUx41ZKAgLmg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="114,73,110" backgroundStyle="Liquid" foregroundColor="245,239,244">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwU8hTNYEeaUx41ZKAgLmg" name="Read self">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//TransitionConfiguration/fire.1/Read%20self"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="petrinet.xmof#//TransitionConfiguration/fire.1/Read%20self"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwU8hjNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwU8hzNYEeaUx41ZKAgLmg" name="Read output">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//TransitionConfiguration/fire.1/Read%20output"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//TransitionConfiguration/fire.1/Read%20output"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwU8iDNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwU8iTNYEeaUx41ZKAgLmg" name="Read input">
+          <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//TransitionConfiguration/fire.1/Read%20input"/>
+          <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" href="petrinet.xmof#//TransitionConfiguration/fire.1/Read%20input"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwU8ijNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwU8izNYEeaUx41ZKAgLmg" name="Expansion Region">
+          <target xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" href="petrinet.xmof#//TransitionConfiguration/fire.1/Expansion%20Region"/>
+          <semanticElements xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" href="petrinet.xmof#//TransitionConfiguration/fire.1/Expansion%20Region"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwU8jDNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uwU8jTNYEeaUx41ZKAgLmg" name="Expansion Region">
+          <target xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" href="petrinet.xmof#//TransitionConfiguration/fire.1/Expansion%20Region.1"/>
+          <semanticElements xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" href="petrinet.xmof#//TransitionConfiguration/fire.1/Expansion%20Region.1"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uwU8jjNYEeaUx41ZKAgLmg" borderSize="1" borderSizeComputationExpression="1" borderColor="138,226,52" backgroundStyle="Liquid" foregroundColor="236,250,222">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_uwU8jzNYEeaUx41ZKAgLmg"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer"/>
+      <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" href="petrinet.xmof#//TransitionConfiguration/fire.1"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>
