@@ -70,6 +70,8 @@ public class SiriusDecoratorService {
 	public static boolean isActiveEdge(ActivityEdge edge) {
 		if (edge.getSource() == null || edge.getTarget() == null)
 			return false;
+		
+		if(isSimpleActiveEdge(edge))return true;
 		ActivityNode sourceNode = retrieveSourceNode(edge);
 		ActivityNode targetNode = retrieveTargeNode(edge);
 
@@ -79,6 +81,11 @@ public class SiriusDecoratorService {
 			return true;
 		}
 		return false;
+	}
+
+	private static boolean isSimpleActiveEdge(ActivityEdge edge) {
+		return isPreviouslyActiveElement(edge.getSource()) && isActiveElement(edge.getTarget());
+
 	}
 
 	private static ActivityNode retrieveTargeNode(ActivityEdge edge) {
