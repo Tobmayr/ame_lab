@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:petrinet="http://petrinet/1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_Swq9oO9SEeWQio0NoAerxQ" selectedViews="_WMngEO9SEeWQio0NoAerxQ" version="10.1.0.201509162000">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:petrinet="http://petrinet/1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_Swq9oO9SEeWQio0NoAerxQ" selectedViews="_WMngEO9SEeWQio0NoAerxQ _9RXooDObEeaJz99y2t1Xlg" version="10.1.0.201509162000">
   <semanticResources>net1.petrinet</semanticResources>
   <semanticResources>gemoc-gen/execution/execution-20160529_184114/net1.petrinet</semanticResources>
   <semanticResources>platform:/resource/org.modelexecution.xmof.examples.petrinet/model/petrinet.genmodel</semanticResources>
@@ -7,9 +7,9 @@
   <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
   <semanticResources>gemoc-gen/execution/execution-20160531_134714/net1.petrinet</semanticResources>
   <semanticResources>gemoc-gen/execution/execution-20160531_134834/net1.petrinet</semanticResources>
-  <semanticResources>gemoc-gen/execution/execution-20160614_142934/net1.petrinet</semanticResources>
-  <semanticResources>gemoc-gen/execution/execution-20160614_143111/net1.petrinet</semanticResources>
-  <semanticResources>gemoc-gen/execution/execution-20160614_143634/net1.petrinet</semanticResources>
+  <semanticResources>petrinet.xmof</semanticResources>
+  <semanticResources>http://petrinet/1.0</semanticResources>
+  <semanticResources>pathmap://XMOF_LIBRARY/xmof_library.xmof</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WMngEO9SEeWQio0NoAerxQ">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_WQ7_YO9SEeWQio0NoAerxQ" name="petrinet">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_WRYrUO9SEeWQio0NoAerxQ" source="GMF_DIAGRAMS">
@@ -131,5 +131,8 @@
       <target xmi:type="petrinet:Net" href="net1.petrinet#/"/>
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_9RXooDObEeaJz99y2t1Xlg">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Reused']"/>
   </ownedViews>
 </viewpoint:DAnalysis>
