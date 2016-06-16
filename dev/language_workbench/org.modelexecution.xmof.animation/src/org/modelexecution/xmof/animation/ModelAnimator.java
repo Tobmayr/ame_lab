@@ -21,12 +21,9 @@ public class ModelAnimator implements IEngineAddon {
 
 	public void initialize(XMOFBasedModel model, Resource resource) {
 		if (USE_GRAPHITI) {
-			animationController = new GraphitiAnimationController(model,
-					resource);
+			animationController = new GraphitiAnimationController(model, resource);
 		} else {
-			URI airdURI = URI.createURI(
-					"platform:/resource/org.modelexecution.xmof.examples.petrinet.xmof.sirius/representations.aird");
-			animationController = new SiriusAnimationController(model,airdURI);
+			initializeSiriusController(model,resource);
 		}
 
 	}
@@ -57,48 +54,42 @@ public class ModelAnimator implements IEngineAddon {
 
 	@Override
 	public void engineAboutToDispose(IBasicExecutionEngine engine) {
+		animationController.dispose();
+
+	}
+
+	@Override
+	public void aboutToSelectLogicalStep(IBasicExecutionEngine engine, Collection<LogicalStep> logicalSteps) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void aboutToSelectLogicalStep(IBasicExecutionEngine engine,
-			Collection<LogicalStep> logicalSteps) {
+	public void proposedLogicalStepsChanged(IBasicExecutionEngine engine, Collection<LogicalStep> logicalSteps) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void proposedLogicalStepsChanged(IBasicExecutionEngine engine,
-			Collection<LogicalStep> logicalSteps) {
+	public void logicalStepSelected(IBasicExecutionEngine engine, LogicalStep selectedLogicalStep) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void logicalStepSelected(IBasicExecutionEngine engine,
-			LogicalStep selectedLogicalStep) {
+	public void aboutToExecuteLogicalStep(IBasicExecutionEngine engine, LogicalStep logicalStepToExecute) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void aboutToExecuteLogicalStep(IBasicExecutionEngine engine,
-			LogicalStep logicalStepToExecute) {
+	public void logicalStepExecuted(IBasicExecutionEngine engine, LogicalStep logicalStepExecuted) {
 		// TODO Auto-generated method stub
-
+		return;
 	}
 
 	@Override
-	public void logicalStepExecuted(IBasicExecutionEngine engine,
-			LogicalStep logicalStepExecuted) {
-		// TODO Auto-generated method stub
-return;
-	}
-
-	@Override
-	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
-			MSEOccurrence mseOccurrence) {
+	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine, MSEOccurrence mseOccurrence) {
 		if (animationController != null) {
 			animationController.processMSEOccurrence(mseOccurrence, true);
 		}
@@ -106,15 +97,13 @@ return;
 	}
 
 	@Override
-	public void mseOccurrenceExecuted(IBasicExecutionEngine engine,
-			MSEOccurrence mseOccurrence) {
+	public void mseOccurrenceExecuted(IBasicExecutionEngine engine, MSEOccurrence mseOccurrence) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void engineStatusChanged(IBasicExecutionEngine engine,
-			RunStatus newStatus) {
+	public void engineStatusChanged(IBasicExecutionEngine engine, RunStatus newStatus) {
 		// TODO Auto-generated method stub
 
 	}
@@ -125,4 +114,17 @@ return;
 		return null;
 	}
 
+	private void initializeSiriusController(XMOFBasedModel model, Resource resource) {
+		String uriString = resource.getURI().toString();
+		URI airdURI;
+		if (uriString.contains("petrinet2")) {
+			 airdURI= URI.createURI(
+					"platform:/resource/org.modelexecution.xmof.examples.petrinet2.xmof.sirius/representations.aird");
+		}else{
+			airdURI = URI.createURI(
+					"platform:/resource/org.modelexecution.xmof.examples.petrinet.xmof.sirius/representations.aird");
+		}
+		
+		animationController = new SiriusAnimationController(model, airdURI);
+	}
 }

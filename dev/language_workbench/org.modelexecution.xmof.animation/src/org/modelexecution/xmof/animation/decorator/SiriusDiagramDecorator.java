@@ -59,5 +59,11 @@ public class SiriusDiagramDecorator extends DiagramDecorator {
 	 return false;
 	
 	}
+	
+	public boolean decorateExpansionRegion(Match match){
+		
+		
+		return false;
+	}
 
 }

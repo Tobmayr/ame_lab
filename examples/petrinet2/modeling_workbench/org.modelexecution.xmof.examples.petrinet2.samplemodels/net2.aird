@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:petrinet2="http://petrinet2/1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_thzVIPgWEeWKl48CccOz2g" selectedViews="_th9tMPgWEeWKl48CccOz2g" version="8.1.1">
-  <models xmi:type="petrinet2:Net" href="net1.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="net2.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_121754/net1.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163736/net1.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163804/net1.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163820/net2.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163846/net2.petrinet2#/"/>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_th9tMPgWEeWKl48CccOz2g" initialized="true">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:petrinet2="http://petrinet2/1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_thzVIPgWEeWKl48CccOz2g" selectedViews="_th9tMPgWEeWKl48CccOz2g _BtLiETObEea276DBPypaYw" version="10.1.0.201509162000">
+  <semanticResources>net1.petrinet2</semanticResources>
+  <semanticResources>net2.petrinet2</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160401_121754/net1.petrinet2</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160401_163736/net1.petrinet2</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160401_163804/net1.petrinet2</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160401_163820/net2.petrinet2</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160401_163846/net2.petrinet2</semanticResources>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_th9tMPgWEeWKl48CccOz2g">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_IDJFoPfyEeW17J_I5G3Vcg" name="petrinet2 net2">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_IDPzUPfyEeW17J_I5G3Vcg" source="GMF_DIAGRAMS">
         <data xmi:type="notation:Diagram" xmi:id="_IDPzUffyEeW17J_I5G3Vcg" type="Sirius" element="_IDJFoPfyEeW17J_I5G3Vcg" measurementUnit="Pixel">
@@ -196,58 +196,45 @@
           </edges>
         </data>
       </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_BrNMIDObEea276DBPypaYw" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_BrNMITObEea276DBPypaYw"/>
+      </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_IDJFoffyEeW17J_I5G3Vcg" name="Net2">
         <target xmi:type="petrinet2:Net" href="net2.petrinet2#/"/>
         <semanticElements xmi:type="petrinet2:Net" href="net2.petrinet2#/"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_IDJFovfyEeW17J_I5G3Vcg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_IDJFo_fyEeW17J_I5G3Vcg"/>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_IDJFpPfyEeW17J_I5G3Vcg"/>
-          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_IDJssPfyEeW17J_I5G3Vcg" red="255" green="255" blue="255"/>
-          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_IDJssffyEeW17J_I5G3Vcg" red="209" green="209" blue="209"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']"/>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IDJssvfyEeW17J_I5G3Vcg" name="p1" incomingEdges="_IDMwK_fyEeW17J_I5G3Vcg" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="petrinet2:Place" href="net2.petrinet2#//@places.0"/>
           <semanticElements xmi:type="petrinet2:Place" href="net2.petrinet2#//@places.0"/>
-          <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_IDMwAPfyEeW17J_I5G3Vcg" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwAffyEeW17J_I5G3Vcg"/>
+          <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_IDMwAPfyEeW17J_I5G3Vcg" showIcon="false" color="39,76,114">
             <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwAvfyEeW17J_I5G3Vcg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_IDMwA_fyEeW17J_I5G3Vcg" red="39" green="76" blue="114"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IDMwBPfyEeW17J_I5G3Vcg" name="p2" incomingEdges="_IDMwIvfyEeW17J_I5G3Vcg _IDMwLvfyEeW17J_I5G3Vcg" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="petrinet2:Place" href="net2.petrinet2#//@places.1"/>
           <semanticElements xmi:type="petrinet2:Place" href="net2.petrinet2#//@places.1"/>
-          <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_IDMwBffyEeW17J_I5G3Vcg" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwBvfyEeW17J_I5G3Vcg"/>
+          <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_IDMwBffyEeW17J_I5G3Vcg" showIcon="false" color="39,76,114">
             <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwB_fyEeW17J_I5G3Vcg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_IDMwCPfyEeW17J_I5G3Vcg" red="39" green="76" blue="114"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IDMwCffyEeW17J_I5G3Vcg" name="p3" incomingEdges="_IDMwJffyEeW17J_I5G3Vcg _IDMwMffyEeW17J_I5G3Vcg" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="petrinet2:Place" href="net2.petrinet2#//@places.2"/>
           <semanticElements xmi:type="petrinet2:Place" href="net2.petrinet2#//@places.2"/>
-          <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_IDMwCvfyEeW17J_I5G3Vcg" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwC_fyEeW17J_I5G3Vcg"/>
+          <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_IDMwCvfyEeW17J_I5G3Vcg" showIcon="false" color="39,76,114">
             <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwDPfyEeW17J_I5G3Vcg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_IDMwDffyEeW17J_I5G3Vcg" red="39" green="76" blue="114"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IDMwDvfyEeW17J_I5G3Vcg" name="p4" incomingEdges="_IDMwKPfyEeW17J_I5G3Vcg" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="petrinet2:Place" href="net2.petrinet2#//@places.3"/>
           <semanticElements xmi:type="petrinet2:Place" href="net2.petrinet2#//@places.3"/>
-          <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_IDMwD_fyEeW17J_I5G3Vcg" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwEPfyEeW17J_I5G3Vcg"/>
+          <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_IDMwD_fyEeW17J_I5G3Vcg" showIcon="false" color="39,76,114">
             <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwEffyEeW17J_I5G3Vcg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_IDMwEvfyEeW17J_I5G3Vcg" red="39" green="76" blue="114"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']"/>
         </ownedDiagramElements>
@@ -255,10 +242,7 @@
           <target xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.0"/>
           <semanticElements xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_IDMwFPfyEeW17J_I5G3Vcg" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwFffyEeW17J_I5G3Vcg"/>
             <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='TranistionNode']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwFvfyEeW17J_I5G3Vcg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_IDMwF_fyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='TranistionNode']"/>
         </ownedDiagramElements>
@@ -266,10 +250,7 @@
           <target xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.1"/>
           <semanticElements xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.1"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_IDMwGffyEeW17J_I5G3Vcg" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwGvfyEeW17J_I5G3Vcg"/>
             <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='TranistionNode']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwG_fyEeW17J_I5G3Vcg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_IDMwHPfyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='TranistionNode']"/>
         </ownedDiagramElements>
@@ -277,10 +258,7 @@
           <target xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.2"/>
           <semanticElements xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.2"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_IDMwHvfyEeW17J_I5G3Vcg" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwH_fyEeW17J_I5G3Vcg"/>
             <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='TranistionNode']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwIPfyEeW17J_I5G3Vcg"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_IDMwIffyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='TranistionNode']"/>
         </ownedDiagramElements>
@@ -289,7 +267,6 @@
         <target xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_IDMwI_fyEeW17J_I5G3Vcg" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='OutputEdge']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwJPfyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='OutputEdge']"/>
       </ownedDiagramElements>
@@ -297,7 +274,6 @@
         <target xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.1"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_IDMwJvfyEeW17J_I5G3Vcg" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='OutputEdge']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwJ_fyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='OutputEdge']"/>
       </ownedDiagramElements>
@@ -305,7 +281,6 @@
         <target xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.2"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_IDMwKffyEeW17J_I5G3Vcg" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='OutputEdge']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwKvfyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='OutputEdge']"/>
       </ownedDiagramElements>
@@ -313,7 +288,6 @@
         <target xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_IDMwLPfyEeW17J_I5G3Vcg" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='InputEdge']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwLffyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='InputEdge']"/>
       </ownedDiagramElements>
@@ -321,7 +295,6 @@
         <target xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.1"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_IDMwL_fyEeW17J_I5G3Vcg" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='InputEdge']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwMPfyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='InputEdge']"/>
       </ownedDiagramElements>
@@ -329,7 +302,6 @@
         <target xmi:type="petrinet2:Transition" href="net2.petrinet2#//@transitions.2"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_IDMwMvfyEeW17J_I5G3Vcg" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='InputEdge']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_IDMwM_fyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='InputEdge']"/>
       </ownedDiagramElements>
@@ -339,5 +311,8 @@
       <target xmi:type="petrinet2:Net" href="net2.petrinet2#/"/>
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_BtLiETObEea276DBPypaYw">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Reused']"/>
   </ownedViews>
 </viewpoint:DAnalysis>
