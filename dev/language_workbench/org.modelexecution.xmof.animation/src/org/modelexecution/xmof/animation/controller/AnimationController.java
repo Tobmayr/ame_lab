@@ -3,20 +3,17 @@ package org.modelexecution.xmof.animation.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.gmf.runtime.diagram.ui.internal.services.decorator.DecoratorService;
 import org.eclipse.ui.PlatformUI;
-import org.gemoc.executionframework.engine.mse.MSEOccurrence;
-import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
-import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.animation.controller.internal.Match;
-import org.modelexecution.xmof.animation.controller.internal.XMOFType;
 import org.modelexecution.xmof.animation.controller.internal.MappingService;
+import org.modelexecution.xmof.animation.controller.internal.Match;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.handler.DiagramHandler;
 import org.modelexecution.xmof.animation.ui.Activator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
+
+import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 
 public abstract class AnimationController {
 
