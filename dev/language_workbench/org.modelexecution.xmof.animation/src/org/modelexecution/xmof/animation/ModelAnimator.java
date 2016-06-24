@@ -5,8 +5,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.gemoc.executionframework.engine.mse.LogicalStep;
-import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
@@ -14,6 +12,8 @@ import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.animation.controller.GraphitiAnimationController;
 import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
+
+import fr.inria.diverse.trace.commons.model.trace.Step;
 
 public class ModelAnimator implements IEngineAddon {
 	private static final boolean USE_GRAPHITI = false;
@@ -28,92 +28,6 @@ public class ModelAnimator implements IEngineAddon {
 
 	}
 
-	@Override
-	public void engineAboutToStart(IBasicExecutionEngine engine) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void engineStarted(IBasicExecutionEngine executionEngine) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void engineAboutToStop(IBasicExecutionEngine engine) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void engineStopped(IBasicExecutionEngine engine) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void engineAboutToDispose(IBasicExecutionEngine engine) {
-		animationController.dispose();
-
-	}
-
-	@Override
-	public void aboutToSelectLogicalStep(IBasicExecutionEngine engine, Collection<LogicalStep> logicalSteps) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void proposedLogicalStepsChanged(IBasicExecutionEngine engine, Collection<LogicalStep> logicalSteps) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void logicalStepSelected(IBasicExecutionEngine engine, LogicalStep selectedLogicalStep) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void aboutToExecuteLogicalStep(IBasicExecutionEngine engine, LogicalStep logicalStepToExecute) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void logicalStepExecuted(IBasicExecutionEngine engine, LogicalStep logicalStepExecuted) {
-		// TODO Auto-generated method stub
-		return;
-	}
-
-	@Override
-	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine, MSEOccurrence mseOccurrence) {
-		if (animationController != null) {
-			animationController.processMSEOccurrence(mseOccurrence, true);
-		}
-
-	}
-
-	@Override
-	public void mseOccurrenceExecuted(IBasicExecutionEngine engine, MSEOccurrence mseOccurrence) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void engineStatusChanged(IBasicExecutionEngine engine, RunStatus newStatus) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public List<String> validate(List<IEngineAddon> otherAddons) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	private void initializeSiriusController(XMOFBasedModel model, Resource resource) {
 		String uriString = resource.getURI().toString();
 		URI airdURI;
@@ -126,5 +40,77 @@ public class ModelAnimator implements IEngineAddon {
 		}
 		
 		animationController = new SiriusAnimationController(model, airdURI);
+	}
+
+	@Override
+	public void engineAboutToStart(IBasicExecutionEngine engine) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void engineStarted(IBasicExecutionEngine executionEngine) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void engineAboutToStop(IBasicExecutionEngine engine) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void engineStopped(IBasicExecutionEngine engine) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void engineAboutToDispose(IBasicExecutionEngine engine) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void aboutToSelectStep(IBasicExecutionEngine engine, Collection<Step> steps) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void proposedStepsChanged(IBasicExecutionEngine engine, Collection<Step> steps) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void stepSelected(IBasicExecutionEngine engine, Step selectedStep) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void aboutToExecuteStep(IBasicExecutionEngine engine, Step stepToExecute) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void stepExecuted(IBasicExecutionEngine engine, Step stepExecuted) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void engineStatusChanged(IBasicExecutionEngine engine, RunStatus newStatus) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<String> validate(List<IEngineAddon> otherAddons) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

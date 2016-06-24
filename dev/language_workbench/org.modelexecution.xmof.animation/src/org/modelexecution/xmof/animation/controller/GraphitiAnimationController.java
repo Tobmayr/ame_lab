@@ -1,20 +1,13 @@
 package org.modelexecution.xmof.animation.controller;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.PlatformUI;
-import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.controller.internal.Match;
-import org.modelexecution.xmof.animation.controller.internal.MappingService;
-import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.decorator.GraphitiDiagramDecorator;
-import org.modelexecution.xmof.animation.decorator.service.DecorationType;
 import org.modelexecution.xmof.animation.handler.GraphitiDiagramHandler;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
-import org.modelexecution.xmof.animation.ui.Activator;
 
 public class GraphitiAnimationController extends AnimationController {
 
