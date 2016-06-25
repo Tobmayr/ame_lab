@@ -4,11 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
-import org.modelexecution.xmof.Syntax.Actions.BasicActions.Action;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
 import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
-import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.InitialNode;
@@ -16,8 +13,8 @@ import org.modelexecution.xmof.animation.controller.internal.Match;
 
 public class SiriusDecoratorService {
 
-	private static String currentlyActiveElement = null;
-	private static String previouslyActiveElement = null;
+	private static String currentlyActiveElement = "";
+	private static String previouslyActiveElement = "";
 	private static Set<String> traversedElements = new HashSet<>();
 	private static Set<ActivityEdge> traversedEdges = new HashSet<>();
 	private static ActivityEdge currentlyActiveEdge = null;
@@ -46,7 +43,7 @@ public class SiriusDecoratorService {
 	}
 
 	public static boolean isActiveElement(ActivityNode node) {
-		if (node == null)
+		if (node == null || node.getName()==null)
 			return false;
 		
 		String identifier = generateIdentifier(node);
@@ -68,6 +65,7 @@ public class SiriusDecoratorService {
 	}
 
 	public static boolean isActiveEdge(ActivityEdge edge) {
+		if (currentlyActiveElement.isEmpty() || previouslyActiveElement.isEmpty())return false;
 		if (edge.getSource() == null || edge.getTarget() == null)
 			return false;
 		
@@ -127,7 +125,7 @@ public class SiriusDecoratorService {
 	}
 
 	public static boolean isPreviouslyActiveElement(ActivityNode node) {
-		if (node == null)
+		if (node == null || node.getName()==null)
 			return false;
 		String identifier = generateIdentifier(node);
 		if (previouslyActiveElement.equals(identifier))

@@ -10,6 +10,7 @@
   <semanticResources>petrinet.xmof</semanticResources>
   <semanticResources>http://petrinet/1.0</semanticResources>
   <semanticResources>pathmap://XMOF_LIBRARY/xmof_library.xmof</semanticResources>
+  <semanticResources>gemoc-gen/execution/execution-20160625_121802/net1.petrinet</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WMngEO9SEeWQio0NoAerxQ">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_WQ7_YO9SEeWQio0NoAerxQ" name="petrinet">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_WRYrUO9SEeWQio0NoAerxQ" source="GMF_DIAGRAMS">
