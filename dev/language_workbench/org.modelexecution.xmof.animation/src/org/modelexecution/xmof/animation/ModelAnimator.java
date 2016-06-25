@@ -30,14 +30,7 @@ public class ModelAnimator implements IEngineAddon {
 
 	private void initializeSiriusController(XMOFBasedModel model, Resource resource) {
 		String uriString = resource.getURI().toString();
-		URI airdURI;
-		if (uriString.contains("petrinet2")) {
-			 airdURI= URI.createURI(
-					"platform:/resource/org.modelexecution.xmof.examples.petrinet2.xmof.sirius/representations.aird");
-		}else{
-			airdURI = URI.createURI(
-					"platform:/resource/org.modelexecution.xmof.examples.petrinet.xmof.sirius/representations.aird");
-		}
+		URI airdURI=URI.createURI(uriString.replace("xmof/petrinet.xmof", "representations.aird"));
 		
 		animationController = new SiriusAnimationController(model, airdURI);
 	}
@@ -92,7 +85,9 @@ public class ModelAnimator implements IEngineAddon {
 
 	@Override
 	public void aboutToExecuteStep(IBasicExecutionEngine engine, Step stepToExecute) {
-		// TODO Auto-generated method stub
+		if (animationController!=null){
+			animationController.processMSEOccurrence(stepToExecute.getMseoccurrence(), true);
+		}
 		
 	}
 
