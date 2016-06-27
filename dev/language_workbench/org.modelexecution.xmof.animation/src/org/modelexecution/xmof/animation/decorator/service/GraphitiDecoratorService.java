@@ -1,21 +1,36 @@
 package org.modelexecution.xmof.animation.decorator.service;
 
+import org.eclipse.draw2d.Graphics;
+import org.eclipse.graphiti.tb.BorderDecorator;
+import org.eclipse.graphiti.tb.ColorDecorator;
 import org.eclipse.graphiti.tb.IDecorator;
 import org.eclipse.graphiti.util.IColorConstant;
 
 public class GraphitiDecoratorService {
 
 	private static Object decoratedElement;
-	private static IDecorator[] decorators;
-	private static IColorConstant activeColor= IColorConstant.RED;
-	public static void setDecoratedElement(Object element,
-			IDecorator[] decorators) {
-		GraphitiDecoratorService.decorators = decorators;
+	private static DecorationType type = DecorationType.UNDECORATED_NODE;
+
+	public static void setDecoratedElement(Object element, DecorationType decoType) {
 		decoratedElement = element;
+		GraphitiDecoratorService.type=decoType;
+		
 	}
 
 	public static IDecorator[] getDecorators() {
-		return decorators;
+		switch (type) {
+		case NODE_ACTIVE:
+			return new IDecorator[] { new ColorDecorator(IColorConstant.YELLOW, IColorConstant.RED) };
+		case NODE_TRAVERSED:
+			return new IDecorator[] { new ColorDecorator(IColorConstant.YELLOW, IColorConstant.GREEN) };
+		case STRUCTURED_NODE_ACTIVE:
+			return new IDecorator[] { new BorderDecorator(IColorConstant.RED, 1, Graphics.LINE_DASHDOTDOT) };
+		case STRUCTURED_NODE_TRAVERSED:
+			return new IDecorator[] { new BorderDecorator(IColorConstant.YELLOW, 1, Graphics.LINE_DASHDOTDOT) };
+
+		default:
+			return new IDecorator[0];
+		}
 	}
 
 	public static boolean equalsDecoratedElement(Object element) {
@@ -26,7 +41,7 @@ public class GraphitiDecoratorService {
 
 	public static void clear() {
 		decoratedElement = null;
-		decorators = null;
+		type = DecorationType.UNDECORATED_NODE;
 
 	}
 

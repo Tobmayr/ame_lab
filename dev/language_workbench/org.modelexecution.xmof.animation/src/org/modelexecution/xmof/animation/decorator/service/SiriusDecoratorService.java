@@ -22,7 +22,7 @@ public class SiriusDecoratorService {
 
 	public static void setActiveElement(Match match, String activityName) {
 		String identifier = activityName.trim() + "|" + match.getXmofElementName().trim();
-		callerObject = match.getInvokerObjectName();
+		callerObject = match.getCallerObjectName();
 		if (currentlyActiveElement != null) {
 			previouslyActiveElement = currentlyActiveElement;
 			traversedElements.add(currentlyActiveElement);

@@ -7,6 +7,7 @@ import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.impl.
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.animation.controller.internal.Match;
+import org.modelexecution.xmof.animation.decorator.service.DecorationType;
 import org.modelexecution.xmof.animation.decorator.service.SiriusDecoratorService;
 
 public class SiriusDiagramDecorator extends DiagramDecorator {
@@ -14,7 +15,7 @@ public class SiriusDiagramDecorator extends DiagramDecorator {
 	private Set<String> activityNodes;
 
 	public SiriusDiagramDecorator(Activity activity) {
-		super(activity.getName());
+		super(activity);
 		intializeActivityNodesSet(activity);
 	}
 
@@ -47,12 +48,12 @@ public class SiriusDiagramDecorator extends DiagramDecorator {
 	@Override
 	public boolean decorateActivityNode(Match match) {
 	 if (isActivityFinished()){
-		SiriusDecoratorService.clear();
+		
 		setActivityFinished(false);
 	 }
 	 
 	 if (activityNodes.contains(match.getXmofElementName().trim())){
-		 SiriusDecoratorService.setActiveElement(match, getActivityName());
+		 SiriusDecoratorService.setActiveElement(match, getActivity().getName());
 		 return true;
 	 }
 	 
@@ -60,10 +61,26 @@ public class SiriusDiagramDecorator extends DiagramDecorator {
 	
 	}
 	
-	public boolean decorateExpansionRegion(Match match){
+
+	
+
+	@Override
+	public void resetDecorations() {
+		SiriusDecoratorService.clear();
 		
-		
-		return false;
 	}
+
+	@Override
+	protected void decoratePreviouslyActiveNode(DecorationType nodeTraversed) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void decorateActiveNode(DecorationType structuredNodeActive) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
