@@ -36,7 +36,7 @@ public class SiriusAnimationController extends AnimationController {
 	@Override
 	protected void decorateActivityNode(Match match) {
 		super.decorateActivityNode(match);
-		((SiriusDiagramHandler)diagramHandler).refreshDiagram(activeDecorator.getActivityName());
+		((SiriusDiagramHandler)diagramHandler).refreshDiagram(activeDecorator.getActivity().getName());
 	}
 
 	@Override

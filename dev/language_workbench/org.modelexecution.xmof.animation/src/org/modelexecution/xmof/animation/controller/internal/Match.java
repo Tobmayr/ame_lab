@@ -3,28 +3,27 @@ package org.modelexecution.xmof.animation.controller.internal;
 public class Match {
 
 	private XMOFType type = XMOFType.UNKOWN;
-	private String mseOccurenceName;
+	private String mseName;
 	private String xmofElementName;
-	private String invokerObjectName;
+	private String callerObjectName;
 
 
 
 	public Match() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Match(String mseOccurenceName) {
+	public Match(String mseName) {
 		super();
-		this.mseOccurenceName = mseOccurenceName;
+		this.mseName = mseName;
 	}
 
-	public String getMseOccurenceName() {
-		return mseOccurenceName;
+	public String getMseName() {
+		return mseName;
 	}
 
-	public void setMseOccurenceName(String mseOccurenceName) {
-		this.mseOccurenceName = mseOccurenceName;
+	public void setMseName(String mseOccurenceName) {
+		this.mseName = mseOccurenceName;
 	}
 
 	public String getXmofElementName() {
@@ -32,7 +31,7 @@ public class Match {
 	}
 
 	public void setXmofElementName(String xmofElementName) {
-		this.xmofElementName = xmofElementName;
+		this.xmofElementName = xmofElementName.trim();
 	}
 
 	public XMOFType getType() {
@@ -43,12 +42,12 @@ public class Match {
 		this.type = type;
 	}
 	
-	public String getInvokerObjectName() {
-		return invokerObjectName;
+	public String getCallerObjectName() {
+		return callerObjectName;
 	}
 
-	public void setInvokerObjectName(String invokerObjectName) {
-		this.invokerObjectName = invokerObjectName;
+	public void setCallerObjectName(String invokerObjectName) {
+		this.callerObjectName = invokerObjectName;
 	}
 
 }

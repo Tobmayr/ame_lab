@@ -1,10 +1,8 @@
 package org.modelexecution.xmof.animation.controller.internal;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -13,8 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
-import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
-import org.modelexecution.xmof.animation.decorator.GraphitiDiagramDecorator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fUML.Syntax.Actions.BasicActions.CallOperationAction;
@@ -43,6 +39,27 @@ public class MappingService {
 	}
 	
 
+
+	public XMOFBasedModel getModel() {
+		return model;
+	}
+
+	public Match matchDebugEvent(String debugevent) {
+		lastMatchAttempt = new Match(debugevent);
+		String[] prefixArgs = debugevent.split("_",3);
+		if (hasCorrectPrefix(prefixArgs)) {
+			tryToFindMatch(prefixArgs[2]);
+		}
+		return lastMatchAttempt;
+	}
+
+	public Set<String> getActivityNames() {
+		return activityMap.keySet();
+	}
+	
+	public Collection<Activity> getActivities(){
+		return activityMap.values();
+	}
 
 	private void obtainAllowedEObjects() {
 		allowedEObjects = new HashSet<>();
@@ -73,10 +90,6 @@ public class MappingService {
 
 		return;
 
-	}
-
-	public Set<String> getActivityNames() {
-		return activityMap.keySet();
 	}
 
 	private Set<Activity> obtainActivities(Collection<EObject> modelElements) {
@@ -151,23 +164,10 @@ public class MappingService {
 
 	private boolean hasCorrectPrefix(String[] args) {
 		if (args.length == 3) {
-			lastMatchAttempt.setInvokerObjectName(args[1]);
+			lastMatchAttempt.setCallerObjectName(args[1]);
 			return MappingService.MSE_PREFIX.equals(args[0]) && allowedEObjects.contains(args[1]);
 		}
 		return false;
-	}
-
-	public XMOFBasedModel getModel() {
-		return model;
-	}
-
-	public Match matchDebugEvent(String debugevent) {
-		lastMatchAttempt = new Match(debugevent);
-		String[] prefixArgs = debugevent.split("_");
-		if (hasCorrectPrefix(prefixArgs)) {
-			tryToFindMatch(prefixArgs[2]);
-		}
-		return lastMatchAttempt;
 	}
 
 }

@@ -56,7 +56,7 @@ public abstract class AnimationController {
 	public void handleActivity(Match match) {
 		Activity activity = getModelProcessor().getActivityByName(match.getXmofElementName());
 		openOrCreateAcitvityDiagram(activity);
-		activityCallerMap.put(activity.getName(), activeDecorator.getActivityName());
+		activityCallerMap.put(activity.getName(), activeDecorator.getActivity().getName());
 		activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
 	}
 
@@ -79,18 +79,6 @@ public abstract class AnimationController {
 		}
 	}
 
-	
-
-	private ActivityNode getXMOFElement(String activityName, String name) {
-		Activity activity = modelProcessor.getActivityByName(activityName);
-		for (ActivityNode node : activity.getNode()) {
-			if (node.getName().equals(name)) {
-				return node;
-			}
-		}
-
-		return null;
-	}
 
 	protected abstract void initializeDecorators();
 
@@ -129,7 +117,7 @@ public abstract class AnimationController {
 			}
 
 			private boolean tryDecorateInCallingAcitivty(Match match) {
-				String callingActivity = activityCallerMap.get(activeDecorator.getActivityName());
+				String callingActivity = activityCallerMap.get(activeDecorator.getActivity().getName());
 				if (callingActivity != null) {
 					activeDecorator = diagramDecoratorMap.get(callingActivity.trim());
 					if (activeDecorator.decorateActivityNode(match)) {

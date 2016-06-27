@@ -26,9 +26,9 @@ public class GraphitiAnimationController extends AnimationController {
 	@Override
 	protected  void initializeDecorators() {
 		diagramDecoratorMap = new HashMap<>();
-		for (String activityName : getModelProcessor().getActivityNames()) {
-			diagramDecoratorMap.put(activityName,
-					new GraphitiDiagramDecorator(activityName,
+		for (Activity activity : getModelProcessor().getActivities()) {
+			diagramDecoratorMap.put(activity.getName(),
+					new GraphitiDiagramDecorator(activity,
 							((GraphitiDiagramHandler)diagramHandler).getKernelEditor()));
 		}
 	}
