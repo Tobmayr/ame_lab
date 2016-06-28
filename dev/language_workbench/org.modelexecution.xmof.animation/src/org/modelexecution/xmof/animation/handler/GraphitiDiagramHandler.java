@@ -1,7 +1,5 @@
 package org.modelexecution.xmof.animation.handler;
 
-
-
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -12,61 +10,59 @@ import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 
+public class GraphitiDiagramHandler extends DiagramHandler {
 
-public class GraphitiDiagramHandler extends DiagramHandler implements Runnable {
+	private static final String KERNEL_EDITOR_ID = "org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditorID";
 
-	private static final String KERNEL_EDITOR_ID="org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditorID";
-	
 	private KernelEditor activeEditor;
 	private Resource modelResource;
 
 	public GraphitiDiagramHandler(Resource modelResource) {
-		this.modelResource=modelResource;
-	
+		this.modelResource = modelResource;
+		PlatformUI.getWorkbench().getDisplay().asyncExec((new Runnable() {
+			@Override
+			public void run() {
+				openModel();
+			}
+		}));
+
 	}
-	
-	public void openOrShowDiagram(Activity activity){
+
+	public void openOrShowDiagram(Activity activity) {
 		activeEditor.showDiagram(activity);
 	}
 
+	private boolean openModel() {
+		IEditorInput editorInput = getEditorInput();
 
-	private boolean openModel(){
-		IEditorInput editorInput= getEditorInput();
-		
-		IWorkbenchPage page = PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getActivePage();
-	
-			try {
-				activeEditor = (KernelEditor)page.openEditor(editorInput, KERNEL_EDITOR_ID);
-				
-			
-			} catch (PartInitException e) {
-				e.printStackTrace();
-				return false;
-				
-			}
-			
-			return true;
-		
+		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+
+		try {
+			activeEditor = (KernelEditor) page.openEditor(editorInput, KERNEL_EDITOR_ID);
+
+		} catch (PartInitException e) {
+			e.printStackTrace();
+			return false;
+
+		}
+
+		return true;
 
 	}
 
 	private IEditorInput getEditorInput() {
-		URI modelPathURI= modelResource.getURI();
+		URI modelPathURI = modelResource.getURI();
 		return new URIEditorInput(modelPathURI);
 	}
 
-
-	@Override
-	public void run() {
-		openModel();
-		
-	}
-	
-	public KernelEditor getKernelEditor(){
+	public KernelEditor getKernelEditor() {
 		return activeEditor;
 	}
-	
-	
-	
+
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+
+	}
+
 }

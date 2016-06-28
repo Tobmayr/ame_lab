@@ -6,10 +6,10 @@ import java.util.Map;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.animation.controller.internal.MappingService;
-import org.modelexecution.xmof.animation.controller.internal.Match;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.handler.DiagramHandler;
+import org.modelexecution.xmof.animation.mapping.MappingService;
+import org.modelexecution.xmof.animation.mapping.Match;
 import org.modelexecution.xmof.animation.ui.Activator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
@@ -17,7 +17,7 @@ import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 
 public abstract class AnimationController {
 
-	private MappingService modelProcessor;
+	private MappingService mappingService;
 	private XMOFBasedModel model;
 	protected Map<String, DiagramDecorator> diagramDecoratorMap;
 	protected DiagramDecorator activeDecorator;
@@ -26,14 +26,14 @@ public abstract class AnimationController {
 
 	public AnimationController(XMOFBasedModel model, DiagramHandler concreteHandler) {
 		this.model = model;
-		modelProcessor = new MappingService(model);
+		mappingService = new MappingService(model);
 		diagramDecoratorMap = new HashMap<String, DiagramDecorator>();
 		activityCallerMap = new HashMap<>();
 		this.diagramHandler = concreteHandler;
 	}
 
-	public void processMSEOccurrence(MSEOccurrence mseOccurrence, boolean verbose) {
-		Match match = modelProcessor.matchDebugEvent(mseOccurrence.getMse().getName());
+	public void processMSE(MSEOccurrence mseOccurrence, boolean verbose) {
+		Match match = mappingService.matchDebugEvent(mseOccurrence.getMse().getName());
 		if (verbose) {
 			String info = mseOccurrence.getMse().getName() + " has been matched to:\n" + match.getXmofElementName();
 			Activator.getDefault().getMessaggingSystem().debug(info, Activator.PLUGIN_ID);
@@ -49,7 +49,15 @@ public abstract class AnimationController {
 		activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
 	}
 
-	protected abstract void openOrCreateAcitvityDiagram(Activity activity);
+	protected void openOrCreateAcitvityDiagram(Activity activity) {
+		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+			@Override
+			public void run() {
+				diagramHandler.openOrShowDiagram(activity);
+			}
+
+		});
+	}
 
 	public abstract void dispose();
 
@@ -79,15 +87,14 @@ public abstract class AnimationController {
 		}
 	}
 
-
 	protected abstract void initializeDecorators();
 
 	public MappingService getModelProcessor() {
-		return modelProcessor;
+		return mappingService;
 	}
 
 	public void setModelProcessor(MappingService modelProcessor) {
-		this.modelProcessor = modelProcessor;
+		this.mappingService = modelProcessor;
 	}
 
 	public XMOFBasedModel getModel() {

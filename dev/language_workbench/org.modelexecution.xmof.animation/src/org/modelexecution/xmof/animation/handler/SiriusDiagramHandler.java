@@ -39,7 +39,7 @@ public class SiriusDiagramHandler extends DiagramHandler {
 	public SiriusDiagramHandler(URI airdURI) {
 		this.airdURI = airdURI;
 		killPreviousSiriusSession(airdURI);
-		SessionManager.INSTANCE.getSession(airdURI, new NullProgressMonitor());
+		
 	}
 
 	private void killPreviousSiriusSession(URI sessionResourceURI) {
@@ -140,6 +140,12 @@ public class SiriusDiagramHandler extends DiagramHandler {
 			}
 		});
 
+	}
+
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

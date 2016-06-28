@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.controller.internal;
+package org.modelexecution.xmof.animation.mapping;
 
 public enum XMOFType {
 	MAIN, ACTITVITY, ACTIVITYNODE, CONTROLNODE, CALLOPERATION, UNKOWN, EXPANSIONREGION

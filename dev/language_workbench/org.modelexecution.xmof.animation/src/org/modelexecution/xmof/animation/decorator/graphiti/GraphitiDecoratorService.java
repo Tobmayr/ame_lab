@@ -1,10 +1,11 @@
-package org.modelexecution.xmof.animation.decorator.service;
+package org.modelexecution.xmof.animation.decorator.graphiti;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.graphiti.tb.BorderDecorator;
 import org.eclipse.graphiti.tb.ColorDecorator;
 import org.eclipse.graphiti.tb.IDecorator;
 import org.eclipse.graphiti.util.IColorConstant;
+import org.modelexecution.xmof.animation.decorator.DecorationType;
 
 public class GraphitiDecoratorService {
 

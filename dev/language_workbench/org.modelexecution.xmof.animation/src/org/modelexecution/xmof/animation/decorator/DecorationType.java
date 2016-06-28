@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.decorator.service;
+package org.modelexecution.xmof.animation.decorator;
 
 public enum DecorationType {
 

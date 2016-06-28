@@ -25,7 +25,7 @@
    <extension
          point="org.modelexecution.xmof.diagram.DecorationProvider">
       <decoratorProvider
-            decoratorProviderClass="org.modelexecution.xmof.animation.decorator.provider.NodeDecoratorProvider">
+            decoratorProviderClass="org.modelexecution.xmof.animation.decorator.graphiti.NodeDecoratorProvider">
       </decoratorProvider>
    </extension>
    <extension

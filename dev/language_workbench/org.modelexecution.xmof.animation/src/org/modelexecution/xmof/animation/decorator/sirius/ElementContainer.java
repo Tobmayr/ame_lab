@@ -1,10 +1,10 @@
-package org.modelexecution.xmof.animation.decorator.service;
+package org.modelexecution.xmof.animation.decorator.sirius;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.modelexecution.xmof.animation.util.EdgeId;
+import org.modelexecution.xmof.animation.decorator.EdgeId;
 
 public class ElementContainer {
 
