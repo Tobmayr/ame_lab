@@ -11,21 +11,21 @@ import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.animation.controller.GraphitiAnimationController;
 import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
+import org.modelexecution.xmof.gemoc.engine.ui.commons.XMOFRepresentation;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
 
 public class ModelAnimator implements IEngineAddon {
-	private static final boolean USE_GRAPHITI = true;
+
 	private AnimationController animationController;
 
-	public void initialize(XMOFBasedModel model, Resource resource) {
-		if (USE_GRAPHITI) {
+	public void initialize(XMOFBasedModel model, Resource resource, String representation) {
+		if (representation.equals(XMOFRepresentation.REPRESENTATION_GRAPHITI)){
 			animationController = new GraphitiAnimationController(model, resource);
-		} else {
+		}else if(representation.equals(XMOFRepresentation.REPRESENTATION_SIRIUS)){
 			initializeSiriusController(model,resource);
 		}
-
 	}
 
 	private void initializeSiriusController(XMOFBasedModel model, Resource resource) {
