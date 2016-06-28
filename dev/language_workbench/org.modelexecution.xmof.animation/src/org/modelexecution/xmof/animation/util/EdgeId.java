@@ -1,12 +1,24 @@
 package org.modelexecution.xmof.animation.util;
 
-public class ActivityEdgeId {
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
+
+public class EdgeId {
 
 	private String sourceNodeId;
 	private String targetNodeId;
 
-	public ActivityEdgeId(String sourceNodeName, String targetNodeName) {
+	public EdgeId(ActivityEdge edge) {
+		if (edge.getSource() != null) {
+			sourceNodeId = edge.getSource().getName();
+		}
+		if (edge.getTarget() != null) {
+			targetNodeId = edge.getTarget().getName();
+		}
+	}
+
+	public EdgeId(String sourceNodeName, String targetNodeName) {
 		super();
+
 		this.sourceNodeId = sourceNodeName;
 		this.targetNodeId = targetNodeName;
 
@@ -20,7 +32,6 @@ public class ActivityEdgeId {
 		return targetNodeId;
 	}
 
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -38,7 +49,7 @@ public class ActivityEdgeId {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ActivityEdgeId other = (ActivityEdgeId) obj;
+		EdgeId other = (EdgeId) obj;
 		if (sourceNodeId == null) {
 			if (other.sourceNodeId != null)
 				return false;
@@ -54,7 +65,7 @@ public class ActivityEdgeId {
 
 	@Override
 	public String toString() {
-		return "("+sourceNodeId + "|" + targetNodeId+")";
+		return "_" + "(" + sourceNodeId + "|" + targetNodeId + ")";
 	}
 
 }
