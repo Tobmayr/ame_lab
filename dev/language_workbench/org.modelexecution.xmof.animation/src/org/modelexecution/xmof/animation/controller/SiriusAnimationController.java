@@ -12,9 +12,9 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class SiriusAnimationController extends AnimationController {
 
-	public SiriusAnimationController(XMOFBasedModel model,URI airdURI) {
-	
-		super(model,new SiriusDiagramHandler(airdURI));
+	public SiriusAnimationController(XMOFBasedModel model, URI airdURI) {
+
+		super(model, new SiriusDiagramHandler(airdURI));
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class SiriusAnimationController extends AnimationController {
 		diagramDecoratorMap = new HashMap<>();
 		for (String activityName : getModelProcessor().getActivityNames()) {
 			diagramDecoratorMap.put(activityName,
-					new SiriusDiagramDecorator(getModelProcessor().getActivityByName(activityName)));
+					new SiriusDiagramDecorator(getModelProcessor().getActivityByName(activityName), this));
 		}
 
 	}
@@ -30,19 +30,24 @@ public class SiriusAnimationController extends AnimationController {
 	@Override
 	protected void openOrCreateAcitvityDiagram(Activity activity) {
 		diagramHandler.openOrShowDiagram(activity);
-		
+		SiriusDecoratorService.intializeContainer(activity.getName());
+
 	}
-	
+
 	@Override
 	protected void decorateActivityNode(Match match) {
 		super.decorateActivityNode(match);
-		((SiriusDiagramHandler)diagramHandler).refreshDiagram(activeDecorator.getActivity().getName());
+		refresh();
 	}
 
 	@Override
 	public void dispose() {
-		SiriusDecoratorService.clear();
-		
+		SiriusDecoratorService.reset();
+
+	}
+
+	public void refresh() {
+		((SiriusDiagramHandler) diagramHandler).refreshDiagram(activeDecorator.getActivity().getName());
 	}
 
 }

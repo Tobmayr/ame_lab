@@ -1,153 +1,114 @@
 package org.modelexecution.xmof.animation.decorator.service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.eclipse.emf.ecore.EObject;
-import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
-import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.InitialNode;
-import org.modelexecution.xmof.animation.controller.internal.Match;
+import org.modelexecution.xmof.animation.util.EdgeId;
 
 public class SiriusDecoratorService {
 
-	private static String currentlyActiveElement = "";
-	private static String previouslyActiveElement = "";
-	private static Set<String> traversedElements = new HashSet<>();
-	private static Set<ActivityEdge> traversedEdges = new HashSet<>();
-	private static ActivityEdge currentlyActiveEdge = null;
-	private static String callerObject = "";
+	private static Map<String, ElementContainer> activityElementContainerMap = new HashMap<>();
 
-	public static void setActiveElement(Match match, String activityName) {
-		String identifier = activityName.trim() + "|" + match.getXmofElementName().trim();
-		callerObject = match.getCallerObjectName();
-		if (currentlyActiveElement != null) {
-			previouslyActiveElement = currentlyActiveElement;
-			traversedElements.add(currentlyActiveElement);
+	public static void setActiveNode(Activity activity, ActivityNode node) {
+		ElementContainer container = activityElementContainerMap.get(activity.getName());
+		if (container != null) {
+			container.setActiveNode(node.getName());
 		}
-		if (currentlyActiveEdge != null) {
-			traversedEdges.add(currentlyActiveEdge);
-		}
-		currentlyActiveElement = identifier;
-		traversedElements.remove(currentlyActiveElement);
+	}
 
+	public static void addTraversedNode(Activity activity, ActivityNode node) {
+		ElementContainer container = activityElementContainerMap.get(activity.getName());
+		if (container != null) {
+			container.addTraversedNode(node.getName());
+		}
+	}
+
+	public static void setActiveEdge(Activity activity, ActivityEdge edge) {
+		ElementContainer container = activityElementContainerMap.get(activity.getName());
+		if (container != null) {
+
+			container.setActiveEdge(new EdgeId(edge));
+		}
+	}
+
+	public static void addTraversedEdge(Activity activity, ActivityEdge edge) {
+		ElementContainer container = activityElementContainerMap.get(activity.getName());
+		if (container != null) {
+			container.addTraversedEdge(new EdgeId(edge));
+		}
 	}
 
 	public static boolean isTraveresedElement(ActivityNode node) {
-		if (node == null)
-			return false;
-		String identifier = generateIdentifier(node);
-		return traversedElements.contains(identifier);
+		String key = getActivityName(node);
+		ElementContainer container = activityElementContainerMap.get(key);
+		if (container != null) {
+			return container.getTraversedNodes().contains(node.getName());
+		}
+		return false;
 	}
 
 	public static boolean isActiveElement(ActivityNode node) {
-		if (node == null || node.getName()==null)
-			return false;
-		
-		String identifier = generateIdentifier(node);
-		return currentlyActiveElement.equals(identifier);
-			
-
-	}
-
-
-	private static String generateIdentifier(ActivityNode node) {
-		String activityName = "";
-		if (node.getActivity() != null) {
-			activityName = node.getActivity().getName();
-		} else if (node.getInStructuredNode() != null && node.getInStructuredNode().getActivity() != null) {
-			activityName = node.getInStructuredNode().getActivity().getName();
+		String key = getActivityName(node);
+		ElementContainer container = activityElementContainerMap.get(key);
+		if (container != null) {
+			return container.getActiveNode().equals(node.getName());
 		}
-		return activityName + "|" + node.getName();
+	
+		return false;
 
 	}
 
 	public static boolean isActiveEdge(ActivityEdge edge) {
-		if (currentlyActiveElement.isEmpty() || previouslyActiveElement.isEmpty())return false;
-		if (edge.getSource() == null || edge.getTarget() == null)
-			return false;
-		
-		if(isSimpleActiveEdge(edge))return true;
-		ActivityNode sourceNode = retrieveSourceNode(edge);
-		ActivityNode targetNode = retrieveTargeNode(edge);
+		String key = getActivityName(edge);
+		ElementContainer container = activityElementContainerMap.get(key);
+		if (container != null) {
 
-		if (isPreviouslyActiveElement(sourceNode) && isActiveElement(targetNode)) {
-			currentlyActiveEdge = edge;
-			traversedEdges.remove(currentlyActiveEdge);
-			return true;
+			return container.getActiveEdge().equals(new EdgeId(edge));
 		}
 		return false;
-	}
-
-	private static boolean isSimpleActiveEdge(ActivityEdge edge) {
-		return isPreviouslyActiveElement(edge.getSource()) && isActiveElement(edge.getTarget());
-
-	}
-
-	private static ActivityNode retrieveTargeNode(ActivityEdge edge) {
-		if (edge.getTarget() instanceof Pin) {
-			return retrieveConnectedActivityNode((Pin) edge.getTarget());
-		}else if (edge.getTarget() instanceof ExpansionNode){
-			return retrieveConnectedActivityNode((ExpansionNode) edge.getTarget());
-		}
-		return edge.getTarget();
-	}
-
-	private static ActivityNode retrieveConnectedActivityNode(ExpansionNode expansionNode) {
-		if (expansionNode.getRegionAsInput()!=null){
-			return expansionNode.getRegionAsInput();
-		}else 
-			return expansionNode.getRegionAsOutput();
-	}
-
-	private static ActivityNode retrieveSourceNode(ActivityEdge edge) {
-		if (edge.getSource() instanceof Pin) {
-			return retrieveConnectedActivityNode((Pin) edge.getSource());
-		}else if (edge.getSource() instanceof ExpansionNode){
-			return retrieveConnectedActivityNode((ExpansionNode) edge.getSource());
-		}
-		return edge.getSource();
-	}
-
-	private static ActivityNode retrieveConnectedActivityNode(Pin pin) {
-		if (pin.eContainer() instanceof ActivityNode) {
-			return (ActivityNode) pin.eContainer();
-		}
-
-		return null;
-
 	}
 
 	public static boolean isTraversedEdge(ActivityEdge edge) {
-		return traversedEdges.contains(edge);
-	}
+		String key = getActivityName(edge);
+		ElementContainer container = activityElementContainerMap.get(key);
+		if (container != null) {
 
-	public static boolean isPreviouslyActiveElement(ActivityNode node) {
-		if (node == null || node.getName()==null)
-			return false;
-		String identifier = generateIdentifier(node);
-		if (previouslyActiveElement.equals(identifier))
-			return true;
-		if (node instanceof InitialNode)
-			return true;
+			return container.getTraversedEdges().contains(new EdgeId(edge));
+		}
 		return false;
+	}
+
+	private static String getActivityName(ActivityNode node) {
+		if (node.getActivity() != null) {
+			return node.getActivity().getName();
+		}
+		return "";
+	}
+
+	private static String getActivityName(ActivityEdge edge) {
+		if (edge.getActivity() != null) {
+			return edge.getActivity().getName();
+		}
+		return "";
+	}
+
+	public static void clear(String activityName) {
+		activityElementContainerMap.put(activityName, new ElementContainer());
+	}
+
+	public static void intializeContainer(String activityName) {
+		if (!activityElementContainerMap.containsKey(activityName)) {
+			activityElementContainerMap.put(activityName, new ElementContainer());
+		}
 
 	}
 
-	public static void clear() {
-		traversedElements = new HashSet<>();
-		currentlyActiveElement = null;
-	}
+	public static void reset() {
+		activityElementContainerMap = new HashMap<>();
 
-	public static String getCallerObject(EObject o) {
-		return "Activity has been called by:\n" + callerObject;
-
-	}
-
-	public static boolean animatorRunning(EObject o) {
-		return callerObject.isEmpty() || callerObject == null;
 	}
 
 }

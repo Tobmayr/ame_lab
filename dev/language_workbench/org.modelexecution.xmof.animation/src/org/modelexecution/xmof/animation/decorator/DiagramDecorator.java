@@ -23,13 +23,13 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectFl
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectNode;
 import org.modelexecution.xmof.animation.controller.internal.Match;
 import org.modelexecution.xmof.animation.decorator.service.DecorationType;
-import org.modelexecution.xmof.animation.util.ActivityEdgeId;
+import org.modelexecution.xmof.animation.util.EdgeId;
 
 public abstract class DiagramDecorator {
 	private boolean activityFinished = false;
 	protected Activity activity;
 	protected Map<String, ActivityNode> activityNodeMap;
-	protected Map<ActivityEdgeId, ActivityEdge> activityEdgeMap;
+	protected Map<EdgeId, ActivityEdge> activityEdgeMap;
 	protected ActivityNode activeNode;
 	protected ActivityNode previouslyActiveNode;
 	protected StructuredActivityNode inStructuredNode = null;
@@ -54,7 +54,7 @@ public abstract class DiagramDecorator {
 	}
 
 	private void processActivityEdge(ActivityEdge edge) {
-		ActivityEdgeId id = null;
+		EdgeId id = null;
 		ActivityNode source = null, target = null;
 		if (edge instanceof ControlFlow) {
 			source = edge.getSource();
@@ -64,7 +64,7 @@ public abstract class DiagramDecorator {
 			target = retrieveConnectedNode(edge.getTarget());
 		}
 		if (source != null && target != null) {
-			id = new ActivityEdgeId(source.getName(), target.getName());
+			id = new EdgeId(source.getName(), target.getName());
 			activityEdgeMap.put(id, edge);
 		}
 
@@ -171,7 +171,7 @@ public abstract class DiagramDecorator {
 	private ActivityEdge retrieveActiveEdge() {
 		if (previouslyActiveNode == null)
 			return null;
-		ActivityEdgeId id = new ActivityEdgeId(previouslyActiveNode.getName(), activeNode.getName());
+		EdgeId id = new EdgeId(previouslyActiveNode.getName(), activeNode.getName());
 		return activityEdgeMap.get(id);
 	}
 

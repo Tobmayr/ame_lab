@@ -1,76 +1,48 @@
 package org.modelexecution.xmof.animation.decorator;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.eclipse.emf.ecore.EObject;
-import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.impl.ExpansionRegionImpl;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.animation.controller.internal.Match;
+import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
 import org.modelexecution.xmof.animation.decorator.service.DecorationType;
 import org.modelexecution.xmof.animation.decorator.service.SiriusDecoratorService;
 
 public class SiriusDiagramDecorator extends DiagramDecorator {
 
-	private Set<String> activityNodes;
+	private SiriusAnimationController controller;
 
-	public SiriusDiagramDecorator(Activity activity) {
+	public SiriusDiagramDecorator(Activity activity, SiriusAnimationController controller) {
 		super(activity);
-		intializeActivityNodesSet(activity);
-	}
-
-	private void intializeActivityNodesSet(Activity activity) {
-		activityNodes = new HashSet<>();
-		for (ActivityNode node : activity.getNode()) {
-			processActivityNode(node);
-		}
-
-	}
-
-	private void processActivityNode(ActivityNode node) {
-		if (node.getName() != null) {
-			if (node instanceof ExpansionRegionImpl) {
-
-				getActivityNodes((ExpansionRegionImpl) node);
-			}
-			activityNodes.add(node.getName());
-		}
-
-	}
-
-	private void getActivityNodes(ExpansionRegionImpl expNode) {
-		for (ActivityNode actNode : expNode.getNode()) {
-			processActivityNode(actNode);
-		}
-
+		this.controller = controller;
 	}
 
 	@Override
-	public boolean decorateActivityElement(Match match) {
-		if (isActivityFinished()) {
-
-			setActivityFinished(false);
+	protected void decorateElement(EObject element, DecorationType type) {
+		switch (type) {
+		case NODE_ACTIVE:
+		case STRUCTURED_NODE_ACTIVE:
+			SiriusDecoratorService.setActiveNode(activity, (ActivityNode) element);
+			break;
+		case NODE_TRAVERSED:
+		case STRUCTURED_NODE_TRAVERSED:
+			SiriusDecoratorService.addTraversedNode(activity, (ActivityNode) element);
+			break;
+		case EDGE_ACTIVE:
+			SiriusDecoratorService.setActiveEdge(activity, (ActivityEdge) element);
+			break;
+		case EDGE_TRAVERSED:
+			SiriusDecoratorService.addTraversedEdge(activity, (ActivityEdge) element);
+		default:
+			break;
 		}
-
-		if (activityNodes.contains(match.getXmofElementName().trim())) {
-			SiriusDecoratorService.setActiveElement(match, getActivity().getName());
-			return true;
-		}
-
-		return false;
 
 	}
 
 	@Override
 	public void resetDecorations() {
-		SiriusDecoratorService.clear();
-
-	}
-
-	@Override
-	protected void decorateElement(EObject element, DecorationType type) {
-		// TODO Auto-generated method stub
+		SiriusDecoratorService.clear(activity.getName());
+		controller.refresh();
 
 	}
 
