@@ -41,5 +41,7 @@ Import-Package: org.eclipse.emf.ecore.presentation,
  org.eclipse.sirius.ui.business.api.dialect;version="3.1.0",
  org.eclipse.sirius.ui.business.api.session;version="3.1.0",
  org.eclipse.sirius.viewpoint;version="3.1.0",
+ org.gemoc.commons.eclipse.emf,
+ org.gemoc.commons.eclipse.ui.dialogs,
  org.modelexecution.xmof.diagram.decoration
 Bundle-ActivationPolicy: lazy

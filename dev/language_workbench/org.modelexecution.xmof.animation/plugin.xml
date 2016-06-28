@@ -40,7 +40,7 @@
    <extension
          point="org.eclipse.debug.ui.launchConfigurationTabGroups">
       <launchConfigurationTabGroup
-            class="org.modelexecution.xmof.gemoc.engine.ui.launcher.LauncherTabGroup"
+            class="org.modelexecution.xmof.animation.launcher.LauncherTabGroup"
             id="org.xmof.execution.engine.ui.launcher.tabGroupAnim"
             type="org.modelexecution.xmof.gemoc.animation.launcheranim">
       </launchConfigurationTabGroup>
