@@ -34,6 +34,7 @@ public abstract class DiagramDecorator {
 	protected ActivityNode previouslyActiveNode;
 	protected StructuredActivityNode inStructuredNode = null;
 	protected ActivityEdge activeEdge;
+	protected ActivityEdge previouslyActiveEdge;
 
 	public DiagramDecorator(Activity activity) {
 
@@ -142,22 +143,28 @@ public abstract class DiagramDecorator {
 				inStructuredNode = null;
 			}
 		}
-		if (activeNode == null)
-			return false;
-		if (activeNode instanceof StructuredActivityNode) {
-			decorateElement(activeNode, DecorationType.STRUCTURED_NODE_ACTIVE);
+		if (activeNode != null) {
+			if (activeNode instanceof StructuredActivityNode) {
+				decorateElement(activeNode, DecorationType.STRUCTURED_NODE_ACTIVE);
 
-			inStructuredNode = (StructuredActivityNode) activeNode;
-		} else {
-			decorateElement(activeNode, DecorationType.NODE_ACTIVE);
+				inStructuredNode = (StructuredActivityNode) activeNode;
+			} else {
+				decorateElement(activeNode, DecorationType.NODE_ACTIVE);
+			}
+		}
+
+		if (previouslyActiveEdge != null) {
+			decorateElement(previouslyActiveEdge, DecorationType.EDGE_TRAVERSED);
 		}
 
 		activeEdge = retrieveActiveEdge();
 		if (activeEdge != null) {
 			decorateElement(activeEdge, DecorationType.EDGE_ACTIVE);
 		}
+
 		previouslyActiveNode = activeNode;
-		return true;
+		previouslyActiveEdge = activeEdge;
+		return activeNode != null;
 
 	}
 

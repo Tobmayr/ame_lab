@@ -30,6 +30,8 @@ public class GraphitiDecoratorService {
 			return new IDecorator[] { new BorderDecorator(IColorConstant.YELLOW, 1, Graphics.LINE_DASHDOTDOT) };
 		case EDGE_ACTIVE:
 			return new IDecorator[] { new ColorDecorator(IColorConstant.RED, IColorConstant.RED) };
+		case EDGE_TRAVERSED:
+			return new IDecorator[] { new ColorDecorator(IColorConstant.GREEN, IColorConstant.GREEN) };
 		default:
 			return new IDecorator[0];
 		}
