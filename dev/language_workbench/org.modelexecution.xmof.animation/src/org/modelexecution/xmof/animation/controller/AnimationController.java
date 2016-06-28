@@ -120,7 +120,7 @@ public abstract class AnimationController {
 				String callingActivity = activityCallerMap.get(activeDecorator.getActivity().getName());
 				if (callingActivity != null) {
 					activeDecorator = diagramDecoratorMap.get(callingActivity.trim());
-					if (activeDecorator.decorateActivityNode(match)) {
+					if (activeDecorator.decorateActivityElement(match)) {
 						openOrCreateAcitvityDiagram(getModelProcessor().getActivityByName(callingActivity));
 					}
 					return true;
@@ -130,7 +130,7 @@ public abstract class AnimationController {
 			}
 
 			private boolean tryDecorateInCurrentActivity(Match match) {
-				return activeDecorator.decorateActivityNode(match);
+				return activeDecorator.decorateActivityElement(match);
 			}
 
 		});

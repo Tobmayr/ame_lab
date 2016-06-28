@@ -27,6 +27,7 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 		this.kernelEditor = kernelEditor;
 	}
 
+	@Override
 	public void resetDecorations() {
 		previouslyActiveNode = null;
 		GraphitiDecoratorService.clear();
@@ -37,38 +38,30 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 	}
 
 	@Override
-	public void initializeActivityNodeMap() {
+	public void initializeMaps() {
 		diagramEditor = getActiveDiagramEditor();
 		activityNodeMap = new HashMap<String, ActivityNode>();
 		if (diagramEditor != null) {
 			activity = getActivity(diagramEditor);
-			super.initializeActivityNodeMap();
+			super.initializeMaps();
 
 		}
 	}
 
 	@Override
-	protected void decoratePreviouslyActiveNode(DecorationType type) {
+	protected void decorateElement(EObject object, DecorationType type) {
 
-		refreshDecoration(previouslyActiveNode, type);
-
-	}
-
-	@Override
-	protected void decorateActiveNode(DecorationType type) {
-
-		refreshDecoration(activeNode, type);
-		previouslyActiveNode = activeNode;
+		refreshDecoration(object, type);
 
 	}
 
-	private void refreshDecoration(ActivityNode node, DecorationType type) {
+	private void refreshDecoration(EObject element, DecorationType type) {
 
-		GraphitiDecoratorService.setDecoratedElement(node, type);
+		GraphitiDecoratorService.setDecoratedElement(element, type);
 
 		DiagramBehavior diagramBehavior = getDiagramBehavior(diagramEditor);
 		Diagram diagram = getDiagram(diagramEditor);
-		List<PictogramElement> pictogramElements = Graphiti.getLinkService().getPictogramElements(diagram, node);
+		List<PictogramElement> pictogramElements = Graphiti.getLinkService().getPictogramElements(diagram, element);
 		for (PictogramElement pictogramElement : pictogramElements) {
 			diagramBehavior.refreshRenderingDecorators(pictogramElement);
 		}
