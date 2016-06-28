@@ -56,7 +56,7 @@ public class SiriusDecoratorService {
 		if (container != null) {
 			return container.getActiveNode().equals(node.getName());
 		}
-	
+
 		return false;
 
 	}
@@ -84,6 +84,10 @@ public class SiriusDecoratorService {
 	private static String getActivityName(ActivityNode node) {
 		if (node.getActivity() != null) {
 			return node.getActivity().getName();
+		} else if (node.getInStructuredNode() != null) {
+			if (node.getInStructuredNode().getActivity() != null) {
+				return node.getInStructuredNode().getActivity().getName();
+			}
 		}
 		return "";
 	}
@@ -91,6 +95,10 @@ public class SiriusDecoratorService {
 	private static String getActivityName(ActivityEdge edge) {
 		if (edge.getActivity() != null) {
 			return edge.getActivity().getName();
+		} else if (edge.getInStructuredNode() != null) {
+			if (edge.getInStructuredNode().getActivity() != null) {
+				return edge.getInStructuredNode().getActivity().getName();
+			}
 		}
 		return "";
 	}
