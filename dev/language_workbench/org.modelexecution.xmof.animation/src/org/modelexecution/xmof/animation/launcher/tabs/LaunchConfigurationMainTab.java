@@ -41,6 +41,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 	protected Text modelLocationText;
 	protected Text modelInitializationModelText;
 	protected Text siriusRepresentationLocationText;
+	protected Text xmofSiriusRepresentationLocationText;
 	protected Button animateButton;
 	protected Text delayText;
 	protected Button animationFirstBreak;
@@ -98,6 +99,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 						.setText(URIHelper.removePlatformScheme(runConfiguration.getAnimatorURI()));
 			else
 				siriusRepresentationLocationText.setText("");
+			
 
 			delayText.setText(Integer.toString(runConfiguration.getAnimationDelay()));
 			animationFirstBreak.setSelection(runConfiguration.getBreakStart());
@@ -106,7 +108,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 
 			languageCombo.setText(runConfiguration.getLanguageName());
 			representationCombo.setText(runConfiguration.getXMOFRepresentation());
-
+			
 			modelInitializationModelText.setText(runConfiguration.getModelInitializationModel());
 
 		} catch (CoreException e) {
@@ -207,7 +209,6 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 
 	private Composite createAnimationLayout(Composite parent, Font font) {
 		createTextLabelLayout(parent, "Animator");
-
 		siriusRepresentationLocationText = new Text(parent, SWT.SINGLE | SWT.BORDER);
 		siriusRepresentationLocationText.setLayoutData(createStandardLayout());
 		siriusRepresentationLocationText.setFont(font);
@@ -234,12 +235,36 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 		representationCombo.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-
+				
 				updateLaunchConfigurationDialog();
 			}
 		});
 		createTextLabelLayout(parent, "");
 
+		createTextLabelLayout(parent, "AIRD File");
+		xmofSiriusRepresentationLocationText = new Text(parent, SWT.SINGLE | SWT.BORDER);
+		xmofSiriusRepresentationLocationText.setLayoutData(createStandardLayout());
+		xmofSiriusRepresentationLocationText.setFont(font);
+		xmofSiriusRepresentationLocationText.addModifyListener(fBasicModifyListener);
+		Button siriusRepresentationLocationButton1 = createPushButton(parent, "Browse", null);
+		siriusRepresentationLocationButton1.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(SelectionEvent evt) {
+				// handleModelLocationButtonSelected();
+				// TODO launch the appropriate selector
+
+				SelectAIRDIFileDialog dialog = new SelectAIRDIFileDialog();
+				if (dialog.open() == Dialog.OK) {
+					String modelPath = ((IResource) dialog.getResult()[0]).getFullPath().toPortableString();
+					xmofSiriusRepresentationLocationText.setText(modelPath);
+					updateLaunchConfigurationDialog();
+				}
+			}
+		});
+		
+		
+		
+		
+		
 		createTextLabelLayout(parent, "Delay");
 		delayText = new Text(parent, SWT.SINGLE | SWT.BORDER);
 		delayText.setLayoutData(createStandardLayout());

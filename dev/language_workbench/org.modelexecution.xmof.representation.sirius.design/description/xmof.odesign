@@ -305,7 +305,7 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.animation.decorator.service.SiriusDecoratorService"/>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.animation.decorator.sirius.SiriusDecoratorService"/>
     <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.representation.sirius.design.services.LabelService"/>
   </ownedViewpoints>
   <userColorsPalettes>
