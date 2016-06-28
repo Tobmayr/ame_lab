@@ -1,12 +1,12 @@
-package org.modelexecution.xmof.animation.decorator;
+package org.modelexecution.xmof.animation.decorator.sirius;
 
 import org.eclipse.emf.ecore.EObject;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
-import org.modelexecution.xmof.animation.decorator.service.DecorationType;
-import org.modelexecution.xmof.animation.decorator.service.SiriusDecoratorService;
+import org.modelexecution.xmof.animation.decorator.DecorationType;
+import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
 
 public class SiriusDiagramDecorator extends DiagramDecorator {
 

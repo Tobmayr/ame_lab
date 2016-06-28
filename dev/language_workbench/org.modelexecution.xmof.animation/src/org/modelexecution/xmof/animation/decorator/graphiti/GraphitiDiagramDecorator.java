@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.decorator;
+package org.modelexecution.xmof.animation.decorator.graphiti;
 
 import java.util.HashMap;
 import java.util.List;
@@ -14,8 +14,8 @@ import org.eclipse.graphiti.ui.editor.DiagramEditor;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
-import org.modelexecution.xmof.animation.decorator.service.DecorationType;
-import org.modelexecution.xmof.animation.decorator.service.GraphitiDecoratorService;
+import org.modelexecution.xmof.animation.decorator.DecorationType;
+import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
 
 public class GraphitiDiagramDecorator extends DiagramDecorator {
 
@@ -50,7 +50,6 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	@Override
 	protected void decorateElement(EObject object, DecorationType type) {
-
 		refreshDecoration(object, type);
 
 	}

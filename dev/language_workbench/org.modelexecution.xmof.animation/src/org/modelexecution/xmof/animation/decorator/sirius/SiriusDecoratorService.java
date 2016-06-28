@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.decorator.service;
+package org.modelexecution.xmof.animation.decorator.sirius;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.animation.util.EdgeId;
+import org.modelexecution.xmof.animation.decorator.EdgeId;
 
 public class SiriusDecoratorService {
 

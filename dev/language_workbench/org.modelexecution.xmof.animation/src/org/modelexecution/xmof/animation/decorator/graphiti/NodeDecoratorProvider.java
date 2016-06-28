@@ -1,9 +1,8 @@
-package org.modelexecution.xmof.animation.decorator.provider;
+package org.modelexecution.xmof.animation.decorator.graphiti;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 import org.eclipse.graphiti.tb.IDecorator;
-import org.modelexecution.xmof.animation.decorator.service.GraphitiDecoratorService;
 import org.modelexecution.xmof.diagram.decoration.IXMOFDecoratorProvider;
 
 public class NodeDecoratorProvider implements IXMOFDecoratorProvider {
