@@ -3,7 +3,6 @@ package org.modelexecution.xmof.representation.sirius.design.services;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
