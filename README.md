@@ -12,7 +12,7 @@ For more information see</br></br>
 http://www.modelexecution.org
 http://gemoc.org/
 
-This is dependent on projects of the following repositories</br>
+This project  is dependent on projects of the following repositories</br></br>
 *https://github.com/moliz </br>
 *https://github.com/moliz/moliz.gemoc</br>
 *https://github.com/SiriusLab/ModelDebugging</br>
