@@ -24,5 +24,5 @@ public class GraphitiAnimationController extends AnimationController {
 		}
 	}
 
-
+	
 }
