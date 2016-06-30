@@ -8,7 +8,7 @@ In short the project provides</br>
 2. A Sirius-based editor for xMOF models</br>
 
 
-For more information see</br></br>
+For more information see</br><
 http://www.modelexecution.org
 http://gemoc.org/
 
