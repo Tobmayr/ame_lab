@@ -13,7 +13,7 @@ http://www.modelexecution.org
 http://gemoc.org/
 
 This is dependent on projects of the following repositories
-*https://github.com/moliz
+*https://github.com/moliz </br>
 *https://github.com/moliz/moliz.gemoc
 *https://github.com/SiriusLab/ModelDebugging
 *https://github.com/diverse-project/melange
