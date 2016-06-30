@@ -46,8 +46,12 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	@Override
 	protected void decorateElement(EObject element, ElementState state) {
-		super.decorateElement(element, state);
-		refreshDecoration(element);
+		if (!(element instanceof ActivityEdge)){
+			super.decorateElement(element, state);
+			refreshDecoration(element);
+		}
+		
+		
 	}
 
 	private void refreshDecoration(EObject element) {
