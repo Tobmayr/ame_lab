@@ -12,11 +12,11 @@ For more information see
 http://www.modelexecution.org
 http://gemoc.org/
 
-This is dependent on projects of the following repositories
+This is dependent on projects of the following repositories</br>
 *https://github.com/moliz </br>
-*https://github.com/moliz/moliz.gemoc
-*https://github.com/SiriusLab/ModelDebugging
-*https://github.com/diverse-project/melange
+*https://github.com/moliz/moliz.gemoc</br>
+*https://github.com/SiriusLab/ModelDebugging</br>
+*https://github.com/diverse-project/melange</br>
 A setup guide can be found in the root directory.
 
 This project is open source under the terms of the EPL 1.0 (www.eclipse.org/legal/epl-v10.html).
