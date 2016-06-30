@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.decorator.graphiti;
+package org.modelexecution.xmof.animation.decorator;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,10 +12,10 @@ import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.ui.editor.DiagramBehavior;
 import org.eclipse.graphiti.ui.editor.DiagramEditor;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
-import org.modelexecution.xmof.animation.decorator.DecorationType;
-import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
+import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 
 public class GraphitiDiagramDecorator extends DiagramDecorator {
 
@@ -29,11 +29,7 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	@Override
 	public void resetDecorations() {
-		previouslyActiveNode = null;
-		GraphitiDecoratorService.clear();
-		for (ActivityNode node : activityNodeMap.values()) {
-			refreshDecoration(node, DecorationType.UNDECORATED_NODE);
-		}
+		super.resetDecorations();
 
 	}
 
@@ -49,15 +45,12 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 	}
 
 	@Override
-	protected void decorateElement(EObject object, DecorationType type) {
-		refreshDecoration(object, type);
-
+	protected void decorateElement(EObject element, ElementState state) {
+		super.decorateElement(element, state);
+		refreshDecoration(element);
 	}
 
-	private void refreshDecoration(EObject element, DecorationType type) {
-
-		GraphitiDecoratorService.setDecoratedElement(element, type);
-
+	private void refreshDecoration(EObject element) {
 		DiagramBehavior diagramBehavior = getDiagramBehavior(diagramEditor);
 		Diagram diagram = getDiagram(diagramEditor);
 		List<PictogramElement> pictogramElements = Graphiti.getLinkService().getPictogramElements(diagram, element);
@@ -117,6 +110,17 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	public void setKernelEditor(KernelEditor kernelEditor) {
 		this.kernelEditor = kernelEditor;
+	}
+
+	@Override
+	protected void refreshDiagram() {
+		for (ActivityNode node : activityNodeMap.values()) {
+			refreshDecoration(node);
+		}
+		for (ActivityEdge edge : activityEdgeMap.values()) {
+			refreshDecoration(edge);
+		}
+
 	}
 
 }

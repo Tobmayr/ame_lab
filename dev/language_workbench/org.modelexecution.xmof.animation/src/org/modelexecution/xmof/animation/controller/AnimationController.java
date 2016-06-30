@@ -6,6 +6,7 @@ import java.util.Map;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
+import org.modelexecution.xmof.animation.decorator.DecoratorService;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.handler.DiagramHandler;
 import org.modelexecution.xmof.animation.mapping.MappingService;
@@ -30,6 +31,7 @@ public abstract class AnimationController {
 		diagramDecoratorMap = new HashMap<String, DiagramDecorator>();
 		activityCallerMap = new HashMap<>();
 		this.diagramHandler = concreteHandler;
+		DecoratorService.reset();
 	}
 
 	public void processMSE(MSEOccurrence mseOccurrence, boolean verbose) {
@@ -47,6 +49,7 @@ public abstract class AnimationController {
 		Activity activity = getModelProcessor().getActivityByName(match.getXmofElementName());
 		openOrCreateAcitvityDiagram(activity);
 		activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
+		DecoratorService.intializeContainer(activity.getName());
 	}
 
 	protected void openOrCreateAcitvityDiagram(Activity activity) {
@@ -59,13 +62,16 @@ public abstract class AnimationController {
 		});
 	}
 
-	public abstract void dispose();
+	public  void dispose(){
+		DecoratorService.reset();
+	}
 
 	public void handleActivity(Match match) {
 		Activity activity = getModelProcessor().getActivityByName(match.getXmofElementName());
 		openOrCreateAcitvityDiagram(activity);
 		activityCallerMap.put(activity.getName(), activeDecorator.getActivity().getName());
 		activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
+		DecoratorService.intializeContainer(activity.getName());
 	}
 
 	private void processType(Match match) {

@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 import org.eclipse.emf.common.util.URI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.decorator.sirius.SiriusDecoratorService;
-import org.modelexecution.xmof.animation.decorator.sirius.SiriusDiagramDecorator;
+import org.modelexecution.xmof.animation.decorator.DecoratorService;
+import org.modelexecution.xmof.animation.decorator.SiriusDiagramDecorator;
 import org.modelexecution.xmof.animation.handler.SiriusDiagramHandler;
 import org.modelexecution.xmof.animation.mapping.Match;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
@@ -26,12 +26,6 @@ public class SiriusAnimationController extends AnimationController {
 
 	}
 
-	@Override
-	protected void openOrCreateAcitvityDiagram(Activity activity) {
-		super.openOrCreateAcitvityDiagram(activity);
-		SiriusDecoratorService.intializeContainer(activity.getName());
-
-	}
 
 	@Override
 	protected void decorateActivityNode(Match match) {
@@ -39,11 +33,7 @@ public class SiriusAnimationController extends AnimationController {
 		refresh();
 	}
 
-	@Override
-	public void dispose() {
-		SiriusDecoratorService.reset();
-
-	}
+	
 
 	public void refresh() {
 		((SiriusDiagramHandler) diagramHandler).refreshDiagram(activeDecorator.getActivity().getName());
