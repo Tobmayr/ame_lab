@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.decorator;
+package org.modelexecution.xmof.animation.decorator.internal;
 
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 
