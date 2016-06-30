@@ -21,7 +21,10 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ControlFlow;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectFlow;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectNode;
+import org.modelexecution.xmof.animation.decorator.internal.EdgeId;
+import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 import org.modelexecution.xmof.animation.mapping.Match;
+import org.modelexecution.xmof.animation.mapping.XMOFType;
 
 public abstract class DiagramDecorator {
 	private boolean activityFinished = false;
@@ -55,50 +58,70 @@ public abstract class DiagramDecorator {
 			initializeMaps();
 		}
 		if (isActivityFinished()) {
-			resetDecorations();
-			setActivityFinished(false);
+			resetDiagram();
+
 		}
 		activeNode = activityNodeMap.get(match.getXmofElementName());
-	
+
 		if (previouslyActiveNode != null && !(previouslyActiveNode instanceof StructuredActivityNode)) {
-			decorateElement(previouslyActiveNode, DecorationType.NODE_TRAVERSED);
+			decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
 		}
 		if (inStructuredNode != null) {
 			if (activeNode.getInStructuredNode() == null
 					|| !activeNode.getInStructuredNode().equals(inStructuredNode)) {
 				previouslyActiveNode = inStructuredNode;
-				decorateElement(previouslyActiveNode, DecorationType.STRUCTURED_NODE_TRAVERSED);
+				decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
 				inStructuredNode = null;
 			}
 		}
+
+		if (previouslyActiveEdge != null) {
+			decorateElement(previouslyActiveEdge, ElementState.TRAVERSED);
+		}
+
 		if (activeNode != null) {
 			if (activeNode instanceof StructuredActivityNode) {
-				decorateElement(activeNode, DecorationType.STRUCTURED_NODE_ACTIVE);
-	
+				decorateElement(activeNode, ElementState.ACTIVE);
+
 				inStructuredNode = (StructuredActivityNode) activeNode;
 			} else {
-				decorateElement(activeNode, DecorationType.NODE_ACTIVE);
+				decorateElement(activeNode, ElementState.ACTIVE);
 			}
 		}
-	
-		if (previouslyActiveEdge != null) {
-			decorateElement(previouslyActiveEdge, DecorationType.EDGE_TRAVERSED);
-		}
-	
+
 		activeEdge = retrieveActiveEdge();
 		if (activeEdge != null) {
-			decorateElement(activeEdge, DecorationType.EDGE_ACTIVE);
+			decorateElement(activeEdge, ElementState.ACTIVE);
 		}
-	
+
 		previouslyActiveNode = activeNode;
 		previouslyActiveEdge = activeEdge;
 		return activeNode != null;
-	
+
 	}
 
-	public abstract void resetDecorations();
+	private void resetDiagram() {
+		resetDecorations();
+		setActivityFinished(false);
+		activeEdge = null;
+		previouslyActiveEdge = null;
+		inStructuredNode = null;
+		activeNode = null;
+		previouslyActiveNode = null;
 
-	protected abstract void decorateElement(EObject element, DecorationType type);
+	}
+
+	protected void resetDecorations() {
+		DecoratorService.clear(activity.getName());
+		refreshDiagram();
+	};
+
+	protected abstract void refreshDiagram();
+
+	protected void decorateElement(EObject element, ElementState state) {
+		DecoratorService.addDecoratedElement(activity, element, state);
+
+	}
 
 	public boolean isActivityFinished() {
 		return activityFinished;
