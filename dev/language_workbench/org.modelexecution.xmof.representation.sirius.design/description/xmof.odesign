@@ -249,7 +249,7 @@
         </containerMappings>
         <toolSections name="activity tools">
           <ownedTools xsi:type="tool:ToolGroup" name="Control Node">
-            <tools xsi:type="tool:NodeCreationDescription" name="Initial Node" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif">
+            <tools xsi:type="tool:NodeCreationDescription" name="Initial Node" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subNodeMappings[name='AD_NestedControlNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/InitialNode.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -263,7 +263,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:NodeCreationDescription" name="Fork Node" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif">
+            <tools xsi:type="tool:NodeCreationDescription" name="Fork Node" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subNodeMappings[name='AD_NestedControlNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/ForkNode.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -277,7 +277,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:NodeCreationDescription" name="Join Node" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif">
+            <tools xsi:type="tool:NodeCreationDescription" name="Join Node" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subNodeMappings[name='AD_NestedControlNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/JoinNode.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -291,7 +291,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:NodeCreationDescription" name="Merge Node" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif">
+            <tools xsi:type="tool:NodeCreationDescription" name="Merge Node" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subNodeMappings[name='AD_NestedControlNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/MergeNode.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -305,7 +305,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:NodeCreationDescription" name="Decision Node" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif">
+            <tools xsi:type="tool:NodeCreationDescription" name="Decision Node" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subNodeMappings[name='AD_NestedControlNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/DecisionNode.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -326,6 +326,33 @@
               <containerView name="containerView"/>
               <container name="container"/>
               <initialOperation/>
+            </tools>
+            <tools xsi:type="tool:ContainerCreationDescription" name="Read Self Action" containerMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ReadSelfAction" referenceName="node">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:computeDefaultName()"/>
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="OutputPin" referenceName="ouput" variableName="instance1"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ContainerCreationDescription" name="ReadIsClassifiedObject Action" containerMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ReadIsClassifiedObjectAction" referenceName="node">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:computeDefaultName()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
             </tools>
           </ownedTools>
         </toolSections>
