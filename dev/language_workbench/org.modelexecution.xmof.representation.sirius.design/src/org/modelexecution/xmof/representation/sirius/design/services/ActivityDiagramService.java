@@ -28,8 +28,19 @@ public class ActivityDiagramService {
 	public  String computeDefaultName(ActivityNode node) {
 		return LabelServices.INSTANCE.computeDefaultName(node);
 	}
-	
-	public List<EObject> getAllBehaviorsAndPackages(Activity activity) {
+	public Activity findParentActivity(EObject context) {
+		if (context instanceof Activity) {
+			return (Activity)context;
+		}
+
+		if (context.eContainer() != null) {
+			return findParentActivity((EObject)context.eContainer());
+		}
+
+		return null;
+	}
+
+	public List<EObject> getAllBehaviors(EObject activity) {
 		EPackage root= retrieveRoot(activity);
 		List<EObject> result= new ArrayList<>();
 		for (EClassifier classifier:root.getEClassifiers()){

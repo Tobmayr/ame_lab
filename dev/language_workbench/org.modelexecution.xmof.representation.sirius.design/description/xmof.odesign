@@ -320,6 +320,36 @@
               </initialOperation>
             </tools>
           </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="Flow">
+            <tools xsi:type="tool:EdgeCreationDescription" name="Create Object Flow" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif">
+              <sourceVariable name="source"/>
+              <targetVariable name="target"/>
+              <sourceViewVariable name="sourceView"/>
+              <targetViewVariable name="targetView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:findParentActivity()">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="IntermediateActivities.ObjectFlow" referenceName="edge">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:EdgeCreationDescription" name="Create Control Flow" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Association.gif">
+              <sourceVariable name="source"/>
+              <targetVariable name="target"/>
+              <sourceViewVariable name="sourceView"/>
+              <targetViewVariable name="targetView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:findParentActivity()">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="IntermediateActivities.ControlFlow" referenceName="edge">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
           <subSections name="Action">
             <ownedTools xsi:type="tool:ToolGroup" name="Object Action">
               <tools xsi:type="tool:ContainerCreationDescription" name="Create Object Action" forceRefresh="true" containerMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif">
@@ -529,7 +559,21 @@
                 </initialOperation>
               </tools>
             </ownedTools>
-            <ownedTools xsi:type="tool:ToolGroup" name="Communication Action"/>
+            <ownedTools xsi:type="tool:ToolGroup" name="Communication Action">
+              <tools xsi:type="tool_1:SelectionWizardDescription" name="Call Behaviour Action" forceRefresh="true" candidatesExpression="service:getAllBehaviors()" multiple="true" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/CallOperationAction.gif" windowTitle="New Call Behavior Operation">
+                <element name="element"/>
+                <containerView name="containerView"/>
+                <container name="container"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.CallBehaviorAction" referenceName="node">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:computeDefaultName()"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="behavior" valueExpression="var:element"/>
+                    </subModelOperations>
+                  </firstModelOperations>
+                </initialOperation>
+              </tools>
+            </ownedTools>
             <ownedTools xsi:type="tool:ToolGroup" name="Other Action">
               <tools xsi:type="tool:ContainerCreationDescription" name="Test Identity Action" forceRefresh="true" containerMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@subContainerMappings[name='AD_NestedExecutableNode']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/CallBehaviorAction.gif">
                 <variable name="container"/>
