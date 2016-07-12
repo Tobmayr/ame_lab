@@ -15,7 +15,7 @@
       <metamodel href="http://www.modelexecution.org/xmof/syntax/commonbehaviors/basicbehaviors#/"/>
       <metamodel href="http://www.modelexecution.org/xmof/syntax/commonbehaviors/communications#/"/>
       <defaultLayer name="Default">
-        <edgeMappings name="AD_ControlFlow" sourceMapping="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']" targetMapping="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="IntermediateActivities.ControlFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect%20Edge']/@tools.0 //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect%20Edge']/@tools.1">
+        <edgeMappings name="AD_ControlFlow" sourceMapping="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']" targetMapping="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="IntermediateActivities.ControlFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Misc']/@tools.0 //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Misc']/@tools.1">
           <style sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -23,7 +23,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="AD_ObjectFlow" sourceMapping="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_InputPin'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_OutputPin'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@borderedNodeMappings[name='AD_ParameterNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@borderedNodeMappings[name='ExpansionNode']" targetMapping="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_InputPin'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_OutputPin'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@borderedNodeMappings[name='AD_ParameterNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@borderedNodeMappings[name='ExpansionNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="IntermediateActivities.ObjectFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect%20Edge']/@tools.2 //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect%20Edge']/@tools.3">
+        <edgeMappings name="AD_ObjectFlow" sourceMapping="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_InputPin'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_OutputPin'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@borderedNodeMappings[name='AD_ParameterNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@borderedNodeMappings[name='ExpansionNode']" targetMapping="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_InputPin'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_OutputPin'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@borderedNodeMappings[name='AD_ParameterNode'] //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@borderedNodeMappings[name='ExpansionNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="IntermediateActivities.ObjectFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Misc']/@tools.2 //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Misc']/@tools.3">
           <style sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -31,7 +31,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="AD_Activity" semanticCandidatesExpression="var:self" domainClass="IntermediateActivities.Activity">
+        <containerMappings name="AD_Activity" labelDirectEdit="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Misc']/@tools.4" semanticCandidatesExpression="var:self" domainClass="IntermediateActivities.Activity">
           <borderedNodeMappings name="AD_ParameterNode" semanticCandidatesExpression="feature:node" domainClass="ActivityParameterNode">
             <style xsi:type="style:SquareDescription" showIcon="false" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -107,7 +107,7 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
               </style>
             </borderedNodeMappings>
-            <subNodeMappings name="Info" semanticCandidatesExpression="var:self" domainClass="BasicActions.Action">
+            <subNodeMappings name="Info" labelDirectEdit="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Misc']/@tools.4" semanticCandidatesExpression="var:self" domainClass="BasicActions.Action">
               <style xsi:type="style:NoteDescription" borderColor="//@userColorsPalettes[name=null]/@entries[name='very%20light%20gray']" showIcon="false" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='very%20light%20gray']">
                 <labelFormat>bold</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -267,52 +267,6 @@
               </initialOperation>
             </tools>
           </ownedTools>
-          <ownedTools xsi:type="tool:ToolGroup" name="Reconnect Edge">
-            <tools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectControlSource" reconnectionKind="RECONNECT_SOURCE">
-              <source name="source"/>
-              <target name="target"/>
-              <sourceView name="sourceView"/>
-              <targetView name="targetView"/>
-              <element name="element"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:target"/>
-              </initialOperation>
-              <edgeView name="edgeView"/>
-            </tools>
-            <tools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectControlTarget">
-              <source name="source"/>
-              <target name="target"/>
-              <sourceView name="sourceView"/>
-              <targetView name="targetView"/>
-              <element name="element"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
-              </initialOperation>
-              <edgeView name="edgeView"/>
-            </tools>
-            <tools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectObjectSource" reconnectionKind="RECONNECT_SOURCE">
-              <source name="source"/>
-              <target name="target"/>
-              <sourceView name="sourceView"/>
-              <targetView name="targetView"/>
-              <element name="element"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:target"/>
-              </initialOperation>
-              <edgeView name="edgeView"/>
-            </tools>
-            <tools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectObjectTarget">
-              <source name="source"/>
-              <target name="target"/>
-              <sourceView name="sourceView"/>
-              <targetView name="targetView"/>
-              <element name="element"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
-              </initialOperation>
-              <edgeView name="edgeView"/>
-            </tools>
-          </ownedTools>
           <ownedTools xsi:type="tool:ToolGroup" name="Structured Activity Node">
             <tools xsi:type="tool:ContainerCreationDescription" name="Expansion Region" containerMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/ExpansionRegion.gif">
               <variable name="container"/>
@@ -374,6 +328,58 @@
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="Misc">
+            <tools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectControlSource" reconnectionKind="RECONNECT_SOURCE">
+              <source name="source"/>
+              <target name="target"/>
+              <sourceView name="sourceView"/>
+              <targetView name="targetView"/>
+              <element name="element"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:target"/>
+              </initialOperation>
+              <edgeView name="edgeView"/>
+            </tools>
+            <tools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectControlTarget">
+              <source name="source"/>
+              <target name="target"/>
+              <sourceView name="sourceView"/>
+              <targetView name="targetView"/>
+              <element name="element"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+              </initialOperation>
+              <edgeView name="edgeView"/>
+            </tools>
+            <tools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectObjectSource" reconnectionKind="RECONNECT_SOURCE">
+              <source name="source"/>
+              <target name="target"/>
+              <sourceView name="sourceView"/>
+              <targetView name="targetView"/>
+              <element name="element"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:target"/>
+              </initialOperation>
+              <edgeView name="edgeView"/>
+            </tools>
+            <tools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectObjectTarget">
+              <source name="source"/>
+              <target name="target"/>
+              <sourceView name="sourceView"/>
+              <targetView name="targetView"/>
+              <element name="element"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+              </initialOperation>
+              <edgeView name="edgeView"/>
+            </tools>
+            <tools xsi:type="tool:DirectEditLabel" name="BasicEditLabel">
+              <mask mask="{0}"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
               </initialOperation>
             </tools>
           </ownedTools>
