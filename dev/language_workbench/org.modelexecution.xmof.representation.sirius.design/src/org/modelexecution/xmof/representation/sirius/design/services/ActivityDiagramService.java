@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.swt.widgets.Tree;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEClass;
@@ -24,6 +25,11 @@ public class ActivityDiagramService {
 	public  String generateLabel(ActivityNode node) {
 		return node.eClass().getName();
 	}
+
+	public String generateLabel(Pin pin){
+		return LabelServices.INSTANCE.computeLabel(pin);
+	
+}
 
 	public  String computeDefaultName(ActivityNode node) {
 		return LabelServices.INSTANCE.computeDefaultName(node);
