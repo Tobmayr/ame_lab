@@ -21,86 +21,91 @@ public class ModelAnimator implements IEngineAddon {
 	private AnimationController animationController;
 
 	public void initialize(XMOFBasedModel model, Resource resource, String representation) {
-		if (representation.equals(XMOFRepresentation.REPRESENTATION_GRAPHITI)){
+		if (representation.equals(XMOFRepresentation.REPRESENTATION_GRAPHITI)) {
 			animationController = new GraphitiAnimationController(model, resource);
-		}else if(representation.equals(XMOFRepresentation.REPRESENTATION_SIRIUS)){
-			initializeSiriusController(model,resource);
+		} else if (representation.equals(XMOFRepresentation.REPRESENTATION_SIRIUS)) {
+			initializeSiriusController(model, resource);
 		}
 	}
 
 	private void initializeSiriusController(XMOFBasedModel model, Resource resource) {
 		String uriString = resource.getURI().toString();
-		URI airdURI=URI.createURI(uriString.replace("xmof/petrinet.xmof", "representations.aird"));
-		
+		URI airdURI;
+		if (uriString.contains("xmof/petrinet.xmof")) {
+			airdURI = URI.createURI(uriString.replace("xmof/petrinet.xmof", "representations.aird"));
+		} else {
+			airdURI = URI.createURI(uriString.replace("xmof/petrinet2.xmof", "representations.aird"));
+		}
+
 		animationController = new SiriusAnimationController(model, airdURI);
 	}
 
 	@Override
 	public void engineAboutToStart(IBasicExecutionEngine engine) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void engineAboutToStop(IBasicExecutionEngine engine) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void engineStopped(IBasicExecutionEngine engine) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void engineAboutToDispose(IBasicExecutionEngine engine) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void aboutToSelectStep(IBasicExecutionEngine engine, Collection<Step> steps) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void proposedStepsChanged(IBasicExecutionEngine engine, Collection<Step> steps) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void stepSelected(IBasicExecutionEngine engine, Step selectedStep) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void aboutToExecuteStep(IBasicExecutionEngine engine, Step stepToExecute) {
-		if (animationController!=null){
+		if (animationController != null) {
 			animationController.processMSE(stepToExecute.getMseoccurrence(), true);
 		}
-		
+
 	}
 
 	@Override
 	public void stepExecuted(IBasicExecutionEngine engine, Step stepExecuted) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void engineStatusChanged(IBasicExecutionEngine engine, RunStatus newStatus) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
