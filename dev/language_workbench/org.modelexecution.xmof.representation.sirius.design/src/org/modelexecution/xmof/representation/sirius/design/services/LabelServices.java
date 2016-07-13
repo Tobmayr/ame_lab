@@ -2,14 +2,21 @@ package org.modelexecution.xmof.representation.sirius.design.services;
 
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Action;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.CallAction;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.InputPin;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.InvocationAction;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.OutputPin;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
+import org.modelexecution.xmof.Syntax.Actions.CompleteActions.AcceptEventAction;
 import org.modelexecution.xmof.Syntax.Actions.IntermediateActions.LinkAction;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.sun.accessibility.internal.resources.accessibility;
 
 public class LabelServices {
 	public static final LabelServices INSTANCE = new LabelServices();
@@ -34,17 +41,38 @@ public class LabelServices {
 		return name + existingElements.size();
 	}
 
-	public String computeLabel(final Pin pin){
-		if (pin.eContainer() instanceof LinkAction){
-			return computeInputLabel((LinkAction) pin.eContainer() );
+	public String computeLabel(final Pin pin) {
+		if (pin.eContainer() == null)
+			return "";
+		if (pin instanceof InputPin) {
+			if (pin.eContainer() instanceof LinkAction) {
+
+				return computeInputPinLabel("inputValue", ((LinkAction) pin.eContainer()).getInputValue());
+			} else if (pin.eContainer() instanceof InvocationAction) {
+				return computeInputPinLabel("argument", ((InvocationAction) pin.eContainer()).getArgument());
+			}
+		} else if (pin instanceof OutputPin) {
+			if (pin.eContainer() instanceof CallAction) {
+				return computeOutputPinLabel("result", ((CallAction) pin.eContainer()).getResult());
+			}else if (pin.eContainer() instanceof AcceptEventAction){
+				return computeOutputPinLabel("result", ((AcceptEventAction)pin.eContainer()).getResult());
+			}
 		}
 		return "";
 	}
-	
-	private String computeInputLabel(LinkAction action){
-		String label="inputValue";
-		if (action.getInputValue()!=null){
-			label+=action.getInputValue().size();
+
+	private String computeInputPinLabel(String prefix, EList<InputPin> pins) {
+		String label = prefix;
+		if (pins != null) {
+			label += pins.size();
+		}
+		return label;
+	}
+
+	private String computeOutputPinLabel(String prefix, EList<OutputPin> pins) {
+		String label = prefix;
+		if (pins != null) {
+			label += pins.size();
 		}
 		return label;
 	}
