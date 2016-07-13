@@ -74,6 +74,11 @@
         <argument name="initialTokens" incoming="//NetConfiguration/main.1/o1" upperBound="-1"/>
         <target name="target" incoming="//NetConfiguration/main.1/o3" lowerBound="1"/>
       </node>
+      <node xsi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" name="AddStructuralFeatureValueAction1">
+        <object name="object" lowerBound="1"/>
+        <value name="value" lowerBound="1"/>
+        <result name="result" lowerBound="1"/>
+      </node>
       <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" name="o2" source="//NetConfiguration/main.1/read%20self/result" target="//NetConfiguration/main.1/f1"/>
       <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" name="o3" source="//NetConfiguration/main.1/f1" target="//NetConfiguration/main.1/call%20initializeMarking/target"/>
       <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" name="o4" source="//NetConfiguration/main.1/f1" target="//NetConfiguration/main.1/call%20run/target"/>
