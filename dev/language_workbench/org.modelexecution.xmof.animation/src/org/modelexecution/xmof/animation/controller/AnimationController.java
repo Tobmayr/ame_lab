@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.animation.decorator.DecoratorService;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.handler.DiagramHandler;

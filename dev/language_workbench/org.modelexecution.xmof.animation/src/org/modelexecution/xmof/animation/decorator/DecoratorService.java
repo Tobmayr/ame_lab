@@ -10,7 +10,6 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.animation.decorator.internal.EdgeId;
 import org.modelexecution.xmof.animation.decorator.internal.ElementContainer;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
-import org.modelexecution.xmof.animation.mapping.XMOFType;
 
 public class DecoratorService {
 

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.modelexecution.xmof.Syntax.Actions.BasicActions.Action;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.CallAction;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.InputPin;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.InvocationAction;
@@ -16,7 +15,6 @@ import org.modelexecution.xmof.Syntax.Actions.IntermediateActions.LinkAction;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.sun.accessibility.internal.resources.accessibility;
 
 public class LabelServices {
 	public static final LabelServices INSTANCE = new LabelServices();

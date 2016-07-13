@@ -3,8 +3,6 @@ package org.modelexecution.xmof.animation.controller;
 import java.util.HashMap;
 
 import org.eclipse.emf.common.util.URI;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.decorator.DecoratorService;
 import org.modelexecution.xmof.animation.decorator.SiriusDiagramDecorator;
 import org.modelexecution.xmof.animation.handler.SiriusDiagramHandler;
 import org.modelexecution.xmof.animation.mapping.Match;

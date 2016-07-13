@@ -1,20 +1,12 @@
 package org.modelexecution.xmof.animation.decorator;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
-import java.util.List;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.modelexecution.xmof.Syntax.Actions.BasicActions.Action;
-import org.modelexecution.xmof.Syntax.Actions.BasicActions.InputPin;
-import org.modelexecution.xmof.Syntax.Actions.BasicActions.OutputPin;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
 import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
-import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
@@ -24,7 +16,6 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectNo
 import org.modelexecution.xmof.animation.decorator.internal.EdgeId;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 import org.modelexecution.xmof.animation.mapping.Match;
-import org.modelexecution.xmof.animation.mapping.XMOFType;
 
 public abstract class DiagramDecorator {
 	private boolean activityFinished = false;

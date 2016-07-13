@@ -10,7 +10,6 @@ import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.ModelAnimator;
 import org.modelexecution.xmof.animation.ui.Activator;
-
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.ui.launcher.Launcher;
 
