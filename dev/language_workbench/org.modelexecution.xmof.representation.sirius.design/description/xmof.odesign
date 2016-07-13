@@ -322,9 +322,55 @@
               <viewVariable name="containerView"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclIsTypeOf(IntermediateActions::CreateLinkAction)/]">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclIsTypeOf(IntermediateActions::RemoveStructuralFeatureValueAction)/]">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.removeAt->isEmpty()/]">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="removeAt">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="removeAt"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclIsTypeOf(IntermediateActions::RemoveStructuralFeatureValueAction)/]">
+                      <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.removeAt->isEmpty()/]">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="removeAt">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="removeAt"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclIsTypeOf(IntermediateActions::AddStructuralFeatureValueAction)/]">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.insertAt->isEmpty()/]">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="insertAt">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="insertAt"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclIsKindOf(IntermediateActions::LinkAction)/]">
                     <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="inputValue">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:generateLabel()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclIsKindOf(BasicActions::InvocationAction)/]">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="argument">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:generateLabel()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="OutputPin" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_OutputPin']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/OutputPin.gif">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclIsTypeOf(CompleteActions::AcceptEventAction)/]">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.OutputPin" referenceName="result">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="test"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclIsKindOf(BasicActions::InvocationAction)/]">
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[not self.oclIsTypeOf(BasicActions::SendSignalAction)/]">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.OutputPin" referenceName="result">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:generateLabel()"/>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -440,6 +486,13 @@
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="CompleteActions.ReclassifyObjectAction" referenceName="node">
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:computeDefaultName()"/>
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="object" variableName="inputPin">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="object">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.OutputPin" referenceName="result">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="result"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -466,6 +519,9 @@
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="CompleteActions.StartObjectBehaviorAction" referenceName="node">
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:computeDefaultName()"/>
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="object" variableName="inputPin">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="object"/>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -479,6 +535,9 @@
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="CompleteActions.StartClassifierBehaviorAction" referenceName="node">
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:computeDefaultName()"/>
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="object" variableName="objectPing">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="object"/>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -587,6 +646,9 @@
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="IntermediateActions.ClearAssociationAction" referenceName="node">
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:computeDefaultName()"/>
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="object">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="object"/>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -628,6 +690,9 @@
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.SendSignalAction" referenceName="node">
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:computeDefaultName()"/>
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="target">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="target"/>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
