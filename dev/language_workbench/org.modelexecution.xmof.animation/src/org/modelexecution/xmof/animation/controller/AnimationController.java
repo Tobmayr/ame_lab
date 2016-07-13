@@ -84,7 +84,7 @@ public abstract class AnimationController {
 		case CONTROLNODE:
 		case CALLOPERATION:
 		case ACTIVITYNODE:
-		case EXPANSIONREGION:
+		case STRUCTUREDACTIVITYNODE:
 			decorateActivityNode(match);
 			return;
 		default:

@@ -9,19 +9,32 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.Action;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.CallOperationAction;
+import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.ConditionalNode;
+import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.LoopNode;
+import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
+import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityFinalNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.DecisionNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ForkNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.InitialNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.JoinNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.MergeNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
-
-import fUML.Syntax.Actions.BasicActions.CallOperationAction;
-import fUML.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
 
 public class MappingService {
 	private static final String MSE_PREFIX = "MSE";
 	private static final String MAIN = "main";
-	private static final String ACTION_SUFFIX = "Action";
-	private static final String NODE_SUFFIX = "Node";
-	private static final String EXPANSION_SUFFIX = ExpansionRegion.class.getSimpleName();
+	private static final String ACTION_SUFFIX = Action.class.getSimpleName();
+	private static final String[] CONTROLNODE_SUFFIX = { InitialNode.class.getSimpleName(),
+			ActivityFinalNode.class.getSimpleName(), ForkNode.class.getSimpleName(), JoinNode.class.getSimpleName(),
+			DecisionNode.class.getSimpleName(), MergeNode.class.getSimpleName() };
+	private static final String[] STRUCTURED_ACTIVITY_NODE_SUFFIX = { StructuredActivityNode.class.getSimpleName(),
+			ExpansionRegion.class.getSimpleName(), LoopNode.class.getSimpleName(),
+			ConditionalNode.class.getSimpleName() };
 	private static final String CALL_OPERATION = CallOperationAction.class.getSimpleName();
 	private XMOFBasedModel model;
 	private Set<String> allowedEObjects;
@@ -37,8 +50,6 @@ public class MappingService {
 	public Activity getActivityByName(String name) {
 		return activityMap.get(name);
 	}
-	
-
 
 	public XMOFBasedModel getModel() {
 		return model;
@@ -46,7 +57,7 @@ public class MappingService {
 
 	public Match matchDebugEvent(String debugevent) {
 		lastMatchAttempt = new Match(debugevent);
-		String[] prefixArgs = debugevent.split("_",3);
+		String[] prefixArgs = debugevent.split("_", 3);
 		if (hasCorrectPrefix(prefixArgs)) {
 			tryToFindMatch(prefixArgs[2]);
 		}
@@ -56,8 +67,8 @@ public class MappingService {
 	public Set<String> getActivityNames() {
 		return activityMap.keySet();
 	}
-	
-	public Collection<Activity> getActivities(){
+
+	public Collection<Activity> getActivities() {
 		return activityMap.values();
 	}
 
@@ -142,14 +153,28 @@ public class MappingService {
 				} else {
 					lastMatchAttempt.setType(XMOFType.ACTIVITYNODE);
 				}
-			} else if (type.endsWith(MappingService.NODE_SUFFIX)) {
+			} else if (hasControlNodeSuffix(type)) {
 				lastMatchAttempt.setType(XMOFType.CONTROLNODE);
-			} else if (type.endsWith(MappingService.EXPANSION_SUFFIX)) {
-				lastMatchAttempt.setType(XMOFType.EXPANSIONREGION);
+			} else if (hasStructuredNodeSuffix(type)) {
+				lastMatchAttempt.setType(XMOFType.STRUCTUREDACTIVITYNODE);
 			}
 			lastMatchAttempt.setXmofElementName(name);
 		}
 
+	}
+
+	private boolean hasControlNodeSuffix(String type){
+		for (String clazz:CONTROLNODE_SUFFIX){
+			if (type.endsWith(clazz))return true;
+		}
+		return false;
+	}
+	private boolean hasStructuredNodeSuffix(String type) {
+		for (String clazz : STRUCTURED_ACTIVITY_NODE_SUFFIX) {
+			if (type.endsWith(clazz))
+				return true;
+		}
+		return false;
 	}
 
 	private void matchName(String name) {
