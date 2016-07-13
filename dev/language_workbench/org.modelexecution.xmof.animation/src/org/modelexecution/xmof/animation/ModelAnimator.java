@@ -11,6 +11,7 @@ import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.animation.controller.GraphitiAnimationController;
 import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
+import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.XMOFRepresentation;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
@@ -20,24 +21,15 @@ public class ModelAnimator implements IEngineAddon {
 
 	private AnimationController animationController;
 
-	public void initialize(XMOFBasedModel model, Resource resource, String representation) {
+	public void initialize(XMOFBasedModel model, Resource resource, RunConfiguration animConfig) {
+		String representation = animConfig.getXMOFRepresentation();
 		if (representation.equals(XMOFRepresentation.REPRESENTATION_GRAPHITI)) {
 			animationController = new GraphitiAnimationController(model, resource);
 		} else if (representation.equals(XMOFRepresentation.REPRESENTATION_SIRIUS)) {
-			initializeSiriusController(model, resource);
+			String airdURIString = "platform:/resource"+animConfig.getSiriusRepresentationModelPath();
+			URI airdURI = URI.createURI(airdURIString);
+			animationController = new SiriusAnimationController(model, airdURI);
 		}
-	}
-
-	private void initializeSiriusController(XMOFBasedModel model, Resource resource) {
-		String uriString = resource.getURI().toString();
-		URI airdURI;
-		if (uriString.contains("xmof/petrinet.xmof")) {
-			airdURI = URI.createURI(uriString.replace("xmof/petrinet.xmof", "representations.aird"));
-		} else {
-			airdURI = URI.createURI(uriString.replace("xmof/petrinet2.xmof", "representations.aird"));
-		}
-
-		animationController = new SiriusAnimationController(model, airdURI);
 	}
 
 	@Override

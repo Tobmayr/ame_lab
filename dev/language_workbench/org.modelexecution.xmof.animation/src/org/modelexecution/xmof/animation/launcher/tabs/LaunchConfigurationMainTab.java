@@ -7,6 +7,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
+import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -45,12 +46,12 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 	protected Button animateButton;
 	protected Text delayText;
 	protected Button animationFirstBreak;
-
+	protected Label xmofSiriusRepresentationLocationLabel;
 	protected Button nodewiseStepping;
 
 	protected Combo languageCombo;
 	protected Combo representationCombo;
-
+	protected Button siriusRepresentationLocationButton;
 	protected Text modelofexecutionglml_LocationText;
 
 	public int GRID_DEFAULT_WIDTH = 200;
@@ -80,7 +81,8 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 
 	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
-		configuration.setAttribute(RunConfiguration.LAUNCH_XMOF_REPRESENTATION, XMOFRepresentation.REPRESENTATION_GRAPHITI);
+		configuration.setAttribute(RunConfiguration.LAUNCH_XMOF_REPRESENTATION,
+				XMOFRepresentation.REPRESENTATION_GRAPHITI);
 		configuration.setAttribute(RunConfiguration.LAUNCH_DELAY, 1000);
 		configuration.setAttribute(RunConfiguration.LAUNCH_MODEL_ENTRY_POINT, "");
 		configuration.setAttribute(RunConfiguration.LAUNCH_METHOD_ENTRY_POINT, "");
@@ -99,7 +101,11 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 						.setText(URIHelper.removePlatformScheme(runConfiguration.getAnimatorURI()));
 			else
 				siriusRepresentationLocationText.setText("");
-			
+			if (runConfiguration.getSiriusRepresentationModelPath()!=null){
+				xmofSiriusRepresentationLocationText.setText(runConfiguration.getSiriusRepresentationModelPath());
+			}else{
+				xmofSiriusRepresentationLocationText.setText("");
+			}
 
 			delayText.setText(Integer.toString(runConfiguration.getAnimationDelay()));
 			animationFirstBreak.setSelection(runConfiguration.getBreakStart());
@@ -108,7 +114,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 
 			languageCombo.setText(runConfiguration.getLanguageName());
 			representationCombo.setText(runConfiguration.getXMOFRepresentation());
-			
+
 			modelInitializationModelText.setText(runConfiguration.getModelInitializationModel());
 
 		} catch (CoreException e) {
@@ -131,6 +137,8 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 		configuration.setAttribute(RunConfiguration.LAUNCH_BREAK_START, animationFirstBreak.getSelection());
 		configuration.setAttribute(RunConfiguration.LAUNCH_XMOF_REPRESENTATION, representationCombo.getText());
 		configuration.setAttribute(RunConfiguration.LAUNCH_NODEWISE_STEP, nodewiseStepping.getSelection());
+		configuration.setAttribute(RunConfiguration.LAUNC_XMOF_SIRIUS_MODELPATH,
+				xmofSiriusRepresentationLocationText.getText());
 	}
 
 	@Override
@@ -144,6 +152,8 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 			updateLaunchConfigurationDialog();
 		}
 	};
+
+
 
 	public Composite createModelLayout(Composite parent, Font font) {
 		createTextLabelLayout(parent, "Model to execute");
@@ -213,7 +223,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 		siriusRepresentationLocationText.setLayoutData(createStandardLayout());
 		siriusRepresentationLocationText.setFont(font);
 		siriusRepresentationLocationText.addModifyListener(fBasicModifyListener);
-		Button siriusRepresentationLocationButton = createPushButton(parent, "Browse", null);
+		siriusRepresentationLocationButton = createPushButton(parent, "Browse", null);
 		siriusRepresentationLocationButton.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent evt) {
 				// handleModelLocationButtonSelected();
@@ -235,13 +245,16 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 		representationCombo.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				
+
 				updateLaunchConfigurationDialog();
 			}
+
 		});
 		createTextLabelLayout(parent, "");
-
-		createTextLabelLayout(parent, "AIRD File");
+		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+		parent.setLayoutData(gd);
+		xmofSiriusRepresentationLocationLabel = new Label(parent, SWT.NONE);
+		xmofSiriusRepresentationLocationLabel.setText("(*for Sirius) AIRD File");
 		xmofSiriusRepresentationLocationText = new Text(parent, SWT.SINGLE | SWT.BORDER);
 		xmofSiriusRepresentationLocationText.setLayoutData(createStandardLayout());
 		xmofSiriusRepresentationLocationText.setFont(font);
@@ -260,11 +273,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 				}
 			}
 		});
-		
-		
-		
-		
-		
+
 		createTextLabelLayout(parent, "Delay");
 		delayText = new Text(parent, SWT.SINGLE | SWT.BORDER);
 		delayText.setLayoutData(createStandardLayout());
@@ -293,11 +302,11 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 		return parent;
 	}
 
-	
-
 	private GridData createStandardLayout() {
 		return new GridData(SWT.FILL, SWT.CENTER, true, false);
 	}
+
+	
 
 	/***
 	 * Create the Field where user enters the language used to execute

@@ -31,18 +31,17 @@ public class LauncherAnim extends Launcher {
 			Set<IEngineAddon> addons = xmofEngine.getAddonsTypedBy(IEngineAddon.class);
 			for (IEngineAddon addon : addons) {
 				if (addon instanceof ModelAnimator) {
-					String representation = ((org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration) runConfiguration)
-							.getXMOFRepresentation();
-					initializeAnimationAddon((ModelAnimator) addon, xmofEngine, representation);
+					org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration animConfig=(org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration) runConfiguration;
+					initializeAnimationAddon((ModelAnimator) addon, xmofEngine, animConfig);
 				}
 			}
 
 		}
 	}
 
-	private void initializeAnimationAddon(ModelAnimator addon, XMOFExecutionEngine xmofEngine, String representation) {
+	private void initializeAnimationAddon(ModelAnimator addon, XMOFExecutionEngine xmofEngine, org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration animConfig) {
 
-		addon.initialize(xmofEngine.getModel(), xmofEngine.getLoader().getXMOFModelResource(), representation);
+		addon.initialize(xmofEngine.getModel(), xmofEngine.getLoader().getXMOFModelResource(), animConfig);
 
 	}
 

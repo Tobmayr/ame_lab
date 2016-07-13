@@ -11,6 +11,7 @@
 <booleanAttribute key="MultiBranch Reflective Trace" value="false"/>
 <stringAttribute key="Resource" value="/org.modelexecution.xmof.examples.petrinet2.samplemodels/net2.petrinet2"/>
 <booleanAttribute key="VCD visualization" value="false"/>
+<stringAttribute key="XMOF_SIRIUS_RERESENTATION_MODELPATH" value="/org.modelexecution.xmof.examples.petrinet2.xmof.dynamic/representations.aird"/>
 <stringAttribute key="airdResource" value="/org.modelexecution.xmof.examples.petrinet2.samplemodels/net2.aird"/>
 <booleanAttribute key="org.modelexecution.xmof.animation.AnimationAddon" value="true"/>
 </launchConfiguration>
