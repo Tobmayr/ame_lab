@@ -11,6 +11,7 @@ import org.modelexecution.xmof.Syntax.Actions.BasicActions.OutputPin;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
 import org.modelexecution.xmof.Syntax.Actions.CompleteActions.AcceptEventAction;
 import org.modelexecution.xmof.Syntax.Actions.IntermediateActions.LinkAction;
+import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
@@ -44,16 +45,21 @@ public class LabelServices {
 			return "";
 		if (pin instanceof InputPin) {
 			if (pin.eContainer() instanceof LinkAction) {
-
 				return computeInputPinLabel("inputValue", ((LinkAction) pin.eContainer()).getInputValue());
 			} else if (pin.eContainer() instanceof InvocationAction) {
 				return computeInputPinLabel("argument", ((InvocationAction) pin.eContainer()).getArgument());
+			} else if (pin.eContainer() instanceof StructuredActivityNode) {
+				return computeInputPinLabel("input",
+						((StructuredActivityNode) pin.eContainer()).getStructuredNodeInput());
 			}
 		} else if (pin instanceof OutputPin) {
 			if (pin.eContainer() instanceof CallAction) {
 				return computeOutputPinLabel("result", ((CallAction) pin.eContainer()).getResult());
-			}else if (pin.eContainer() instanceof AcceptEventAction){
-				return computeOutputPinLabel("result", ((AcceptEventAction)pin.eContainer()).getResult());
+			} else if (pin.eContainer() instanceof AcceptEventAction) {
+				return computeOutputPinLabel("result", ((AcceptEventAction) pin.eContainer()).getResult());
+			} else if (pin.eContainer() instanceof StructuredActivityNode) {
+				return computeOutputPinLabel("result",
+						((StructuredActivityNode) pin.eContainer()).getStructuredNodeOutput());
 			}
 		}
 		return "";

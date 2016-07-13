@@ -93,14 +93,14 @@
             </conditionnalStyles>
           </subNodeMappings>
           <subContainerMappings name="AD_Action" semanticCandidatesExpression="[self.node->reject(e|e.oclIsKindOf(CompleteStructuredActivities::StructuredActivityNode))/]" domainClass="BasicActions.Action" childrenPresentation="List">
-            <borderedNodeMappings name="AD_InputPin" semanticCandidatesExpression="feature:input" domainClass="BasicActions.InputPin">
+            <borderedNodeMappings name="AD_InputPin" labelDirectEdit="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Misc']/@tools.4" semanticCandidatesExpression="feature:input" domainClass="BasicActions.InputPin">
               <style xsi:type="style:SquareDescription" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="2" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
               </style>
             </borderedNodeMappings>
-            <borderedNodeMappings name="AD_OutputPin" semanticCandidatesExpression="feature:output" domainClass="BasicActions.OutputPin">
+            <borderedNodeMappings name="AD_OutputPin" labelDirectEdit="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@toolSections.0/@ownedTools[name='Misc']/@tools.4" semanticCandidatesExpression="feature:output" domainClass="BasicActions.OutputPin">
               <style xsi:type="style:SquareDescription" showIcon="false" sizeComputationExpression="2" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -317,6 +317,8 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="Pins">
             <tools xsi:type="tool:NodeCreationDescription" name="Input Pin" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_InputPin']" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/InputPin.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
@@ -353,6 +355,11 @@
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:generateLabel()"/>
                     </subModelOperations>
                   </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclIsKindOf(CompleteStructuredActivities::StructuredActivityNode)/]">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.InputPin" referenceName="structuredNodeInput">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:generateLabel()"/>
+                    </subModelOperations>
+                  </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
             </tools>
@@ -371,6 +378,11 @@
                       <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.OutputPin" referenceName="result">
                         <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:generateLabel()"/>
                       </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="[self.oclIsKindOf(CompleteStructuredActivities::StructuredActivityNode)/]">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BasicActions.OutputPin" referenceName="structuredNodeOutput">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="service:generateLabel()"/>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
