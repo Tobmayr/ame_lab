@@ -3,7 +3,6 @@ package org.modelexecution.xmof.animation.controller;
 import java.util.HashMap;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.decorator.GraphitiDiagramDecorator;
 import org.modelexecution.xmof.animation.handler.GraphitiDiagramHandler;

@@ -1,11 +1,7 @@
 package org.modelexecution.xmof.animation.decorator;
 
-import org.eclipse.emf.ecore.EObject;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
-import org.modelexecution.xmof.animation.mapping.XMOFType;
 
 public class SiriusDiagramDecorator extends DiagramDecorator {
 
