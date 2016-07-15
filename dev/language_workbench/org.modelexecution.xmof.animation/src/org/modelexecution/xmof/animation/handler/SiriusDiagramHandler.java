@@ -55,7 +55,7 @@ public class SiriusDiagramHandler extends DiagramHandler {
 	}
 
 	/**
-	 * A previous session needs to be killed before the animation can take plaxe
+	 * A previous session needs to be killed before the animation can take place
 	 * 
 	 * @param sessionResourceURI URI of session
 	 */

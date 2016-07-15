@@ -23,7 +23,7 @@ import org.modelexecution.xmof.animation.decorator.DecoratorService;
 import org.modelexecution.xmof.diagram.decoration.IXMOFDecoratorProvider;
 
 /**
- * Provider for Graphiti animation service
+ * Decoration Provider for Graphiti animation service
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)

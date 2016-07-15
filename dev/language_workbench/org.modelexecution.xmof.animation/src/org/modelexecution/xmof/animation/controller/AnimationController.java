@@ -164,7 +164,8 @@ public abstract class AnimationController {
 	}
 
 	/**
-	 * Try to decorate node in active diagram. If node is in caller diagram finish diagram.
+	 * Try to decorate node in active diagram. If the node cannot be found in the currently active activity
+	 * the caller activity is used.
 	 * 
 	 * @param match matched debugEvent
 	 */

@@ -11,7 +11,7 @@ package org.modelexecution.xmof.animation.decorator.internal;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 
 /**
- * Container for activity edges that include the source and target node IDs
+ * Combined ID for activity edges that include the source and target node IDs
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
