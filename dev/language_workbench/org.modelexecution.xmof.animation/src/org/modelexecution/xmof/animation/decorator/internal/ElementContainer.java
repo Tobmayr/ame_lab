@@ -1,15 +1,31 @@
+/*******************************************************************************
+ * Copyright (c) 2016
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ *******************************************************************************/
 package org.modelexecution.xmof.animation.decorator.internal;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Container for a diagram element
+ * 
+ * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
+ * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
+ * @version 1.0
+ *
+ */
 public class ElementContainer {
 
 	private String activeNode;
-	private EdgeId activeEdge;
+	private EdgeID activeEdge;
 	private Set<String> traversedNodes = new HashSet<>();
-	private Set<EdgeId> traversedEdges = new HashSet<>();
+	private Set<EdgeID> traversedEdges = new HashSet<>();
 
 	public void setActiveNode(String nodeName) {
 		if (nodeName != null) {
@@ -19,7 +35,7 @@ public class ElementContainer {
 
 	}
 
-	public void setActiveEdge(EdgeId edge) {
+	public void setActiveEdge(EdgeID edge) {
 		if (edge != null) {
 			activeEdge = edge;
 			traversedEdges.remove(activeEdge);
@@ -27,7 +43,7 @@ public class ElementContainer {
 
 	}
 
-	public void addTraversedEdge(EdgeId edge) {
+	public void addTraversedEdge(EdgeID edge) {
 		if (edge != null) {
 			traversedEdges.add(edge);
 		}
@@ -43,7 +59,7 @@ public class ElementContainer {
 		return activeNode;
 	}
 
-	public EdgeId getActiveEdge() {
+	public EdgeID getActiveEdge() {
 		return activeEdge;
 	}
 
@@ -52,7 +68,7 @@ public class ElementContainer {
 
 	}
 
-	public Set<EdgeId> getTraversedEdges() {
+	public Set<EdgeID> getTraversedEdges() {
 		return Collections.unmodifiableSet(traversedEdges);
 	}
 

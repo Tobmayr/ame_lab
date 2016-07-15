@@ -1,3 +1,11 @@
+/*******************************************************************************
+ * Copyright (c) 2016
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ *******************************************************************************/
 package org.modelexecution.xmof.animation.handler;
 
 import java.util.Arrays;
@@ -27,6 +35,14 @@ import org.gemoc.executionframework.engine.core.CommandExecution;
 import org.gemoc.executionframework.extensions.sirius.modelloader.DebugPermissionProvider;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 
+/**
+ * Provider for Sirius animation service
+ * 
+ * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
+ * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
+ * @version 1.0
+ *
+ */
 public class SiriusDiagramHandler extends DiagramHandler {
 
 	private Map<String, IEditorPart> diagramEditorMap = new HashMap<>();
@@ -38,6 +54,11 @@ public class SiriusDiagramHandler extends DiagramHandler {
 		
 	}
 
+	/**
+	 * A previous session needs to be killed before the animation can take plaxe
+	 * 
+	 * @param sessionResourceURI URI of session
+	 */
 	private void killPreviousSiriusSession(URI sessionResourceURI) {
 		final Session session = SessionManager.INSTANCE.getExistingSession(sessionResourceURI);
 		if (session != null) {

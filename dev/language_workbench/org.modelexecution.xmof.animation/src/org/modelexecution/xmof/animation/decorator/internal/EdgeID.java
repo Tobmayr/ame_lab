@@ -1,13 +1,29 @@
+/*******************************************************************************
+ * Copyright (c) 2016
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ *******************************************************************************/
 package org.modelexecution.xmof.animation.decorator.internal;
 
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 
-public class EdgeId {
+/**
+ * Container for activity edges that include the source and target node IDs
+ * 
+ * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
+ * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
+ * @version 1.0
+ *
+ */
+public class EdgeID {
 
 	private String sourceNodeId;
 	private String targetNodeId;
 
-	public EdgeId(ActivityEdge edge) {
+	public EdgeID(ActivityEdge edge) {
 		if (edge.getSource() != null) {
 			sourceNodeId = edge.getSource().getName();
 		}
@@ -16,7 +32,7 @@ public class EdgeId {
 		}
 	}
 
-	public EdgeId(String sourceNodeName, String targetNodeName) {
+	public EdgeID(String sourceNodeName, String targetNodeName) {
 		super();
 
 		this.sourceNodeId = sourceNodeName;
@@ -49,7 +65,7 @@ public class EdgeId {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		EdgeId other = (EdgeId) obj;
+		EdgeID other = (EdgeID) obj;
 		if (sourceNodeId == null) {
 			if (other.sourceNodeId != null)
 				return false;

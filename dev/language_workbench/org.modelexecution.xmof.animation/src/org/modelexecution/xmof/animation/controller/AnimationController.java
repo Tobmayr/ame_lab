@@ -1,3 +1,11 @@
+/*******************************************************************************
+ * Copyright (c) 2016
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ *******************************************************************************/
 package org.modelexecution.xmof.animation.controller;
 
 import java.util.HashMap;
@@ -15,6 +23,16 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 
+/**
+ * The controller manages the communication flow
+ * within the model animator. The execution engine provides all information
+ * needed for the animation process encapsulated in a Model Specific Event object.
+ * 
+ * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
+ * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
+ * @version 1.0
+ *
+ */
 public abstract class AnimationController {
 
 	private MappingService mappingService;
@@ -24,6 +42,12 @@ public abstract class AnimationController {
 	protected Map<String, String> activityCallerMap;
 	protected DiagramHandler diagramHandler;
 
+	/**
+	 * Constructor resets DecoratorService
+	 * 
+	 * @param model xMOF model that should be animated
+	 * @param concreteHandler open or shows activity diagrams
+	 */
 	public AnimationController(XMOFBasedModel model, DiagramHandler concreteHandler) {
 		this.model = model;
 		mappingService = new MappingService(model);
@@ -33,6 +57,12 @@ public abstract class AnimationController {
 		DecoratorService.reset();
 	}
 
+	/**
+	 * processes MSEOccurences to match an event
+	 * 
+	 * @param mseOccurrence
+	 * @param verbose Debug output
+	 */
 	public void processMSE(MSEOccurrence mseOccurrence, boolean verbose) {
 		Match match = mappingService.matchDebugEvent(mseOccurrence.getMse().getName());
 		if (verbose) {
@@ -43,15 +73,25 @@ public abstract class AnimationController {
 
 	}
 
+	/**
+	 * Intializes decorators and opens correct activity diagram
+	 * 
+	 * @param match matched debug event
+	 */
 	public void handleMain(Match match) {
 		initializeDecorators();
 		Activity activity = getModelProcessor().getActivityByName(match.getXmofElementName());
-		openOrCreateAcitvityDiagram(activity);
+		openOrCreateActivityDiagram(activity);
 		activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
 		DecoratorService.intializeContainer(activity.getName());
 	}
 
-	protected void openOrCreateAcitvityDiagram(Activity activity) {
+	/**
+	 * Opens activity diagram in active workbench
+	 * 
+	 * @param activity Activity diagram
+	 */
+	protected void openOrCreateActivityDiagram(Activity activity) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 			@Override
 			public void run() {
@@ -61,18 +101,31 @@ public abstract class AnimationController {
 		});
 	}
 
+	/**
+	 * Resets DecoratorService
+	 */
 	public  void dispose(){
 		DecoratorService.reset();
 	}
 
+	/**
+	 * 
+	 * 
+	 * @param match
+	 */
 	public void handleActivity(Match match) {
 		Activity activity = getModelProcessor().getActivityByName(match.getXmofElementName());
-		openOrCreateAcitvityDiagram(activity);
+		openOrCreateActivityDiagram(activity);
 		activityCallerMap.put(activity.getName(), activeDecorator.getActivity().getName());
 		activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
 		DecoratorService.intializeContainer(activity.getName());
 	}
 
+	/**
+	 * Determines type of match and delegates to other methods
+	 * 
+	 * @param match matched debugEvent
+	 */
 	private void processType(Match match) {
 		switch (match.getType()) {
 		case MAIN:
@@ -88,7 +141,7 @@ public abstract class AnimationController {
 			decorateActivityNode(match);
 			return;
 		default:
-
+			Activator.getDefault().getMessaggingSystem().debug("process type could not be determined", Activator.PLUGIN_ID);
 		}
 	}
 
@@ -110,6 +163,11 @@ public abstract class AnimationController {
 		this.model = model;
 	}
 
+	/**
+	 * Try to decorate node in active diagram. If node is in caller diagram finish diagram.
+	 * 
+	 * @param match matched debugEvent
+	 */
 	protected void decorateActivityNode(Match match) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 			@Override
@@ -117,7 +175,7 @@ public abstract class AnimationController {
 				if (activeDecorator != null) {
 					if (!tryDecorateInCurrentActivity(match)) {
 
-						if (tryDecorateInCallingAcitivty(match)) {
+						if (tryDecorateInCallingActivity(match)) {
 							activeDecorator.setActivityFinished(true);
 						} else {
 							activeDecorator.setActivityFinished(false);
@@ -128,12 +186,12 @@ public abstract class AnimationController {
 
 			}
 
-			private boolean tryDecorateInCallingAcitivty(Match match) {
+			private boolean tryDecorateInCallingActivity(Match match) {
 				String callingActivity = activityCallerMap.get(activeDecorator.getActivity().getName());
 				if (callingActivity != null) {
 					activeDecorator = diagramDecoratorMap.get(callingActivity.trim());
 					if (activeDecorator.decorateActivityElement(match)) {
-						openOrCreateAcitvityDiagram(getModelProcessor().getActivityByName(callingActivity));
+						openOrCreateActivityDiagram(getModelProcessor().getActivityByName(callingActivity));
 					}
 					return true;
 				}

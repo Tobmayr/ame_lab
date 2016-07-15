@@ -1,3 +1,11 @@
+/*******************************************************************************
+ * Copyright (c) 2016
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ *******************************************************************************/
 package org.modelexecution.xmof.animation;
 
 import java.util.Collection;
@@ -16,11 +24,24 @@ import org.modelexecution.xmof.gemoc.engine.ui.commons.XMOFRepresentation;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
-
+/**
+ * ModelAnimator class which implements the AddonInterface for notifications of debug events.
+ * 
+ * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
+ * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
+ * @version 1.0
+ *
+ */
 public class ModelAnimator implements IEngineAddon {
 
 	private AnimationController animationController;
 
+	/**
+	 * Initialization of graphical representation. Either Graphiti or Sirius will be used
+	 * @param model A xMOF-based Model
+	 * @param resource 
+	 * @param animConfig RunConfiguration where the representation should be
+	 */
 	public void initialize(XMOFBasedModel model, Resource resource, RunConfiguration animConfig) {
 		String representation = animConfig.getXMOFRepresentation();
 		if (representation.equals(XMOFRepresentation.REPRESENTATION_GRAPHITI)) {
@@ -83,6 +104,9 @@ public class ModelAnimator implements IEngineAddon {
 
 	}
 
+	/**
+	 * MSE occurrence is passed to controller to animate step
+	 */
 	@Override
 	public void aboutToExecuteStep(IBasicExecutionEngine engine, Step stepToExecute) {
 		if (animationController != null) {

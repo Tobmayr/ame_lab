@@ -1,3 +1,11 @@
+/*******************************************************************************
+ * Copyright (c) 2016
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ *******************************************************************************/
 package org.modelexecution.xmof.animation.launcher.tabs;
 
 import java.util.List;
@@ -35,6 +43,14 @@ import org.modelexecution.xmof.gemoc.engine.ui.launcher.tabs.LaunchConfiguration
 import fr.obeo.dsl.debug.ide.launch.AbstractDSLLaunchConfigurationDelegate;
 import fr.obeo.dsl.debug.ide.sirius.ui.launch.AbstractDSLLaunchConfigurationDelegateUI;
 
+/**
+ * Launch configuration for the ui tab
+ * 
+ * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
+ * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
+ * @version 1.0
+ *
+ */
 public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 
 	protected Composite parent;

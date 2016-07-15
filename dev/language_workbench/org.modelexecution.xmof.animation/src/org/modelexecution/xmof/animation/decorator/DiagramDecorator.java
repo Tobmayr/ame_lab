@@ -1,3 +1,11 @@
+/*******************************************************************************
+ * Copyright (c) 2016
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ *******************************************************************************/
 package org.modelexecution.xmof.animation.decorator;
 
 import java.util.HashMap;
@@ -13,15 +21,24 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ControlFlow;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectFlow;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectNode;
-import org.modelexecution.xmof.animation.decorator.internal.EdgeId;
+import org.modelexecution.xmof.animation.decorator.internal.EdgeID;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 import org.modelexecution.xmof.animation.mapping.Match;
 
+/**
+ * The DiagramDecorator is capable of manipulating the graphical representation via
+ * decorating of diagram elements
+ * 
+ * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
+ * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
+ * @version 1.0
+ *
+ */
 public abstract class DiagramDecorator {
 	private boolean activityFinished = false;
 	protected Activity activity;
 	protected Map<String, ActivityNode> activityNodeMap;
-	protected Map<EdgeId, ActivityEdge> activityEdgeMap;
+	protected Map<EdgeID, ActivityEdge> activityEdgeMap;
 	protected ActivityNode activeNode;
 	protected ActivityNode previouslyActiveNode;
 	protected StructuredActivityNode inStructuredNode = null;
@@ -44,6 +61,12 @@ public abstract class DiagramDecorator {
 
 	}
 
+	/**
+	 * Decorates activity node in different nodes depending of the status (traversed or active)
+	 * 
+	 * @param match matched debug event
+	 * @return true if node has a xMOFName
+	 */
 	public boolean decorateActivityElement(Match match) {
 		if (activityNodeMap == null) {
 			initializeMaps();
@@ -126,8 +149,13 @@ public abstract class DiagramDecorator {
 		return activity;
 	}
 
+	/**
+	 * Determines source and target nodes of a edge and puts the result in the edge map
+	 * 
+	 * @param edge Edge of an activity diagram
+	 */
 	private void processActivityEdge(ActivityEdge edge) {
-		EdgeId id = null;
+		EdgeID id = null;
 		ActivityNode source = null, target = null;
 		if (edge instanceof ControlFlow) {
 			source = edge.getSource();
@@ -137,7 +165,7 @@ public abstract class DiagramDecorator {
 			target = retrieveConnectedNode(edge.getTarget());
 		}
 		if (source != null && target != null) {
-			id = new EdgeId(source.getName(), target.getName());
+			id = new EdgeID(source.getName(), target.getName());
 			activityEdgeMap.put(id, edge);
 		}
 
@@ -170,6 +198,11 @@ public abstract class DiagramDecorator {
 		return null;
 	}
 
+	/**
+	 * Determines nodes that are linked with the node
+	 * 
+	 * @param node Node of an activity diagram
+	 */
 	private void processActivityNode(ActivityNode node) {
 		if (node.getName() != null) {
 			if (node instanceof StructuredActivityNode) {
@@ -198,7 +231,7 @@ public abstract class DiagramDecorator {
 	private ActivityEdge retrieveActiveEdge() {
 		if (previouslyActiveNode == null)
 			return null;
-		EdgeId id = new EdgeId(previouslyActiveNode.getName(), activeNode.getName());
+		EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());
 		return activityEdgeMap.get(id);
 	}
 
