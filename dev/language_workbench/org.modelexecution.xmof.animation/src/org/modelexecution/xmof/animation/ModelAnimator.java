@@ -19,8 +19,6 @@ import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.animation.controller.GraphitiAnimationController;
 import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
-import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
-import org.modelexecution.xmof.gemoc.engine.ui.commons.XMOFRepresentation;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
@@ -33,7 +31,8 @@ import fr.inria.diverse.trace.commons.model.trace.Step;
  *
  */
 public class ModelAnimator implements IEngineAddon {
-
+	private static String REPRESENTATION_GRAPHITI="Graphiti";
+	private static String REPRESENTATION_SIRIUS="Sirius";
 	private AnimationController animationController;
 
 	/**
@@ -42,12 +41,12 @@ public class ModelAnimator implements IEngineAddon {
 	 * @param resource 
 	 * @param animConfig RunConfiguration where the representation should be
 	 */
-	public void initialize(XMOFBasedModel model, Resource resource, RunConfiguration animConfig) {
-		String representation = animConfig.getXMOFRepresentation();
-		if (representation.equals(XMOFRepresentation.REPRESENTATION_GRAPHITI)) {
+	public void initialize(XMOFBasedModel model, Resource resource,String representation,String modelPath) {
+		
+		if (representation.equals(ModelAnimator.REPRESENTATION_GRAPHITI)) {
 			animationController = new GraphitiAnimationController(model, resource);
-		} else if (representation.equals(XMOFRepresentation.REPRESENTATION_SIRIUS)) {
-			String airdURIString = "platform:/resource"+animConfig.getSiriusRepresentationModelPath();
+		} else if (representation.equals(ModelAnimator.REPRESENTATION_SIRIUS)) {
+			String airdURIString = "platform:/resource"+modelPath;
 			URI airdURI = URI.createURI(airdURIString);
 			animationController = new SiriusAnimationController(model, airdURI);
 		}
