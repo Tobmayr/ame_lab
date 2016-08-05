@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation;
+package org.modelexecution.xmof.animation.addon;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,8 +17,8 @@ import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.controller.AnimationController;
-import org.modelexecution.xmof.animation.controller.GraphitiAnimationController;
-import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
+import org.modelexecution.xmof.animation.graphiti.GraphitiAnimationController;
+import org.modelexecution.xmof.animation.sirius.SiriusAnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
