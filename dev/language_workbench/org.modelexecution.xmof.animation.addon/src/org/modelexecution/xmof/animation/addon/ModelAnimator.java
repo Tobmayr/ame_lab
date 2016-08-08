@@ -13,6 +13,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
+import org.eclipse.emf.ecore.resource.impl.URIConverterImpl;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
@@ -22,8 +24,10 @@ import org.modelexecution.xmof.animation.sirius.SiriusAnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
+
 /**
- * ModelAnimator class which implements the AddonInterface for notifications of debug events.
+ * ModelAnimator class which implements the AddonInterface for notifications of
+ * debug events.
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
@@ -31,25 +35,29 @@ import fr.inria.diverse.trace.commons.model.trace.Step;
  *
  */
 public class ModelAnimator implements IEngineAddon {
-	private static String REPRESENTATION_GRAPHITI="Graphiti";
-	private static String REPRESENTATION_SIRIUS="Sirius";
+
 	private AnimationController animationController;
 
 	/**
-	 * Initialization of graphical representation. Either Graphiti or Sirius will be used
-	 * @param model A xMOF-based Model
-	 * @param resource 
-	 * @param animConfig RunConfiguration where the representation should be
+	 * Initialization of graphical representation. Either Graphiti or Sirius
+	 * will be used
+	 * 
+	 * @param model
+	 *            A xMOF-based Model
+	 * @param resource
+	 * @param animConfig
+	 *            RunConfiguration where the representation should be
 	 */
-	public void initialize(XMOFBasedModel model, Resource resource,String representation,String modelPath) {
-		
-		if (representation.equals(ModelAnimator.REPRESENTATION_GRAPHITI)) {
+	public void initialize(XMOFBasedModel model, Resource resource) {
+		String siriusRepresentationPath = resource.getURI().segment(1) + "/representations.aird";
+		URI siriusURI = URI.createURI("platform:/resource/" + siriusRepresentationPath);
+
+		if (new ExtensibleURIConverterImpl().exists(siriusURI, null)) {
+			animationController = new SiriusAnimationController(model, siriusURI);
+		} else {
 			animationController = new GraphitiAnimationController(model, resource);
-		} else if (representation.equals(ModelAnimator.REPRESENTATION_SIRIUS)) {
-			String airdURIString = "platform:/resource"+modelPath;
-			URI airdURI = URI.createURI(airdURIString);
-			animationController = new SiriusAnimationController(model, airdURI);
 		}
+
 	}
 
 	@Override
@@ -78,9 +86,9 @@ public class ModelAnimator implements IEngineAddon {
 
 	@Override
 	public void engineAboutToDispose(IBasicExecutionEngine engine) {
-		if (animationController!=null){
+		if (animationController != null) {
 			animationController.dispose();
-			animationController=null;
+			animationController = null;
 		}
 
 	}
