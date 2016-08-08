@@ -57,8 +57,7 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 			Set<IEngineAddon> addons = xmofEngine.getAddonsTypedBy(IEngineAddon.class);
 			for (IEngineAddon addon : addons) {
 				if (addon instanceof ModelAnimator) {
-					RunConfiguration animConfig=(RunConfiguration) runConfiguration;
-					initializeAnimationAddon((ModelAnimator) addon, xmofEngine, animConfig);
+					initializeAnimationAddon((ModelAnimator) addon, xmofEngine);
 				}
 			}
 
@@ -67,8 +66,8 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 	}
 
 
-	private void initializeAnimationAddon(ModelAnimator addon, XMOFExecutionEngine xmofEngine, org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration animConfig) {
-		addon.initialize(xmofEngine.getModel(), xmofEngine.getLoader().getXMOFModelResource(), animConfig.getXMOFRepresentation(),animConfig.getSiriusRepresentationModelPath());
+	private void initializeAnimationAddon(ModelAnimator addon, XMOFExecutionEngine xmofEngine) {
+		addon.initialize(xmofEngine.getModel(), xmofEngine.getLoader().getXMOFModelResource());
 
 	}
 
