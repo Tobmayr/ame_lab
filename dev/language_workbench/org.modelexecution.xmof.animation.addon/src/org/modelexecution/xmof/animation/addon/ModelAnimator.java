@@ -14,13 +14,13 @@ import java.util.List;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
-import org.eclipse.emf.ecore.resource.impl.URIConverterImpl;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.animation.graphiti.GraphitiAnimationController;
 import org.modelexecution.xmof.animation.sirius.SiriusAnimationController;
+import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
@@ -48,7 +48,7 @@ public class ModelAnimator implements IEngineAddon {
 	 * @param animConfig
 	 *            RunConfiguration where the representation should be
 	 */
-	public void initialize(XMOFBasedModel model, Resource resource) {
+	private void initialize(XMOFBasedModel model, Resource resource) {
 		String siriusRepresentationPath = resource.getURI().segment(1) + "/representations.aird";
 		URI siriusURI = URI.createURI("platform:/resource/" + siriusRepresentationPath);
 
@@ -60,15 +60,23 @@ public class ModelAnimator implements IEngineAddon {
 
 	}
 
+	
 	@Override
-	public void engineAboutToStart(IBasicExecutionEngine engine) {
-		// TODO Auto-generated method stub
+	public void engineAboutToStart(IBasicExecutionEngine executionEngine) {
+		
 
 	}
-
+	/**
+	 * After successfully starting the engine, the the animation plugin will be initialized.s
+	 * @param executionEngine
+	 */
 	@Override
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
-		// TODO Auto-generated method stub
+		if (executionEngine instanceof XMOFExecutionEngine){
+			XMOFExecutionEngine xmofEngine= (XMOFExecutionEngine)executionEngine;
+			initialize(xmofEngine.getModel(), xmofEngine.getLoader().getXMOFModelResource());
+			
+		}
 
 	}
 

@@ -19,8 +19,6 @@ import org.gemoc.executionframework.ui.views.engine.EnginesStatusView;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.core.ISequentialExecutionEngine;
-import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
-import org.modelexecution.xmof.animation.addon.ModelAnimator;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionModelContext;
@@ -46,29 +44,7 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 		ModelExecutionContext executioncontext = new XMOFExecutionModelContext(runConfiguration, executionMode);
 		executioncontext.initializeResourceModel();
 		executionEngine.initialize(executioncontext);
-		initializeAnimationAddon(executionEngine, runConfiguration);
 		return executionEngine;
-	}
-	
-	private void initializeAnimationAddon(IBasicExecutionEngine executionEngine,
-			org.gemoc.executionframework.engine.ui.commons.RunConfiguration runConfiguration) {
-		if (executionEngine instanceof XMOFExecutionEngine) {
-			XMOFExecutionEngine xmofEngine = (XMOFExecutionEngine) executionEngine;
-			Set<IEngineAddon> addons = xmofEngine.getAddonsTypedBy(IEngineAddon.class);
-			for (IEngineAddon addon : addons) {
-				if (addon instanceof ModelAnimator) {
-					initializeAnimationAddon((ModelAnimator) addon, xmofEngine);
-				}
-			}
-
-		}
-		
-	}
-
-
-	private void initializeAnimationAddon(ModelAnimator addon, XMOFExecutionEngine xmofEngine) {
-		addon.initialize(xmofEngine.getModel(), xmofEngine.getLoader().getXMOFModelResource());
-
 	}
 
 	@Override
