@@ -1,3 +1,5 @@
+This repository is outdated an is no longer updated or maintained. The model animator plugin has been integrated into the Moliz framework
+and has been moved to https://github.com/moliz/moliz.gemoc
 # ame_lab
 
 This repository has been created in the context of the course "Advanced Model Engineering" in SS16 (University of Technology Vienna, summerterm 2016)
