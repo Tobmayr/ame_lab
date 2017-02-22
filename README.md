@@ -1,5 +1,4 @@
-The code in this repository is deprecated and is no longer updated or maintained. The model animator plugin has been integrated into the Moliz framework
-and has been moved to https://github.com/moliz/moliz.gemoc
+The code in this repository is deprecated and is no longer updated or maintained. The model animator plugin has been integrated into the moliz repository and the code is hosted here: https://github.com/moliz/moliz.gemoc
 
 # ame_lab
 
