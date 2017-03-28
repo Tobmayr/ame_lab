@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.graphiti;
+package org.modelexecution.xmof.animation.handler;
 
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;
@@ -17,7 +17,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
-import org.modelexecution.xmof.animation.handler.DiagramHandler;
 
 /**
  * Handler for Graphiti animation service

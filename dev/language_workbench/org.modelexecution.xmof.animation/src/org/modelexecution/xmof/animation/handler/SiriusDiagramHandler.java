@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.sirius;
+package org.modelexecution.xmof.animation.handler;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,7 +34,6 @@ import org.eclipse.ui.PlatformUI;
 import org.gemoc.executionframework.engine.core.CommandExecution;
 import org.gemoc.executionframework.extensions.sirius.modelloader.DebugPermissionProvider;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.handler.DiagramHandler;
 
 /**
  * Provider for Sirius animation service

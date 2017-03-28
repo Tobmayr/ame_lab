@@ -81,8 +81,7 @@ public abstract class DiagramDecorator {
 			decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
 		}
 		if (inStructuredNode != null) {
-			
-			if (activeNode==null ||activeNode.getInStructuredNode() == null
+			if (activeNode.getInStructuredNode() == null
 					|| !activeNode.getInStructuredNode().equals(inStructuredNode)) {
 				previouslyActiveNode = inStructuredNode;
 				decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
@@ -101,9 +100,6 @@ public abstract class DiagramDecorator {
 				inStructuredNode = (StructuredActivityNode) activeNode;
 			} else {
 				decorateElement(activeNode, ElementState.ACTIVE);
-				if (inStructuredNode != null) {
-					decorateElement(inStructuredNode, ElementState.ACTIVE);
-				}
 			}
 		}
 
@@ -233,7 +229,7 @@ public abstract class DiagramDecorator {
 	}
 
 	private ActivityEdge retrieveActiveEdge() {
-		if (activeNode==null||previouslyActiveNode == null)
+		if (previouslyActiveNode == null)
 			return null;
 		EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());
 		return activityEdgeMap.get(id);

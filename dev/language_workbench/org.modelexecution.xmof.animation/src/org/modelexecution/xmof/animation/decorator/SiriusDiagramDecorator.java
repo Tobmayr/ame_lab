@@ -6,19 +6,17 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.sirius;
-
+package org.modelexecution.xmof.animation.decorator;
 
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
-
+import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
 
 /**
  * Specific DiagramDecorator for Sirius
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
- * @see org.modelexecution.xmof.animation.graphiti.DiagramDecorator
+ * @see org.modelexecution.xmof.animation.decorator.DiagramDecorator
  * @version 1.0
  *
  */

@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.graphiti;
+package org.modelexecution.xmof.animation.decorator;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +23,6 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
-import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 
 /**
@@ -31,7 +30,7 @@ import org.modelexecution.xmof.animation.decorator.internal.ElementState;
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
- * @see org.modelexecution.xmof.animation.decorator.decorator.DiagramDecorator
+ * @see org.modelexecution.xmof.animation.decorator.DiagramDecorator
  * @version 1.0
  *
  */

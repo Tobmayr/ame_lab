@@ -175,11 +175,11 @@ public abstract class AnimationController {
 			public void run() {
 				if (activeDecorator != null) {
 					if (!tryDecorateInCurrentActivity(match)) {
-						DiagramDecorator lastDecorator=activeDecorator;
+
 						if (tryDecorateInCallingActivity(match)) {
-							lastDecorator.setActivityFinished(true);
+							activeDecorator.setActivityFinished(true);
 						} else {
-							lastDecorator.setActivityFinished(false);
+							activeDecorator.setActivityFinished(false);
 						}
 					}
 
